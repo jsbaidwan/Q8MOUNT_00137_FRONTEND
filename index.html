@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Industrial Mounting Solutions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons (Placeholder for exact icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="#" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="#" class="active">Products</a>
+                <a href="#">Fleet Solutions</a>
+                <a href="#">OEM Services</a>
+                <a href="#">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <i class="fa-solid fa-search text-muted"></i>
+                <input type="text" placeholder="Search Technical Database...">
+            </div>
+            <button class="icon-btn theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </button>
+            <button class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="layout-wrapper">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Technical Categories</h3>
+                <p class="text-muted"
+                    style="font-size: 0.75rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Browse By System</p>
+                <ul class="sidebar-nav">
+                    <li><a href="#" class="active"><i class="fa-solid fa-sliders"></i> Chassis Systems</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Drivetrain</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bolt"></i> Electrical</a></li>
+                    <li><a href="#"><i class="fa-solid fa-wrench"></i> Mounting Hardware</a></li>
+                    <li><a href="#"><i class="fa-solid fa-hammer"></i> Tools & Shop</a></li>
+                </ul>
+            </div>
+
+            <button class="btn btn-secondary" style="margin-bottom: 2rem;">Quick SKU Entry</button>
+
+            <div class="sidebar-footer">
+                <ul class="sidebar-nav">
+                    <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-arrow-up"></i> Bulk Upload</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="dot"></span> INDUSTRIAL PRECISION
+                    </div>
+                    <h1 class="hero-title">Extreme Mounting<br><span class="text-primary">Engineered for</span> Life.
+                    </h1>
+                    <p class="hero-desc">The ultimate industrial mounting ecosystem for heavy-duty applications.
+                        Custom-fit solutions with ISO 9001 certified components.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary">Explore Catalog <i class="fa-solid fa-arrow-right"
+                                style="margin-left:0.5rem"></i></button>
+                        <button class="btn btn-secondary">Watch Demo</button>
+                    </div>
+                </div>
+
+                <div class="solution-finder">
+                    <div class="finder-header">
+                        <i class="fa-solid fa-chart-simple" style="color: var(--color-primary);"></i> Solution Finder
+                    </div>
+                    <div class="finder-form">
+                        <div class="finder-row">
+                            <div class="finder-field">
+                                <label>VEHICLE YEAR</label>
+                                <select>
+                                    <option>2024</option>
+                                </select>
+                            </div>
+                            <div class="finder-field">
+                                <label>MAKE</label>
+                                <select>
+                                    <option>Ford</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="finder-field">
+                            <label>MODEL</label>
+                            <select>
+                                <option>F-150 Lightning</option>
+                            </select>
+                        </div>
+                        <div class="finder-field">
+                            <label>APPLICATION</label>
+                            <select>
+                                <option>Fleet Management</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary finder-submit" style="width: 100%;">Find My Solution</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Moving SKUs -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2>Top-Moving SKUs</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-secondary"><i class="fa-solid fa-filter"></i> Filter Specs</button>
+                        <button class="btn btn-secondary"><i class="fa-solid fa-list"></i> Density: Detailed</button>
+                    </div>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-dark">In Stock</span>
+                                <span class="badge badge-danger">Hot Item</span>
+                            </div>
+                            <img src="https://loremflickr.com/600/400/metal,machined"
+                                alt="Chassis Mount">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-MT-990-XL</span>
+                            <h3 class="product-title">HD Heavy-Duty Chassis Mount</h3>
+                            <table class="product-specs">
+                                <tr>
+                                    <td>Material</td>
+                                    <td>T6-6061 Aluminum</td>
+                                </tr>
+                                <tr>
+                                    <td>Load Rating</td>
+                                    <td>4,500 LBS Static</td>
+                                </tr>
+                                <tr>
+                                    <td>Coating</td>
+                                    <td>MIL-SPEC Anodized</td>
+                                </tr>
+                            </table>
+                            <div class="product-footer">
+                                <span class="product-price">$184.50</span>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-info">Fleet Ready</span>
+                            </div>
+                            <img src="https://loremflickr.com/600/400/bolts,nuts"
+                                alt="Precision Bolt Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-HD-FAST-12</span>
+                            <h3 class="product-title">Precision Bolt Kit (Grade 12.9)</h3>
+                            <table class="product-specs">
+                                <tr>
+                                    <td>Material</td>
+                                    <td>Alloy Steel 12.9</td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td>12 Pack (Bulk)</td>
+                                </tr>
+                                <tr>
+                                    <td>Thread</td>
+                                    <td>M12 X 1.75</td>
+                                </tr>
+                            </table>
+                            <div class="product-footer">
+                                <span class="product-price">$42.00</span>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-warning">Low Stock</span>
+                            </div>
+                            <img src="https://loremflickr.com/600/400/car,engine"
+                                alt="Engine Cradle">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-ENG-V8-SL</span>
+                            <h3 class="product-title">Universal V8 Engine Cradle</h3>
+                            <table class="product-specs">
+                                <tr>
+                                    <td>Material</td>
+                                    <td>Structural Steel</td>
+                                </tr>
+                                <tr>
+                                    <td>Compatibility</td>
+                                    <td>GM/Ford/Mopar</td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>14.2 KG</td>
+                                </tr>
+                            </table>
+                            <div class="product-footer">
+                                <span class="product-price">$312.99</span>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Quality Assurance Banner -->
+            <section class="qa-banner">
+                <div class="qa-content">
+                    <span class="qa-subtitle">Quality Assurance</span>
+                    <h2>ISO 9001:2015 Certified Manufacturing For Critical Automotive Systems.</h2>
+                    <div class="qa-stats">
+                        <div class="qa-stat">
+                            <h4>100%</h4>
+                            <p>Stress Tested</p>
+                        </div>
+                        <div class="qa-stat">
+                            <h4>MIL-STD</h4>
+                            <p>Compliance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="qa-image">
+                    <!-- Factory robot placeholder image -->
+                    <img src="https://loremflickr.com/1000/600/factory,robotics"
+                        alt="Factory Manufacturing">
+                </div>
+            </section>
+
+            <!-- Best Sellers (Additional Section) -->
+            <section class="product-section">
+                <div class="section-header">
+                    <h2>Best Sellers</h2>
+                </div>
+                <div class="product-grid">
+                    <!-- Additional products using same card component -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://loremflickr.com/600/400/suspension,car"
+                                alt="Performance Suspension">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-SUS-PRO-1</span>
+                            <h3 class="product-title">Pro-Series Suspension Arm</h3>
+                            <table class="product-specs">
+                                <tr>
+                                    <td>Material</td>
+                                    <td>Forged Aluminum</td>
+                                </tr>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>Adjustable Control Arm</td>
+                                </tr>
+                            </table>
+                            <div class="product-footer">
+                                <span class="product-price">$245.00</span>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://loremflickr.com/600/400/brakes,car"
+                                alt="Brake Caliper">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-BRK-CAL-6</span>
+                            <h3 class="product-title">6-Piston Heavy Duty Caliper</h3>
+                            <table class="product-specs">
+                                <tr>
+                                    <td>Material</td>
+                                    <td>Billet Aluminum</td>
+                                </tr>
+                                <tr>
+                                    <td>Fitment</td>
+                                    <td>Universal Front</td>
+                                </tr>
+                            </table>
+                            <div class="product-footer">
+                                <span class="product-price">$489.99</span>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://loremflickr.com/600/400/exhaust,car"
+                                alt="Exhaust Header">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-EXH-HDR-8</span>
+                            <h3 class="product-title">High-Flow Exhaust Headers</h3>
+                            <table class="product-specs">
+                                <tr>
+                                    <td>Material</td>
+                                    <td>304 Stainless Steel</td>
+                                </tr>
+                                <tr>
+                                    <td>Diameter</td>
+                                    <td>1.875" Primary</td>
+                                </tr>
+                            </table>
+                            <div class="product-footer">
+                                <span class="product-price">$620.00</span>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Brands Section -->
+            <section class="brands-section">
+                <h3>Trusted By Industry Leaders</h3>
+                <div class="brand-logos">
+                    <!-- Placeholder logos -->
+                    <img src="https://logo.clearbit.com/ford.com"
+                        alt="Ford">
+                    <img src="https://logo.clearbit.com/bmw.com"
+                        alt="BMW">
+                    <img src="https://logo.clearbit.com/mercedes-benz.com"
+                        alt="Mercedes">
+                    <img src="https://logo.clearbit.com/toyota.com"
+                        alt="Toyota">
+                    <img src="https://logo.clearbit.com/nissanusa.com"
+                        alt="Nissan">
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="color: white;">Q8MOUNT</a>
+                <p>High-performance mounting solutions engineered for industrial and automotive applications. Delivering
+                    technical excellence through precision manufacturing since 1994.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <nav class="footer-nav">
+                    <a href="#">Technical Specs</a>
+                    <a href="#">Compliance</a>
+                    <a href="#">Installation Guides</a>
+                    <a href="#">Warranty Info</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4>Corporate</h4>
+                <nav class="footer-nav">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Contact Engineering</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Apply initial theme
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+
+        // Toggle handler
+        themeToggle.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            if (!currentTheme) {
+                currentTheme = systemPrefersDark ? 'dark' : 'light';
+            }
+
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+    </script>
+</body>
+
+</html>
