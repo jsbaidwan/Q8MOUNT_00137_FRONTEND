@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Premium Automotive Parts & Mounting Solutions</title>
+    <meta name="description" content="Q8MOUNT — Your trusted source for premium automotive parts, engine components, brake systems, suspension, and professional mounting solutions. ISO 9001 certified.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="#" class="logo">Q8<span class="logo-accent">MOUNT</span></a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <a href="#" class="active">Products</a>
+                <a href="#">Fleet Solutions</a>
+                <a href="#">OEM Services</a>
+                <a href="#">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Search parts, SKUs, vehicles..." id="searchInput">
+            </div>
+            <!-- Language Switcher -->
+            <div class="lang-switcher" id="langSwitcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ar">عربي</button>
+            </div>
+            <!-- Theme Toggle Switch -->
+            <div class="theme-switch" id="themeToggle">
+                <i class="fa-solid fa-sun theme-icon-light"></i>
+                <label class="toggle-label">
+                    <input type="checkbox" id="themeCheckbox" aria-label="Toggle Dark Mode">
+                    <span class="toggle-slider"></span>
+                </label>
+                <i class="fa-solid fa-moon theme-icon-dark"></i>
+            </div>
+            <button class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </button>
+            <button class="icon-btn cart-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">3</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== MOBILE MENU OVERLAY ==================== -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-header">
+                <a href="#" class="logo">Q8<span class="logo-accent">MOUNT</span></a>
+                <button class="mobile-menu-close" id="menuClose" aria-label="Close Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="#" class="active"><i class="fa-solid fa-box-open"></i> Products</a>
+                <a href="#"><i class="fa-solid fa-truck"></i> Fleet Solutions</a>
+                <a href="#"><i class="fa-solid fa-industry"></i> OEM Services</a>
+                <a href="#"><i class="fa-solid fa-headset"></i> Support</a>
+            </nav>
+            <div class="mobile-categories">
+                <h4>Categories</h4>
+                <a href="#"><i class="fa-solid fa-gear"></i> Engine Parts</a>
+                <a href="#"><i class="fa-solid fa-compact-disc"></i> Brake Systems</a>
+                <a href="#"><i class="fa-solid fa-car-side"></i> Suspension</a>
+                <a href="#"><i class="fa-solid fa-gears"></i> Drivetrain</a>
+                <a href="#"><i class="fa-solid fa-oil-can"></i> Maintenance</a>
+                <a href="#"><i class="fa-solid fa-toolbox"></i> Accessories</a>
+            </div>
+            <div class="mobile-menu-footer">
+                <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a>
+                <a href="#"><i class="fa-solid fa-file-arrow-up"></i> Bulk Upload</a>
+                <a href="#"><i class="fa-solid fa-right-to-bracket"></i> Quick SKU Entry</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== LAYOUT WITH SIDEBAR ==================== -->
+    <div class="layout-wrapper">
+
+        <!-- Sidebar (Original Design — Client Option) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Technical Categories</h3>
+                <p class="sidebar-browse">Browse By System</p>
+                <ul class="sidebar-nav">
+                    <li><a href="#" class="active"><i class="fa-solid fa-gear"></i> Engine Parts</a></li>
+                    <li><a href="#"><i class="fa-solid fa-compact-disc"></i> Brake Systems</a></li>
+                    <li><a href="#"><i class="fa-solid fa-car-side"></i> Suspension</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gears"></i> Drivetrain</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bolt"></i> Electrical</a></li>
+                    <li><a href="#"><i class="fa-solid fa-oil-can"></i> Maintenance</a></li>
+                    <li><a href="#"><i class="fa-solid fa-toolbox"></i> Accessories</a></li>
+                    <li><a href="#"><i class="fa-solid fa-wrench"></i> Tools & Shop</a></li>
+                </ul>
+            </div>
+
+            <button class="btn sidebar-sku-btn">Quick SKU Entry</button>
+
+            <div class="sidebar-footer">
+                <ul class="sidebar-nav">
+                    <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file-arrow-up"></i> Bulk Upload</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main class="main-content">
+
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-section reveal-on-scroll">
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <span class="dot"></span> AUTOMOTIVE PERFORMANCE
+                        </div>
+                        <h1 class="hero-title">Premium Auto Parts<br><span class="text-primary">Engineered for</span>
+                            Performance.</h1>
+                        <p class="hero-desc">The ultimate automotive parts marketplace. OEM-quality components with
+                            perfect fitment, backed by ISO 9001 certified manufacturing and expert support.</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary">Explore Catalog <i class="fa-solid fa-arrow-right"
+                                    style="margin-left:0.5rem"></i></button>
+                            <button class="btn btn-secondary">Watch Demo</button>
+                        </div>
+                    </div>
+
+                    <div class="solution-finder">
+                        <div class="finder-header">
+                            <i class="fa-solid fa-car" style="color: var(--color-primary);"></i> Vehicle Part Finder
+                        </div>
+                        <div class="finder-form">
+                            <div class="finder-row">
+                                <div class="finder-field">
+                                    <label for="vehicleYear">VEHICLE YEAR</label>
+                                    <select id="vehicleYear">
+                                        <option>2024</option>
+                                        <option>2023</option>
+                                        <option>2022</option>
+                                    </select>
+                                </div>
+                                <div class="finder-field">
+                                    <label for="vehicleMake">MAKE</label>
+                                    <select id="vehicleMake">
+                                        <option>Ford</option>
+                                        <option>Toyota</option>
+                                        <option>BMW</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="finder-field">
+                                <label for="vehicleModel">MODEL</label>
+                                <select id="vehicleModel">
+                                    <option>F-150 Lightning</option>
+                                    <option>Mustang GT</option>
+                                </select>
+                            </div>
+                            <div class="finder-field">
+                                <label for="vehicleApp">PART CATEGORY</label>
+                                <select id="vehicleApp">
+                                    <option>Engine Components</option>
+                                    <option>Brake Systems</option>
+                                    <option>Suspension</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary finder-submit">Find My Parts</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED CATEGORIES ===== -->
+        <section class="categories-section reveal-on-scroll" id="categories">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Shop By Category</h2>
+                        <p class="section-subtitle">Browse our complete range of automotive parts</p>
+                    </div>
+                    <a href="#" class="view-all-link">View All Categories <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="categories-grid">
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Engine Parts</h3>
+                            <span class="category-count">156 Products</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right category-arrow"></i>
+                    </a>
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fa-solid fa-compact-disc"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Brake Systems</h3>
+                            <span class="category-count">98 Products</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right category-arrow"></i>
+                    </a>
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Suspension</h3>
+                            <span class="category-count">124 Products</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right category-arrow"></i>
+                    </a>
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Drivetrain</h3>
+                            <span class="category-count">87 Products</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right category-arrow"></i>
+                    </a>
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fa-solid fa-oil-can"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Maintenance</h3>
+                            <span class="category-count">210 Products</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right category-arrow"></i>
+                    </a>
+                    <a href="#" class="category-card">
+                        <div class="category-icon">
+                            <i class="fa-solid fa-toolbox"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Accessories</h3>
+                            <span class="category-count">175 Products</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right category-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED PRODUCTS ===== -->
+        <section class="product-section reveal-on-scroll" id="featured-products">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Featured Products</h2>
+                        <p class="section-subtitle">Hand-picked for quality and performance</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-filter"></i> Filter</button>
+                        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-grip"></i> Grid</button>
+                    </div>
+                </div>
+                <div class="product-grid featured-grid">
+                    <!-- Featured 1 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Featured</span>
+                                <span class="badge badge-danger">Hot Item</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/airfilter/600/400" alt="Performance Air Filter">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-AF-PRO-K1</span>
+                            <h3 class="product-title">High-Performance Air Filter Kit</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(128)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Fitment</td><td>Universal</td></tr>
+                                <tr><td>Material</td><td>Cotton Gauze</td></tr>
+                                <tr><td>Flow Rate</td><td>+15% Airflow</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$89.99</span>
+                                    <span class="product-price-old">$119.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Featured 2 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Featured</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/headlight/600/400" alt="LED Headlight Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-LED-HL-X2</span>
+                            <h3 class="product-title">Premium LED Headlight Conversion Kit</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(94)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Lumens</td><td>12,000 LM</td></tr>
+                                <tr><td>Color Temp</td><td>6000K Pure White</td></tr>
+                                <tr><td>Lifespan</td><td>50,000 Hours</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$249.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Featured 3 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Featured</span>
+                                <span class="badge badge-dark">In Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/exhaust1/600/400" alt="Performance Exhaust System">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-EXH-CAT-V6</span>
+                            <h3 class="product-title">Cat-Back Performance Exhaust System</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </div>
+                                <span class="rating-count">(67)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>304 Stainless Steel</td></tr>
+                                <tr><td>Pipe Dia.</td><td>3" Mandrel Bent</td></tr>
+                                <tr><td>Sound</td><td>Aggressive Tone</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$799.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Featured 4 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Featured</span>
+                                <span class="badge badge-warning">Low Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/steering1/600/400" alt="Racing Steering Wheel">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-STR-RC-350</span>
+                            <h3 class="product-title">Racing Flat-Bottom Steering Wheel</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(42)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Diameter</td><td>350mm</td></tr>
+                                <tr><td>Material</td><td>Suede + Carbon</td></tr>
+                                <tr><td>Hub</td><td>Quick Release</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$349.99</span>
+                                    <span class="product-price-old">$429.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Featured 5 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Featured</span>
+                                <span class="badge badge-dark">In Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/carbonintake/600/400" alt="Carbon Fiber Cold Air Intake">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-INT-CF-4</span>
+                            <h3 class="product-title">Carbon Fiber Cold Air Intake System</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(112)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Carbon Fiber</td></tr>
+                                <tr><td>Gain</td><td>+18 HP</td></tr>
+                                <tr><td>Filter</td><td>Washable Cone</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$380.00</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Featured 6 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Featured</span>
+                                <span class="badge badge-danger">Hot Item</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/clutchkit/600/400" alt="Stage 3 Clutch Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-CLU-STG3</span>
+                            <h3 class="product-title">Stage 3 Performance Clutch Kit</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(56)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Torque Cap</td><td>480 lb-ft</td></tr>
+                                <tr><td>Disc</td><td>Ceramic</td></tr>
+                                <tr><td>Flywheel</td><td>Included</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$540.00</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROMOTIONAL BANNER 1 ===== -->
+        <section class="promo-section reveal-on-scroll" id="promo1">
+            <div class="container">
+                <div class="promo-banner promo-gradient-1">
+                    <div class="promo-content">
+                        <span class="promo-badge">LIMITED TIME OFFER</span>
+                        <h2 class="promo-title">Up to 30% Off<br>Engine Components</h2>
+                        <p class="promo-desc">Premium pistons, gaskets, timing kits and more. OEM quality at
+                            unbeatable prices.</p>
+                        <button class="btn btn-light">Shop Engine Parts <i class="fa-solid fa-arrow-right"
+                                style="margin-left:0.5rem"></i></button>
+                    </div>
+                    <div class="promo-visual">
+                        <i class="fa-solid fa-gear promo-icon-bg"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BEST SELLERS ===== -->
+        <section class="product-section reveal-on-scroll" id="best-sellers">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Best Sellers</h2>
+                        <p class="section-subtitle">Most popular parts ordered this month</p>
+                    </div>
+                    <a href="#" class="view-all-link">View All Best Sellers <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="product-grid featured-grid">
+                    <!-- Best Seller 1 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-dark">In Stock</span>
+                                <span class="badge badge-danger">Best Seller</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/suspension1/600/400" alt="Performance Suspension Arm">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-SUS-PRO-1</span>
+                            <h3 class="product-title">Pro-Series Adjustable Suspension Arm</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(215)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Forged Aluminum</td></tr>
+                                <tr><td>Type</td><td>Adjustable Control Arm</td></tr>
+                                <tr><td>Fitment</td><td>Universal Multi-Fit</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$245.00</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Best Seller 2 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-info">Fleet Ready</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/brakecaliper/600/400" alt="Heavy Duty Brake Caliper">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-BRK-CAL-6</span>
+                            <h3 class="product-title">6-Piston Heavy Duty Brake Caliper</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(178)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Billet Aluminum</td></tr>
+                                <tr><td>Fitment</td><td>Universal Front</td></tr>
+                                <tr><td>Pistons</td><td>6-Piston Monoblock</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$489.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Best Seller 3 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-warning">Low Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/exhaustheader/600/400" alt="High-Flow Exhaust Headers">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-EXH-HDR-8</span>
+                            <h3 class="product-title">High-Flow Tubular Exhaust Headers</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </div>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>304 Stainless Steel</td></tr>
+                                <tr><td>Diameter</td><td>1.875" Primary</td></tr>
+                                <tr><td>Config</td><td>4-into-1 Long Tube</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$620.00</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Best Seller 4 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Best Seller</span>
+                                <span class="badge badge-dark">In Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/brakepads/600/400" alt="Carbon-Ceramic Brake Pads">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-BRK-PAD-4</span>
+                            <h3 class="product-title">Carbon-Ceramic Street/Track Brake Pads</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(304)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Carbon-Ceramic</td></tr>
+                                <tr><td>Temp Range</td><td>Up to 1200°F</td></tr>
+                                <tr><td>Use</td><td>Track / Street</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$129.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Best Seller 5 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Best Seller</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/ignitioncoil/600/400" alt="High-Output Ignition Coils">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-IGN-COIL-6</span>
+                            <h3 class="product-title">High-Output Ignition Coils Set</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="rating-count">(189)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Voltage</td><td>45k Volts</td></tr>
+                                <tr><td>Engine</td><td>V6/V8 Fitment</td></tr>
+                                <tr><td>Warranty</td><td>2 Years</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$199.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Best Seller 6 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Best Seller</span>
+                                <span class="badge badge-warning">Low Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/radiator/600/400" alt="Aluminum Radiator">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-RAD-ALUM-3</span>
+                            <h3 class="product-title">Triple-Core Aluminum Radiator</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span class="rating-count">(142)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Core</td><td>Triple-Pass</td></tr>
+                                <tr><td>Material</td><td>Aircraft Aluminum</td></tr>
+                                <tr><td>Width</td><td>52mm</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$315.00</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RECOMMENDED PRODUCTS (Horizontal Scroll) ===== -->
+        <section class="recommended-section reveal-on-scroll" id="recommended">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Recommended For You</h2>
+                        <p class="section-subtitle">Based on popular searches and trending parts</p>
+                    </div>
+                    <div class="scroll-nav">
+                        <button class="scroll-btn" id="scrollLeft" aria-label="Scroll Left"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="scroll-btn" id="scrollRight" aria-label="Scroll Right"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="recommended-scroll" id="recommendedScroll">
+                    <!-- Rec 1 -->
+                    <article class="product-card product-card-compact">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/oilfilter/600/400" alt="Oil Filter">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-OIL-FLT-P</span>
+                            <h3 class="product-title">Premium Oil Filter</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <span class="rating-count">(340)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">$24.99</span>
+                                <button class="btn btn-cart btn-sm"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Rec 2 -->
+                    <article class="product-card product-card-compact">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/sparkplug/600/400" alt="Spark Plug Set">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-SPK-IR-6</span>
+                            <h3 class="product-title">Iridium Spark Plug Set (6-Pack)</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                                <span class="rating-count">(203)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">$48.00</span>
+                                <button class="btn btn-cart btn-sm"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Rec 3 -->
+                    <article class="product-card product-card-compact">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/timingbelt/600/400" alt="Timing Belt Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-TMG-BLT-K</span>
+                            <h3 class="product-title">Complete Timing Belt Kit</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                                <span class="rating-count">(156)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">$156.00</span>
+                                <button class="btn btn-cart btn-sm"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Rec 4 -->
+                    <article class="product-card product-card-compact">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/waterpump/600/400" alt="Water Pump Assembly">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-WP-ASM-U</span>
+                            <h3 class="product-title">Water Pump Assembly</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <span class="rating-count">(112)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">$189.00</span>
+                                <button class="btn btn-cart btn-sm"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Rec 5 -->
+                    <article class="product-card product-card-compact">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/ignitioncoil/600/400" alt="Ignition Coil Pack">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-IGN-CP-4</span>
+                            <h3 class="product-title">Ignition Coil Pack (Set of 4)</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                                <span class="rating-count">(78)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">$112.00</span>
+                                <button class="btn btn-cart btn-sm"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Rec 6 -->
+                    <article class="product-card product-card-compact">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/fuelinjector/600/400" alt="Fuel Injector Set">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-FI-SET-6</span>
+                            <h3 class="product-title">High-Flow Fuel Injector Set</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                                <span class="rating-count">(64)</span>
+                            </div>
+                            <div class="product-footer">
+                                <span class="product-price">$320.00</span>
+                                <button class="btn btn-cart btn-sm"><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ACCESSORIES SECTION ===== -->
+        <section class="product-section reveal-on-scroll" id="accessories">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Car Accessories</h2>
+                        <p class="section-subtitle">Upgrade your ride with premium accessories</p>
+                    </div>
+                    <a href="#" class="view-all-link">View All Accessories <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="product-grid featured-grid">
+                    <!-- Acc 1 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-dark">In Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/shiftknob/600/400" alt="Carbon Fiber Shift Knob">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-ACC-CF-SK</span>
+                            <h3 class="product-title">Carbon Fiber Weighted Shift Knob</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <span class="rating-count">(87)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Real Carbon Fiber</td></tr>
+                                <tr><td>Thread</td><td>Universal Adapter</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group"><span class="product-price">$79.99</span></div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Acc 2 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/ledinterior/600/400" alt="LED Interior Light Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-ACC-LED-INT</span>
+                            <h3 class="product-title">LED Interior Ambient Light Kit</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                                <span class="rating-count">(134)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Colors</td><td>RGB 16 Million</td></tr>
+                                <tr><td>Control</td><td>App + Remote</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group"><span class="product-price">$45.00</span></div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Acc 3 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-info">Popular</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/floormats/600/400" alt="Performance Floor Mats">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-ACC-FM-ALL</span>
+                            <h3 class="product-title">All-Weather Performance Floor Mats</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <span class="rating-count">(256)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Heavy-Duty TPE</td></tr>
+                                <tr><td>Coverage</td><td>Full Set (4 Pieces)</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group"><span class="product-price">$89.99</span></div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Acc 4 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/wheelcover/600/400" alt="Steering Wheel Cover">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-ACC-SWC-L</span>
+                            <h3 class="product-title">Premium Leather Steering Wheel Cover</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                                <span class="rating-count">(91)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Genuine Leather</td></tr>
+                                <tr><td>Size</td><td>Universal 14.5-15"</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group"><span class="product-price">$35.00</span></div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Acc 5 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-primary">Popular</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/phonemount/600/400" alt="Magnetic Dashboard Phone Mount">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-ACC-PH-MAG</span>
+                            <h3 class="product-title">Magnetic Dashboard Phone Mount</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                <span class="rating-count">(412)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Magnet</td><td>N52 Neodymium</td></tr>
+                                <tr><td>Attachment</td><td>3M VHB Adhesive</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group"><span class="product-price">$29.99</span></div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Acc 6 -->
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-dark">In Stock</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/headrest/600/400" alt="Memory Foam Headrest">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-ACC-HL-REST</span>
+                            <h3 class="product-title">Ergonomic Memory Foam Headrest</h3>
+                            <div class="product-rating">
+                                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                                <span class="rating-count">(177)</span>
+                            </div>
+                            <table class="product-specs">
+                                <tr><td>Material</td><td>Memory Foam</td></tr>
+                                <tr><td>Cover</td><td>Washable Mesh</td></tr>
+                            </table>
+                            <div class="product-footer">
+                                <div class="price-group"><span class="product-price">$39.99</span></div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRODUCT KITS SECTION ===== -->
+        <section class="product-section kits-section reveal-on-scroll" id="kits">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Performance Kits</h2>
+                        <p class="section-subtitle">Save more with bundled automotive kits</p>
+                    </div>
+                    <a href="#" class="view-all-link">View All Kits <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="product-grid kits-grid">
+                    <!-- Kit 1 -->
+                    <article class="product-card kit-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-kit">Kit · 8 Parts</span>
+                                <span class="badge badge-danger">Save 18%</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/brakekit/600/400" alt="Complete Brake Overhaul Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-KIT-BRK-CMP</span>
+                            <h3 class="product-title">Complete Brake Overhaul Kit</h3>
+                            <div class="kit-includes">
+                                <span class="kit-label"><i class="fa-solid fa-box-open"></i> Kit Includes:</span>
+                                <ul>
+                                    <li>Front & Rear Brake Pads</li>
+                                    <li>Drilled & Slotted Rotors (4)</li>
+                                    <li>Brake Fluid DOT 4</li>
+                                    <li>Hardware Kit</li>
+                                </ul>
+                            </div>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$599.99</span>
+                                    <span class="product-price-old">$729.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add Kit</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Kit 2 -->
+                    <article class="product-card kit-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-kit">Kit · 12 Parts</span>
+                                <span class="badge badge-danger">Save 22%</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/tuneupkit/600/400" alt="Engine Tune-Up Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-KIT-TUN-PRO</span>
+                            <h3 class="product-title">Engine Tune-Up Pro Kit</h3>
+                            <div class="kit-includes">
+                                <span class="kit-label"><i class="fa-solid fa-box-open"></i> Kit Includes:</span>
+                                <ul>
+                                    <li>Spark Plugs (6) Iridium</li>
+                                    <li>Air Filter + Cabin Filter</li>
+                                    <li>Oil Filter + Drain Plug</li>
+                                    <li>PCV Valve + Gaskets</li>
+                                </ul>
+                            </div>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$349.99</span>
+                                    <span class="product-price-old">$449.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add Kit</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Kit 3 -->
+                    <article class="product-card kit-card">
+                        <div class="product-image-container">
+                            <div class="product-badges">
+                                <span class="badge badge-kit">Kit · 6 Parts</span>
+                                <span class="badge badge-danger">Save 15%</span>
+                            </div>
+                            <button class="wishlist-btn" aria-label="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <img src="https://picsum.photos/seed/suspensionkit/600/400" alt="Suspension Refresh Kit">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-sku">SKU: Q8-KIT-SUS-REF</span>
+                            <h3 class="product-title">Suspension Refresh Kit</h3>
+                            <div class="kit-includes">
+                                <span class="kit-label"><i class="fa-solid fa-box-open"></i> Kit Includes:</span>
+                                <ul>
+                                    <li>Front Struts (Pair)</li>
+                                    <li>Rear Shocks (Pair)</li>
+                                    <li>Strut Mounts + Bearings</li>
+                                    <li>Bump Stops + Dust Boots</li>
+                                </ul>
+                            </div>
+                            <div class="product-footer">
+                                <div class="price-group">
+                                    <span class="product-price">$899.99</span>
+                                    <span class="product-price-old">$1,059.99</span>
+                                </div>
+                                <button class="btn btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add Kit</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROMOTIONAL BANNER 2 ===== -->
+        <section class="promo-section reveal-on-scroll" id="promo2">
+            <div class="container">
+                <div class="promo-banner promo-gradient-2">
+                    <div class="promo-content">
+                        <span class="promo-badge">FREE SHIPPING</span>
+                        <h2 class="promo-title">Free Shipping On<br>Orders Over $500</h2>
+                        <p class="promo-desc">Plus hassle-free returns within 30 days. Professional grade parts
+                            delivered to your door.</p>
+                        <div class="promo-ctas">
+                            <button class="btn btn-light">Shop Now <i class="fa-solid fa-arrow-right"
+                                    style="margin-left:0.5rem"></i></button>
+                            <button class="btn btn-outline-light">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="promo-visual">
+                        <i class="fa-solid fa-truck-fast promo-icon-bg"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BRAND LOGOS (Marquee) ===== -->
+        <section class="brands-section reveal-on-scroll" id="brands">
+            <div class="container">
+                <h3 class="brands-title">Trusted By Industry Leaders</h3>
+                <p class="brands-subtitle">Genuine parts and certifications from the world's top automotive brands</p>
+            </div>
+            <div class="brands-marquee-wrapper">
+                <div class="brands-marquee">
+                    <div class="brands-track">
+                        <span class="brand-logo-text">FORD</span>
+                        <span class="brand-logo-text">BMW</span>
+                        <span class="brand-logo-text">MERCEDES-BENZ</span>
+                        <span class="brand-logo-text">TOYOTA</span>
+                        <span class="brand-logo-text">NISSAN</span>
+                        <span class="brand-logo-text">AUDI</span>
+                        <span class="brand-logo-text">VOLKSWAGEN</span>
+                        <span class="brand-logo-text">PORSCHE</span>
+                        <span class="brand-logo-text">HONDA</span>
+                        <span class="brand-logo-text">CHEVROLET</span>
+                        <!-- Duplicate for seamless marquee loop -->
+                        <span class="brand-logo-text">FORD</span>
+                        <span class="brand-logo-text">BMW</span>
+                        <span class="brand-logo-text">MERCEDES-BENZ</span>
+                        <span class="brand-logo-text">TOYOTA</span>
+                        <span class="brand-logo-text">NISSAN</span>
+                        <span class="brand-logo-text">AUDI</span>
+                        <span class="brand-logo-text">VOLKSWAGEN</span>
+                        <span class="brand-logo-text">PORSCHE</span>
+                        <span class="brand-logo-text">HONDA</span>
+                        <span class="brand-logo-text">CHEVROLET</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TECHNICAL / INDUSTRIAL INFO ===== -->
+        <section class="tech-section reveal-on-scroll" id="tech-info">
+            <div class="container">
+                <div class="tech-inner">
+                    <div class="tech-content">
+                        <span class="tech-subtitle">Quality Assurance</span>
+                        <h2 class="tech-title">ISO 9001:2015 Certified<br>Automotive Components</h2>
+                        <p class="tech-desc">Every part in our catalog meets or exceeds OEM specifications.
+                            Rigorous quality control, full traceability, and comprehensive warranty coverage
+                            on all products.</p>
+                        <div class="tech-stats">
+                            <div class="tech-stat">
+                                <h4>50,000+</h4>
+                                <p>Parts In Catalog</p>
+                            </div>
+                            <div class="tech-stat">
+                                <h4>100%</h4>
+                                <p>Quality Tested</p>
+                            </div>
+                            <div class="tech-stat">
+                                <h4>MIL-STD</h4>
+                                <p>Compliance</p>
+                            </div>
+                            <div class="tech-stat">
+                                <h4>24/7</h4>
+                                <p>Expert Support</p>
+                            </div>
+                        </div>
+                        <div class="tech-certs">
+                            <div class="cert-badge"><i class="fa-solid fa-shield-halved"></i> ISO 9001</div>
+                            <div class="cert-badge"><i class="fa-solid fa-certificate"></i> SAE Certified</div>
+                            <div class="cert-badge"><i class="fa-solid fa-check-double"></i> OEM Quality</div>
+                            <div class="cert-badge"><i class="fa-solid fa-recycle"></i> Eco-Friendly</div>
+                        </div>
+                    </div>
+                    <div class="tech-visual">
+                        <div class="tech-feature-list">
+                            <div class="tech-feature">
+                                <div class="tech-feature-icon"><i class="fa-solid fa-microscope"></i></div>
+                                <div>
+                                    <h5>Precision Manufacturing</h5>
+                                    <p>CNC-machined components with tolerances down to 0.001mm</p>
+                                </div>
+                            </div>
+                            <div class="tech-feature">
+                                <div class="tech-feature-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                                <div>
+                                    <h5>Stress Tested</h5>
+                                    <p>Every batch undergoes thermal cycling and vibration testing</p>
+                                </div>
+                            </div>
+                            <div class="tech-feature">
+                                <div class="tech-feature-icon"><i class="fa-solid fa-barcode"></i></div>
+                                <div>
+                                    <h5>Full Traceability</h5>
+                                    <p>Each part is serialized with complete manufacturing history</p>
+                                </div>
+                            </div>
+                            <div class="tech-feature">
+                                <div class="tech-feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div>
+                                    <h5>Lifetime Warranty</h5>
+                                    <p>Select products backed by our lifetime replacement guarantee</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </main>
+    </div><!-- end layout-wrapper -->
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Brand Column -->
+                    <div class="footer-brand">
+                        <a href="#" class="logo footer-logo">Q8<span class="logo-accent">MOUNT</span></a>
+                        <p>Premium automotive parts and mounting solutions. OEM-quality components with
+                            perfect fitment, backed by expert support and fast shipping worldwide.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <!-- Quick Links -->
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <nav class="footer-nav" aria-label="Quick Links">
+                            <a href="#">New Arrivals</a>
+                            <a href="#">Best Sellers</a>
+                            <a href="#">Deals & Offers</a>
+                            <a href="#">Gift Cards</a>
+                            <a href="#">Track Order</a>
+                        </nav>
+                    </div>
+                    <!-- Categories -->
+                    <div class="footer-column">
+                        <h4>Categories</h4>
+                        <nav class="footer-nav" aria-label="Categories">
+                            <a href="#">Engine Parts</a>
+                            <a href="#">Brake Systems</a>
+                            <a href="#">Suspension</a>
+                            <a href="#">Drivetrain</a>
+                            <a href="#">Accessories</a>
+                        </nav>
+                    </div>
+                    <!-- Customer Service -->
+                    <div class="footer-column">
+                        <h4>Customer Service</h4>
+                        <nav class="footer-nav" aria-label="Customer Service">
+                            <a href="#">Contact Us</a>
+                            <a href="#">Return Policy</a>
+                            <a href="#">Warranty Info</a>
+                            <a href="#">Installation Guides</a>
+                            <a href="#">FAQs</a>
+                        </nav>
+                    </div>
+                    <!-- Newsletter -->
+                    <div class="footer-newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Get the latest deals, new arrivals, and automotive tips delivered to your inbox.</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <div class="newsletter-input-group">
+                                <input type="email" placeholder="Enter your email" aria-label="Email for newsletter" required>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+                        </form>
+                        <div class="footer-contact">
+                            <p><i class="fa-solid fa-phone"></i> +1 (800) Q8-MOUNT</p>
+                            <p><i class="fa-solid fa-envelope"></i> support@q8mount.com</p>
+                            <p><i class="fa-solid fa-location-dot"></i> Kuwait City, Kuwait</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <span>&copy; 2024 Q8MOUNT. All Rights Reserved. Professional Grade Automotive Hardware.</span>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        // ===== THEME TOGGLE (Switch) =====
+        const themeCheckbox = document.getElementById('themeCheckbox');
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Set initial state
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeCheckbox.checked = true;
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeCheckbox.checked = false;
+        }
+
+        themeCheckbox.addEventListener('change', () => {
+            if (themeCheckbox.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // ===== LANGUAGE SWITCHER =====
+        const langBtns = document.querySelectorAll('.lang-btn');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const lang = btn.dataset.lang;
+                if (lang === 'ar') {
+                    document.documentElement.setAttribute('dir', 'rtl');
+                    document.documentElement.setAttribute('lang', 'ar');
+                } else {
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    document.documentElement.setAttribute('lang', 'en');
+                }
+            });
+        });
+
+        // ===== MOBILE MENU =====
+        const menuToggle = document.getElementById('menuToggle');
+        const menuClose = document.getElementById('menuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ===== BACK TO TOP =====
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== SCROLL REVEAL =====
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+        // ===== RECOMMENDED SCROLL BUTTONS =====
+        const scrollContainer = document.getElementById('recommendedScroll');
+        const scrollLeftBtn = document.getElementById('scrollLeft');
+        const scrollRightBtn = document.getElementById('scrollRight');
+
+        if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+            scrollLeftBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -320, behavior: 'smooth' });
+            });
+            scrollRightBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: 320, behavior: 'smooth' });
+            });
+        }
+
+        // ===== NEWSLETTER FORM =====
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const input = newsletterForm.querySelector('input');
+                if (input.value) {
+                    input.value = '';
+                    alert('Thank you for subscribing!');
+                }
+            });
+        }
+
+        // ===== WISHLIST TOGGLE =====
+        document.querySelectorAll('.wishlist-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const icon = btn.querySelector('i');
+                icon.classList.toggle('fa-regular');
+                icon.classList.toggle('fa-solid');
+                btn.classList.toggle('active');
+            });
+        });
+
+        // ===== HEADER SHADOW ON SCROLL =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 10);
+        });
+    </script>
+</body>
+
+</html>
