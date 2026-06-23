@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Shopping Cart</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html">Products</a>
+                <a href="#">Fleet Solutions</a>
+                <a href="#">OEM Services</a>
+                <a href="#">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <i class="fa-solid fa-search text-muted"></i>
+                <input type="text" placeholder="Search Technical Database...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart" style="background-color: var(--color-input-bg);">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+            
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="divider">/</span>
+                <span class="active">Shopping Cart</span>
+            </nav>
+
+            <h1 class="hero-title" style="font-size: 2.2rem; text-align: left; margin-bottom: var(--spacing-sm);">Shopping Cart</h1>
+
+            <!-- Steps Progress Bar -->
+            <div class="checkout-steps-container">
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <span class="step-num">1</span>
+                        <span class="step-label">Cart</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <span class="step-label">Checkout</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <span class="step-label">Confirmation</span>
+                    </div>
+                    <div class="step-connector"></div>
+                </div>
+            </div>
+
+            <!-- Active Cart Container -->
+            <div class="cart-grid" id="active-cart-container">
+                <!-- Left: Items -->
+                <div class="cart-items-column">
+                    <article class="cart-item-card" id="cart-item-1">
+                        <div class="cart-item-img">
+                            <i class="fa-regular fa-image" style="font-size: 2rem; color: var(--color-text-muted);"></i>
+                        </div>
+                        <div class="cart-item-info">
+                            <div>
+                                <h3 class="cart-item-title">Weld Racing Wheel Center Caps & Hub Covers | P605-5083</h3>
+                                <span class="cart-item-sku">SKU: SKU-WELDRACING-026-79876</span>
+                            </div>
+                            <div class="qty-selector">
+                                <button type="button" class="qty-btn" id="qty-minus"><i class="fa-solid fa-minus"></i></button>
+                                <input type="text" class="qty-input" id="qty-val" value="1" readonly>
+                                <button type="button" class="qty-btn" id="qty-plus"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <div class="cart-item-pricing">
+                            <span class="cart-item-price-each">KD <span id="price-each">12.000</span> each</span>
+                            <span class="cart-item-price-total">KD <span id="price-total">12.000</span></span>
+                        </div>
+                        <button type="button" class="cart-item-delete" aria-label="Delete item" id="btn-delete-item">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </article>
+
+                    <a href="index.html" class="cart-continue-link">
+                        <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+                    </a>
+                </div>
+
+                <!-- Right: Summary -->
+                <aside class="cart-summary-sidebar">
+                    <div class="order-summary-card">
+                        <h2 class="summary-title">Order Summary</h2>
+                        <div class="summary-row">
+                            <span>Subtotal (<span id="summary-qty">1</span> items)</span>
+                            <span>KD <span id="summary-subtotal">12.000</span></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="value-green">Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>VAT (0%)</span>
+                            <span>KD 0.000</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total</span>
+                            <span>KD <span id="summary-total">12.000</span></span>
+                        </div>
+
+                        <!-- Coupon Code -->
+                        <div class="coupon-section">
+                            <span class="coupon-label">Coupon Code</span>
+                            <div class="coupon-form">
+                                <input type="text" class="coupon-input" placeholder="Enter code">
+                                <button type="button" class="btn btn-secondary coupon-btn">Apply</button>
+                            </div>
+                        </div>
+
+                        <!-- Proceed Button -->
+                        <a href="checkout.html" class="btn btn-primary btn-checkout-proceed">
+                            Proceed to Checkout <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                        </a>
+
+                        <!-- Secure badge -->
+                        <div class="secure-checkout-label">
+                            <i class="fa-solid fa-lock" style="color: #10B981;"></i> Secure checkout
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Empty Cart Container (Hidden by default) -->
+            <div class="empty-cart-card" id="empty-cart-container" style="display: none;">
+                <div class="empty-cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <h2 class="empty-cart-title">Your cart is empty</h2>
+                <p class="empty-cart-desc">Browse our products and add items to your cart.</p>
+                <a href="index.html" class="btn btn-primary empty-cart-btn">Browse Products</a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3>Engineer-Grade Updates. No Noise.</h3>
+                <p>New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">Q8MOUNT</a>
+                <p>High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <nav class="footer-nav">
+                    <a href="#">Chassis Systems</a>
+                    <a href="#">Drivetrain</a>
+                    <a href="#">Electrical</a>
+                    <a href="#">Mounting Hardware</a>
+                    <a href="#">Suspension</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <nav class="footer-nav">
+                    <a href="#">Technical Specs</a>
+                    <a href="#">Compliance Docs</a>
+                    <a href="#">Installation Guides</a>
+                    <a href="#">Warranty Info</a>
+                    <a href="#">CAD Library</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4>Corporate</h4>
+                <nav class="footer-nav">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Engineering</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Sale</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN USA</span>
+        </div>
+    </footer>
+
+    <script>
+        /* ---------- CART DYNAMIC INTERACTION ---------- */
+        const itemPriceUnit = 12.000;
+        const qtyValEl = document.getElementById('qty-val');
+        const priceTotalEl = document.getElementById('price-total');
+        const summaryQtyEl = document.getElementById('summary-qty');
+        const summarySubtotalEl = document.getElementById('summary-subtotal');
+        const summaryTotalEl = document.getElementById('summary-total');
+        const activeCartContainer = document.getElementById('active-cart-container');
+        const emptyCartContainer = document.getElementById('empty-cart-container');
+        const breadcrumbsActive = document.querySelector('.breadcrumbs .active');
+        const h1Title = document.querySelector('h1.hero-title');
+
+        function updateCartSummary(qty) {
+            const totalPrice = (qty * itemPriceUnit).toFixed(3);
+            qtyValEl.value = qty;
+            priceTotalEl.textContent = totalPrice;
+            summaryQtyEl.textContent = qty;
+            summarySubtotalEl.textContent = totalPrice;
+            summaryTotalEl.textContent = totalPrice;
+        }
+
+        document.getElementById('qty-minus').addEventListener('click', () => {
+            let qty = parseInt(qtyValEl.value);
+            if (qty > 1) {
+                qty--;
+                updateCartSummary(qty);
+            }
+        });
+
+        document.getElementById('qty-plus').addEventListener('click', () => {
+            let qty = parseInt(qtyValEl.value);
+            qty++;
+            updateCartSummary(qty);
+        });
+
+        document.getElementById('btn-delete-item').addEventListener('click', () => {
+            const card = document.getElementById('cart-item-1');
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            card.style.transition = 'all 0.3s ease';
+            
+            setTimeout(() => {
+                activeCartContainer.style.display = 'none';
+                emptyCartContainer.style.display = 'block';
+                // Update breadcrumb and header title to reflect empty state if desired
+            }, 300);
+        });
+
+
+        /* ---------- THEME TOGGLE (pill switch) ---------- */
+        const themeSwitch = document.querySelector('.theme-switch');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeSwitch.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+            localStorage.setItem('theme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+        themeSwitch.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        /* ---------- LANGUAGE SWITCH (EN / AR) ---------- */
+        const langButtons = document.querySelectorAll('.lang-btn');
+
+        function applyLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            localStorage.setItem('lang', lang);
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+                btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+            });
+            
+            // Localized text direction corrections for headings
+            if(lang === 'ar') {
+                breadcrumbsActive.textContent = 'عربة التسوق';
+                h1Title.textContent = 'عربة التسوق';
+                h1Title.style.textAlign = 'right';
+            } else {
+                breadcrumbsActive.textContent = 'Shopping Cart';
+                h1Title.textContent = 'Shopping Cart';
+                h1Title.style.textAlign = 'left';
+            }
+        }
+
+        const savedLang = localStorage.getItem('lang') || 'en';
+        applyLanguage(savedLang);
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+        });
+    </script>
+</body>
+
+</html>

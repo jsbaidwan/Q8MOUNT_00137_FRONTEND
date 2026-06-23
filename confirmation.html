@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Order Confirmed</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html">Products</a>
+                <a href="#">Fleet Solutions</a>
+                <a href="#">OEM Services</a>
+                <a href="#">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <i class="fa-solid fa-search text-muted"></i>
+                <input type="text" placeholder="Search Technical Database...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Steps Progress Bar -->
+            <div class="checkout-steps-container" style="margin-top: var(--spacing-xl);">
+                <div class="checkout-steps">
+                    <div class="step completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Cart</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Checkout</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Confirmation</span>
+                    </div>
+                    <div class="step-connector"></div>
+                </div>
+            </div>
+
+            <!-- Confirmation Card -->
+            <div class="confirmation-card">
+                <div class="success-checkmark">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h1 class="confirmation-title">Thank You For Your Order!</h1>
+                <p class="confirmation-subtitle">Your transaction has been completed successfully.</p>
+                
+                <!-- Receipt Box -->
+                <div class="receipt-box">
+                    <div class="receipt-row">
+                        <span>Order Reference</span>
+                        <span style="font-weight: 800; color: var(--color-text-main);">#Q8-98431-MNT</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>Order Date</span>
+                        <span>June 23, 2026</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>Payment Method</span>
+                        <span>K-Net (Kuwait Local Debit Card)</span>
+                    </div>
+                    <div class="receipt-row" style="border-top: 1px solid var(--color-border); padding-top: var(--spacing-xs); margin-top: var(--spacing-xs);">
+                        <span>Weld Racing Wheel Center Caps × 1</span>
+                        <span>KD 12.000</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>Shipping (Free Shipping)</span>
+                        <span style="color: #10B981; font-weight: 700;">Free</span>
+                    </div>
+                    <div class="receipt-row receipt-total">
+                        <span>Total Paid</span>
+                        <span>KD 12.000</span>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fa-solid fa-house" style="margin-right: 0.5rem;"></i> Continue Shopping
+                    </a>
+                    <button type="button" class="btn btn-secondary" onclick="window.print();">
+                        <i class="fa-solid fa-print" style="margin-right: 0.5rem;"></i> Print Invoice
+                    </button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3>Engineer-Grade Updates. No Noise.</h3>
+                <p>New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">Q8MOUNT</a>
+                <p>High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <nav class="footer-nav">
+                    <a href="#">Chassis Systems</a>
+                    <a href="#">Drivetrain</a>
+                    <a href="#">Electrical</a>
+                    <a href="#">Mounting Hardware</a>
+                    <a href="#">Suspension</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <nav class="footer-nav">
+                    <a href="#">Technical Specs</a>
+                    <a href="#">Compliance Docs</a>
+                    <a href="#">Installation Guides</a>
+                    <a href="#">Warranty Info</a>
+                    <a href="#">CAD Library</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4>Corporate</h4>
+                <nav class="footer-nav">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Engineering</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Sale</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN USA</span>
+        </div>
+    </footer>
+
+    <script>
+        /* ---------- THEME TOGGLE (pill switch) ---------- */
+        const themeSwitch = document.querySelector('.theme-switch');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeSwitch.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+            localStorage.setItem('theme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+        themeSwitch.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        /* ---------- LANGUAGE SWITCH (EN / AR) ---------- */
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const confirmationTitle = document.querySelector('.confirmation-title');
+        const confirmationSubtitle = document.querySelector('.confirmation-subtitle');
+
+        function applyLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            localStorage.setItem('lang', lang);
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+                btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+            });
+            
+            if(lang === 'ar') {
+                confirmationTitle.textContent = 'شكرًا لك على طلبك!';
+                confirmationSubtitle.textContent = 'تم إكمال معاملتك بنجاح.';
+            } else {
+                confirmationTitle.textContent = 'Thank You For Your Order!';
+                confirmationSubtitle.textContent = 'Your transaction has been completed successfully.';
+            }
+        }
+
+        const savedLang = localStorage.getItem('lang') || 'en';
+        applyLanguage(savedLang);
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+        });
+    </script>
+</body>
+
+</html>
