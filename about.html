@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - About Us</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles for Redesigned About Us Page */
+        .about-hero-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-bottom: var(--spacing-xl);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 90, 140, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 163, 255, 0.25) 0%, transparent 50%),
+                linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-2) 100%);
+            z-index: -1;
+        }
+
+        /* Animated overlay grid effect for industrial aesthetic */
+        .about-hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .about-hero-eyebrow {
+            color: var(--color-accent-cyan);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .about-hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4DE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Intro Layout */
+        .about-intro-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .about-section-header {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-section-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .about-section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-primary);
+            border-radius: var(--radius);
+        }
+
+        [dir="rtl"] .about-section-title::after {
+            left: auto;
+            right: 0;
+        }
+
+        .about-paragraph {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-paragraph strong {
+            color: var(--color-text-main);
+        }
+
+        .about-image-card {
+            background-color: var(--color-bg-sidebar);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-card-hover);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .about-image-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--color-primary);
+        }
+
+        .about-image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image-card:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Metrics Counter Grid */
+        .about-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .about-metric-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-metric-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent-cyan));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .about-metric-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary-soft);
+        }
+
+        .about-metric-card:hover::before {
+            opacity: 1;
+        }
+
+        .about-metric-value {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: -1px;
+            font-family: var(--font-family);
+        }
+
+        .about-metric-title {
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: 0.5px;
+        }
+
+        .about-metric-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.4;
+        }
+
+        /* Mission Section */
+        .about-mission-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-mission-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 90%, rgba(201, 0, 0, 0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .about-mission-container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-mission-eyebrow {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--color-accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .about-mission-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.6;
+            color: #FFFFFF;
+            font-style: italic;
+        }
+
+        /* Timeline Section */
+        .about-timeline-section {
+            margin-bottom: var(--spacing-xxl);
+            position: relative;
+        }
+
+        .about-timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: var(--spacing-xl) auto 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* The vertical axis line */
+        .about-timeline-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: var(--color-border);
+            transform: translateX(-50%);
+        }
+
+        [dir="rtl"] .about-timeline-container::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            align-items: center;
+        }
+
+        .about-timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Timeline bullet point indicator */
+        .about-timeline-bullet {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: var(--color-bg-main);
+            border: 3px solid var(--color-primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            box-shadow: 0 0 0 4px var(--color-bg-main);
+            transition: all 0.3s ease;
+        }
+
+        .about-timeline-item:hover .about-timeline-bullet {
+            background-color: var(--color-accent-cyan);
+            border-color: var(--color-primary-hover);
+            transform: translate(-50%, -50%) scale(1.3);
+            box-shadow: 0 0 10px rgba(0, 163, 255, 0.5);
+        }
+
+        .about-timeline-content {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .about-timeline-item:hover .about-timeline-content {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
+        }
+
+        /* Directing blocks left/right alternate */
+        .about-timeline-item:nth-child(even) .about-timeline-content {
+            grid-column: 2;
+        }
+
+        .about-timeline-item:nth-child(odd) .about-timeline-content {
+            grid-column: 1;
+            text-align: right;
+        }
+
+        [dir="rtl"] .about-timeline-item:nth-child(odd) .about-timeline-content {
+            text-align: left;
+        }
+
+        .about-timeline-year {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: -0.5px;
+        }
+
+        .about-timeline-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .about-timeline-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Accreditations Section */
+        .about-accred-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .about-accred-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .about-accred-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
+        }
+
+        .about-accred-icon {
+            font-size: 1.8rem;
+            color: var(--color-accent-amber);
+            flex-shrink: 0;
+            background: var(--color-primary-soft);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-accred-info h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: 0.5px;
+        }
+
+        .about-accred-info p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Core Values Section */
+        .about-values-section {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .about-values-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .about-value-card {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg) var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--spacing-xs);
+        }
+
+        .about-value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
+        }
+
+        .about-value-icon {
+            width: 56px;
+            height: 56px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+            transition: all 0.3s ease;
+        }
+
+        .about-value-card:hover .about-value-icon {
+            background-color: var(--color-primary);
+            color: white;
+            transform: rotate(360deg);
+        }
+
+        .about-value-card h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .about-value-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1200px) {
+            .about-values-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .about-intro-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            .about-metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-timeline-container::before {
+                left: 20px;
+            }
+            .about-timeline-bullet {
+                left: 20px;
+            }
+            .about-timeline-item {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+                padding-left: 40px;
+            }
+            .about-timeline-item:nth-child(even) .about-timeline-content,
+            .about-timeline-item:nth-child(odd) .about-timeline-content {
+                grid-column: 1;
+                text-align: left;
+            }
+            [dir="rtl"] .about-timeline-container::before {
+                left: auto;
+                right: 20px;
+            }
+            [dir="rtl"] .about-timeline-bullet {
+                left: auto;
+                right: 20px;
+                transform: translate(50%, -50%);
+            }
+            [dir="rtl"] .about-timeline-item {
+                padding-left: 0;
+                padding-right: 40px;
+            }
+            [dir="rtl"] .about-timeline-item:nth-child(even) .about-timeline-content,
+            [dir="rtl"] .about-timeline-item:nth-child(odd) .about-timeline-content {
+                text-align: right;
+            }
+            .about-values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-hero-title {
+                font-size: 2.2rem;
+            }
+            .about-metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="About Us" data-ar="من نحن">About Us</span>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="about-hero-section">
+                <span class="about-hero-eyebrow" data-en="Engineering Endurance Since 1994" data-ar="نصنع الأجهزة التي تدوم طويلاً منذ عام ١٩٩٤">Engineering Endurance Since 1994</span>
+                <h1 class="about-hero-title" data-en="About Q8mount" data-ar="حول كيو 8 ماونت">About Q8mount</h1>
+            </section>
+
+            <!-- Heritage & Philosophy Section -->
+            <section class="about-intro-grid">
+                <div>
+                    <div class="about-section-header">
+                        <h2 class="about-section-title" data-en="Our Heritage & Philosophy" data-ar="تراثنا وفلسفتنا">Our Heritage & Philosophy</h2>
+                    </div>
+                    <p class="about-paragraph" data-en="Welcome to Q8mount. We are dedicated to providing the best heavy-duty mounting products and engineering services to our automotive and industrial customers." data-ar="مرحباً بكم في كيو 8 ماونت. نحن ملتزمون بتقديم أفضل منتجات التثبيت الشاقة والخدمات الهندسية لعملائنا في قطاع السيارات والصناعة.">
+                        Welcome to Q8mount. We are dedicated to providing the best heavy-duty mounting products and engineering services to our automotive and industrial customers.
+                    </p>
+                    <p class="about-paragraph" data-en="Our engineering roots drive our passion for manufacturing precision vehicle mounts, heavy-duty chassis systems, and high-performance automotive accessories. We combine state-of-the-art designs with robust structural engineering to offer products compliant with military and ISO standards." data-ar="تدفعنا جذورنا الهندسية لشغف تصنيع هياكل تثبيت المركبات الدقيقة، وأنظمة الهياكل الثقيلة، وملحقات السيارات عالية الأداء. نحن نجمع بين التصاميم الحديثة والهندسة الإنشائية القوية لتقديم منتجات متوافقة مع المعايير العسكرية ومعايير ISO.">
+                        Our engineering roots drive our passion for manufacturing precision vehicle mounts, heavy-duty chassis systems, and high-performance automotive accessories. We combine state-of-the-art designs with robust structural engineering to offer products compliant with military and ISO standards.
+                    </p>
+                    <p class="about-paragraph" data-en="Every bracket and joint is designed in CAD libraries, simulated under severe stress loads, and manufactured with industrial-grade materials to ensure zero-failure deployment in the field." data-ar="يتم تصميم كل حامل ومفصل في مكتبات CAD، ومحاكاته تحت أحمال الإجهاد القاسية، وتصنيعه بمواد صناعية لضمان عدم حدوث أي فشل ميداني أثناء الاستخدام.">
+                        Every bracket and joint is designed in CAD libraries, simulated under severe stress loads, and manufactured with industrial-grade materials to ensure zero-failure deployment in the field.
+                    </p>
+                </div>
+                <div class="about-image-card">
+                    <img src="images/about_engineering.png" alt="Q8mount CAD Blueprint Architecture">
+                </div>
+            </section>
+
+            <!-- Metrics Highlight Grid -->
+            <section class="about-metrics-grid">
+                <!-- Metric 1 -->
+                <div class="about-metric-card">
+                    <div class="about-metric-value">30+</div>
+                    <div class="about-metric-title" data-en="Years of Engineering" data-ar="عاماً من الهندسة">Years of Engineering</div>
+                    <p class="about-metric-desc" data-en="Over three decades of manufacturing expertise." data-ar="أكثر من ثلاثة عقود من الخبرة التصنيعية المتخصصة.">Over three decades of manufacturing expertise.</p>
+                </div>
+                <!-- Metric 2 -->
+                <div class="about-metric-card">
+                    <div class="about-metric-value">15K+</div>
+                    <div class="about-metric-title" data-en="Custom Mounts Sold" data-ar="تركيبات مخصصة مباعة">Custom Mounts Sold</div>
+                    <p class="about-metric-desc" data-en="Trusted by professional fleets and utility users globally." data-ar="موثوق بها من قبل الأساطيل المهنية والمستخدمين عالمياً.">Trusted by professional fleets and utility users globally.</p>
+                </div>
+                <!-- Metric 3 -->
+                <div class="about-metric-card">
+                    <div class="about-metric-value">100%</div>
+                    <div class="about-metric-title" data-en="Mil-Spec Compliance" data-ar="مطابقة عسكرية ١٠٠٪">Mil-Spec Compliance</div>
+                    <p class="about-metric-desc" data-en="Engineered to survive extreme environments and shock." data-ar="مصمم ليتحمل البيئات القاسية والاهتزازات الشديدة.">Engineered to survive extreme environments and shock.</p>
+                </div>
+                <!-- Metric 4 -->
+                <div class="about-metric-card">
+                    <div class="about-metric-value">24/7</div>
+                    <div class="about-metric-title" data-en="Technical Assistance" data-ar="الدعم والمساعدة الفنية">Technical Assistance</div>
+                    <p class="about-metric-desc" data-en="Professional assistance for CAD design & installation." data-ar="مساعدة احترافية في تصميم CAD وعمليات التثبيت.">Professional assistance for CAD design & installation.</p>
+                </div>
+            </section>
+
+            <!-- Mission Statement Section -->
+            <section class="about-mission-section">
+                <div class="about-mission-container">
+                    <span class="about-mission-eyebrow" data-en="Our Core Mission" data-ar="رسالتنا الأساسية">Our Core Mission</span>
+                    <h3 class="about-mission-text" data-en="&ldquo;To deliver exceptional value through quality products, outstanding customer service, and innovative solutions that meet the evolving needs of our customers.&rdquo;" data-ar="&ldquo;تقديم قيمة استثنائية من خلال منتجات عالية الجودة، وخدمة عملاء متميزة، وحلول مبتكرة تلبي الاحتياجات المتطورة لعملائنا.&rdquo;">
+                        &ldquo;To deliver exceptional value through quality products, outstanding customer service, and innovative solutions that meet the evolving needs of our customers.&rdquo;
+                    </h3>
+                </div>
+            </section>
+
+            <!-- Milestones Timeline Section -->
+            <section class="about-timeline-section">
+                <div class="about-section-header" style="text-align: center;">
+                    <h2 class="about-section-title" data-en="Our Journey & Milestones" data-ar="مسيرتنا ومحطاتنا">Our Journey & Milestones</h2>
+                </div>
+                
+                <div class="about-timeline-container">
+                    <!-- Milestone 1 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-bullet"></div>
+                        <div class="about-timeline-content">
+                            <div class="about-timeline-year">1994</div>
+                            <h4 class="about-timeline-title" data-en="Foundational Engineering" data-ar="التأسيس والأعمال الهندسية">Foundational Engineering</h4>
+                            <p class="about-timeline-desc" data-en="Established as an engineering workshop focused on custom welding and metal works for off-road utility fleets." data-ar="تأسست كورشة عمل هندسية تركز على اللحام والأعمال المعدنية المخصصة لأساطيل الطرق الوعرة.">Established as an engineering workshop focused on custom welding and metal works for off-road utility fleets.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 2 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-bullet"></div>
+                        <div class="about-timeline-content">
+                            <div class="about-timeline-year">2005</div>
+                            <h4 class="about-timeline-title" data-en="R&D Mounts Division" data-ar="قسم أبحاث وتطوير الحوامل">R&D Mounts Division</h4>
+                            <p class="about-timeline-desc" data-en="Launched the custom vehicle mounting division, using early computer-aided design (CAD) to prototype high-stress brackets." data-ar="إطلاق قسم تركيب المركبات المخصص، باستخدام التصميم المبكر بمساعدة الكمبيوتر لتصنيع النماذج الأولية.">Launched the custom vehicle mounting division, using early computer-aided design (CAD) to prototype high-stress brackets.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 3 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-bullet"></div>
+                        <div class="about-timeline-content">
+                            <div class="about-timeline-year">2015</div>
+                            <h4 class="about-timeline-title" data-en="ISO & Military Certifications" data-ar="شهادات الأيزو والمعايير العسكرية">ISO & Military Certifications</h4>
+                            <p class="about-timeline-desc" data-en="Aligned operations to ISO 9001:2015 quality control systems and passed standard MIL-STD certification benchmarks." data-ar="توجيه العمليات نحو أنظمة مراقبة الجودة ISO 9001 واجتياز اختبارات المعايير العسكرية.">Aligned operations to ISO 9001:2015 quality control systems and passed standard MIL-STD certification benchmarks.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 4 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-bullet"></div>
+                        <div class="about-timeline-content">
+                            <div class="about-timeline-year">2024</div>
+                            <h4 class="about-timeline-title" data-en="Digital Marketplace Launch" data-ar="إطلاق المتجر الرقمي الصناعي">Digital Marketplace Launch</h4>
+                            <p class="about-timeline-desc" data-en="Unveiled the full online automotive catalog providing custom fitment specs, live ordering, and industrial fleet pricing." data-ar="كشف النقاب عن كتالوج السيارات عبر الإنترنت الذي يوفر مواصفات ملائمة مخصصة وأسعاراً صناعية.">Unveiled the full online automotive catalog providing custom fitment specs, live ordering, and industrial fleet pricing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Accreditations / Industry Standards Section -->
+            <section style="margin-bottom: var(--spacing-xxl);">
+                <div class="about-section-header" style="text-align: center;">
+                    <h2 class="about-section-title" data-en="Quality & Compliance Standards" data-ar="معايير الجودة والامتثال">Quality & Compliance Standards</h2>
+                </div>
+                
+                <div class="about-accred-grid">
+                    <!-- Standard 1 -->
+                    <div class="about-accred-card">
+                        <div class="about-accred-icon"><i class="fa-solid fa-stamp"></i></div>
+                        <div class="about-accred-info">
+                            <h4 data-en="ISO 9001:2015 Certification" data-ar="شهادة ISO 9001:2015">ISO 9001:2015 Certification</h4>
+                            <p data-en="Adhering to strict international standards for manufacturing and design quality systems." data-ar="الالتزام بالمعايير الدولية الصارمة لأنظمة جودة التصنيع والتصميم.">Adhering to strict international standards for manufacturing and design quality systems.</p>
+                        </div>
+                    </div>
+                    <!-- Standard 2 -->
+                    <div class="about-accred-card">
+                        <div class="about-accred-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="about-accred-info">
+                            <h4 data-en="MIL-STD Vibration Specs" data-ar="مواصفات الاهتزاز العسكرية">MIL-STD Vibration Specs</h4>
+                            <p data-en="Engineered to withstand rigorous environments, high impact, and offroad vibration fatigue." data-ar="مصمم ليتحمل البيئات القاسية والصدمات العالية وإجهاد الاهتزاز على الطرق الوعرة.">Engineered to withstand rigorous environments, high impact, and offroad vibration fatigue.</p>
+                        </div>
+                    </div>
+                    <!-- Standard 3 -->
+                    <div class="about-accred-card">
+                        <div class="about-accred-icon"><i class="fa-solid fa-cube"></i></div>
+                        <div class="about-accred-info">
+                            <h4 data-en="Fits-First CAD Library" data-ar="مكتبة CAD للتوافق المباشر">Fits-First CAD Library</h4>
+                            <p data-en="Every SKU is engineered digitally beforehand to align exactly with original factory specs." data-ar="يتم تصميم كل منتج رقمياً مسبقاً ليتوافق تماماً مع مواصفات المصنع الأصلية.">Every SKU is engineered digitally beforehand to align exactly with original factory specs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Values Section -->
+            <section class="about-values-section">
+                <div class="about-section-header" style="text-align: center;">
+                    <h2 class="about-section-title" data-en="Our Core Values" data-ar="قيمنا الأساسية">Our Core Values</h2>
+                </div>
+                
+                <div class="about-values-grid">
+                    <!-- Value 1 -->
+                    <div class="about-value-card">
+                        <div class="about-value-icon"><i class="fa-solid fa-face-smile"></i></div>
+                        <h4 data-en="Customer Priority" data-ar="أولوية العميل">Customer Priority</h4>
+                        <p data-en="Customer satisfaction is our top priority in every engineered mount we deliver." data-ar="رضا العملاء هو أولويتنا القصوى في كل منتج وحل تثبيت نقوم بتقديمه.">Customer satisfaction is our top priority in every engineered mount we deliver.</p>
+                    </div>
+                    <!-- Value 2 -->
+                    <div class="about-value-card">
+                        <div class="about-value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4 data-en="Quality & Standards" data-ar="الجودة والمعايير">Quality & Standards</h4>
+                        <p data-en="We guarantee premium quality products and services compliant with ISO and MIL specifications." data-ar="نحن نضمن منتجات وخدمات عالية الجودة متوافقة مع مواصفات ISO والمعايير العسكرية.">We guarantee premium quality products and services compliant with ISO and MIL specifications.</p>
+                    </div>
+                    <!-- Value 3 -->
+                    <div class="about-value-card">
+                        <div class="about-value-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h4 data-en="Integrity" data-ar="النزاهة والشفافية">Integrity</h4>
+                        <p data-en="Integrity and transparency guide all our operations and relations with our trade clients." data-ar="النزاهة والشفافية توجه جميع عملياتنا وعلاقاتنا مع عملائنا وشركائنا التجاريين.">Integrity and transparency guide all our operations and relations with our trade clients.</p>
+                    </div>
+                    <!-- Value 4 -->
+                    <div class="about-value-card">
+                        <div class="about-value-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <h4 data-en="Innovation" data-ar="الابتكار والتحسين">Innovation</h4>
+                        <p data-en="Continuous improvement and product innovation drive our research and development." data-ar="التحسين المستمر والابتكار في المنتجات يدفعان قسم الأبحاث والتطوير لدينا نحو التميز.">Continuous improvement and product innovation drive our research and development.</p>
+                    </div>
+                    <!-- Value 5 -->
+                    <div class="about-value-card">
+                        <div class="about-value-icon"><i class="fa-solid fa-people-group"></i></div>
+                        <h4 data-en="Lasting Bonds" data-ar="بناء العلاقات">Lasting Bonds</h4>
+                        <p data-en="Building lasting relationships with our buyers, partners, and automotive fleets." data-ar="بناء علاقات طويلة الأمد مع المشترين والشركاء التجاريين وأصحاب الأساطيل.">Building lasting relationships with our buyers, partners, and automotive fleets.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Translate placeholder text for search inputs
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if (val) el.placeholder = val;
+                });
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

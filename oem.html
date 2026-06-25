@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Custom OEM Manufacturing Services</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page-specific premium design adjustments */
+        .oem-hero {
+            background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-2) 100%);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+            box-shadow: var(--shadow-floating);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oem-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 90, 140, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .oem-hero-text {
+            flex: 1.2;
+            z-index: 2;
+        }
+
+        .oem-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.35rem 0.85rem;
+            border-radius: 99px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--color-accent-cyan);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .oem-hero-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .oem-hero-desc {
+            font-size: 1.05rem;
+            color: #C9D2E3;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+
+        .oem-hero-graphic {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .blueprint-circle {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 2px dashed rgba(0, 163, 255, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: rotateBlueprint 20s linear infinite;
+        }
+
+        .blueprint-inner {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 1px dashed rgba(212, 175, 55, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blueprint-core {
+            font-size: 4rem;
+            color: var(--color-accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 163, 255, 0.5);
+        }
+
+        @keyframes rotateBlueprint {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Section Layouts */
+        .oem-section-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: var(--spacing-xs);
+            position: relative;
+        }
+
+        .oem-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--color-primary);
+        }
+
+        [dir="rtl"] .oem-section-title::after {
+            left: auto;
+            right: 0;
+        }
+
+        /* Capabilities Grid */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .capability-card {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
+        }
+
+        .capability-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            border-radius: var(--radius);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .capability-card:hover .capability-icon {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .capability-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text-main);
+        }
+
+        .capability-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Interactive Estimator Form */
+        .oem-interactive-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .estimator-card {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+        }
+
+        .estimator-title {
+            font-size: 1.25rem;
+            font-weight: 850;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--color-text-main);
+        }
+
+        .estimator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .estimator-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .estimator-field-full {
+            grid-column: 1 / -1;
+        }
+
+        .estimator-field label {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .estimator-field select,
+        .estimator-field input {
+            padding: 0.65rem 0.75rem;
+            border: 1px solid var(--color-border);
+            background-color: var(--color-input-bg);
+            color: var(--color-text-main);
+            border-radius: var(--radius);
+            font-size: 0.88rem;
+            font-weight: 600;
+            outline: none;
+            width: 100%;
+        }
+
+        .estimator-field select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 0.9em;
+        }
+
+        [dir="rtl"] .estimator-field select {
+            background-position: left 0.75rem center;
+        }
+
+        .estimator-submit {
+            width: 100%;
+            padding: 0.85rem;
+            font-size: 0.95rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        /* Estimator Output Display */
+        .output-card {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            background-image: radial-gradient(circle at bottom right, var(--color-primary-soft) 0%, transparent 55%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .output-icon {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .output-status {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--color-text-main);
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .output-metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .output-metric {
+            background-color: var(--color-input-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: var(--spacing-md) var(--spacing-sm);
+        }
+
+        .output-metric-title {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .output-metric-val {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--color-primary);
+        }
+
+        .output-guide {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Interactive Workflow Explorer */
+        .workflow-accordion {
+            margin-bottom: var(--spacing-xxl);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .workflow-item {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.25s;
+        }
+
+        .workflow-item.active {
+            border-color: var(--color-primary);
+        }
+
+        .workflow-header {
+            padding: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            background-color: var(--color-bg-sidebar);
+        }
+
+        .workflow-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .workflow-num {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .workflow-item.active .workflow-num {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .workflow-title {
+            font-size: 0.98rem;
+            font-weight: 850;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+        }
+
+        .workflow-chevron {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            transition: transform 0.25s;
+        }
+
+        .workflow-item.active .workflow-chevron {
+            transform: rotate(180deg);
+        }
+
+        .workflow-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: var(--color-bg-main);
+        }
+
+        .workflow-body-content {
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* OEM Inquiry Contact Form */
+        .oem-contact-card {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-floating);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xxl);
+        }
+
+        .oem-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .oem-contact-full {
+            grid-column: 1 / -1;
+        }
+
+        .oem-upload-box {
+            border: 2px dashed var(--color-border);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .oem-upload-box:hover {
+            border-color: var(--color-primary);
+            background-color: var(--color-primary-soft);
+        }
+
+        .oem-upload-icon {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .oem-upload-text {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+        }
+
+        .oem-upload-subtext {
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .oem-interactive-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .oem-hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .oem-hero-title {
+                font-size: 2.2rem;
+            }
+
+            .blueprint-circle {
+                width: 200px;
+                height: 200px;
+            }
+
+            .blueprint-inner {
+                width: 140px;
+                height: 140px;
+            }
+
+            .blueprint-core {
+                font-size: 3rem;
+            }
+
+            .oem-contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .estimator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" class="active" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</span>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="oem-hero">
+                <div class="oem-hero-text">
+                    <div class="oem-hero-badge" data-en="Industrial Grade Custom Manufacturing" data-ar="التصنيع التعاقدي المخصص لقطاع الصناعة">Industrial Grade Custom Manufacturing</div>
+                    <h1 class="oem-hero-title" data-en="Turn Technical Blueprints into Precision Steel." data-ar="تحويل المخططات الفنية إلى قطع فولاذية دقيقة.">Turn Technical Blueprints into Precision Steel.</h1>
+                    <p class="oem-hero-desc" data-en="High-performance contract manufacturing. Our automated multi-axis milling, molding tooling, and quality-inspected engineering teams deliver industrial mounting configurations at scale." data-ar="خدمات تصنيع تعاقدي عالية الأداء. فرق هندسية مدعومة بأنظمة تشغيل آلية، قوالب تشكيل، وفحص جودة دقيق لتلبية طلبات التوريد الصناعية.">High-performance contract manufacturing. Our automated multi-axis milling, molding tooling, and quality-inspected engineering teams deliver industrial mounting configurations at scale.</p>
+                    <a href="#inquiry-form-section" class="btn btn-primary" data-en="Request OEM Quote" data-ar="طلب عرض سعر تصنيع">Request OEM Quote</a>
+                </div>
+                <div class="oem-hero-graphic">
+                    <div class="blueprint-circle">
+                        <div class="blueprint-inner">
+                            <i class="fa-solid fa-drafting-compass blueprint-core"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 1: Capabilities Matrix -->
+            <section>
+                <h2 class="oem-section-title" data-en="Engineering Capabilities" data-ar="القدرات الهندسية والتصنيعية">Engineering Capabilities</h2>
+                <div class="capabilities-grid">
+                    <!-- Cap 1 -->
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="capability-title" data-en="5-Axis CNC Milling" data-ar="التفريز خماسي المحاور">5-Axis CNC Milling</h3>
+                        <p class="capability-desc" data-en="Ultra-precision computer-guided tooling with engineering tolerances down to ±0.005mm." data-ar="تشكيل دقيق وموجه بالكمبيوتر مع تفاوتات هندسية دقيقة للغاية تصل إلى ±0.005 مم.">Ultra-precision computer-guided tooling with engineering tolerances down to ±0.005mm.</p>
+                    </div>
+                    <!-- Cap 2 -->
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fa-solid fa-sheet-plastic"></i>
+                        </div>
+                        <h3 class="capability-title" data-en="Precision Sheet Metal" data-ar="تشكيل ألواح المعادن">Precision Sheet Metal</h3>
+                        <p class="capability-desc" data-en="Advanced laser profile cutting, dynamic mechanical press brakes, and structural punching." data-ar="قص هيدروليكي بألياف الليزر المتقدمة، وثني آلي دقيق للمعادن وألواح الفولاذ.">Advanced laser profile cutting, dynamic mechanical press brakes, and structural punching.</p>
+                    </div>
+                    <!-- Cap 3 -->
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fa-solid fa-atom"></i>
+                        </div>
+                        <h3 class="capability-title" data-en="Alloy Die Castings" data-ar="سباكة قوالب السبائك">Alloy Die Castings</h3>
+                        <p class="capability-desc" data-en="Injection mold tooling for high-tensile custom automotive brackets and industrial housings." data-ar="إنتاج وتوريد قوالب سبائك مخصصة وحوامل التركيب الخاصة بالسيارات والمعدات.">Injection mold tooling for high-tensile custom automotive brackets and industrial housings.</p>
+                    </div>
+                    <!-- Cap 4 -->
+                    <div class="capability-card">
+                        <div class="capability-icon">
+                            <i class="fa-solid fa-vial-shield"></i>
+                        </div>
+                        <h3 class="capability-title" data-en="Inspections & Finishing" data-ar="فحص الجودة والمعالجة">Inspections & Finishing</h3>
+                        <p class="capability-desc" data-en="Coordinate measuring machines (CMM), black oxide baths, and powder anodizing coats." data-ar="أجهزة قياس الإحداثيات الثلاثية (CMM)، معالجة بأكسيد الأسود، وطلاء الأنودة.">Coordinate measuring machines (CMM), black oxide baths, and powder anodizing coats.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Interactive Estimator -->
+            <section>
+                <h2 class="oem-section-title" data-en="Solution Estimator" data-ar="مخمن الحلول الفنية">Solution Estimator</h2>
+                <div class="oem-interactive-container">
+                    <!-- Form -->
+                    <div class="estimator-card">
+                        <h3 class="estimator-title">
+                            <i class="fa-solid fa-calculator" style="color: var(--color-primary);"></i>
+                            <span data-en="Select Specifications" data-ar="تحديد المواصفات الفنية">Select Specifications</span>
+                        </h3>
+                        <div class="estimator-grid">
+                            <div class="estimator-field">
+                                <label data-en="Target Industry" data-ar="القطاع المستهدف">Target Industry</label>
+                                <select id="est-industry">
+                                    <option value="automotive" data-en="Automotive Systems" data-ar="صناعة السيارات">Automotive Systems</option>
+                                    <option value="defense" data-en="Defense & Military" data-ar="الدفاع والعسكرية">Defense & Military</option>
+                                    <option value="aerospace" data-en="Aerospace Engineering" data-ar="هندسة الطيران">Aerospace Engineering</option>
+                                    <option value="industrial" data-en="Heavy Industrial" data-ar="الصناعات الثقيلة">Heavy Industrial</option>
+                                </select>
+                            </div>
+                            <div class="estimator-field">
+                                <label data-en="Primary Material" data-ar="المادة الأساسية">Primary Material</label>
+                                <select id="est-material">
+                                    <option value="alu" data-en="Aluminum T6-6061" data-ar="ألومنيوم T6-6061">Aluminum T6-6061</option>
+                                    <option value="titanium" data-en="Titanium Grade 5" data-ar="تيتانيوم درجة 5">Titanium Grade 5</option>
+                                    <option value="steel" data-en="Carbon Structural Steel" data-ar="فولاذ كربوني هيكلي">Carbon Structural Steel</option>
+                                    <option value="polymer" data-en="Delrin Polymer" data-ar="بوليمر ديلرين">Delrin Polymer</option>
+                                </select>
+                            </div>
+                            <div class="estimator-field">
+                                <label data-en="Machining Tolerance" data-ar="نسبة التفاوت المسموح">Machining Tolerance</label>
+                                <select id="est-tolerance">
+                                    <option value="standard" data-en="Standard (±0.10mm)" data-ar="قياسي (±0.10 مم)">Standard (±0.10mm)</option>
+                                    <option value="precision" data-en="Precision (±0.01mm)" data-ar="دقيق (±0.01 مم)">Precision (±0.01mm)</option>
+                                    <option value="aerospace" data-en="Sub-Micron (±0.005mm)" data-ar="فائق الدقة (±0.005 مم)">Sub-Micron (±0.005mm)</option>
+                                </select>
+                            </div>
+                            <div class="estimator-field">
+                                <label data-en="Production Volume" data-ar="حجم الإنتاج المطلوب">Production Volume</label>
+                                <select id="est-volume">
+                                    <option value="prototype" data-en="1-10 (Prototype)" data-ar="١-١٠ قطع (نموذج)">1-10 (Prototype)</option>
+                                    <option value="low" data-en="10-100 (Low-Volume)" data-ar="١٠-١٠٠ قطعة (محدود)">10-100 (Low-Volume)</option>
+                                    <option value="production" data-en="100-1000 (Production)" data-ar="١٠٠-١٠٠٠ قطعة (إنتاجي)">100-1000 (Production)</option>
+                                    <option value="industrial" data-en="1000+ (Industrial Run)" data-ar="+١٠٠٠ قطعة (صناعي)">1000+ (Industrial Run)</option>
+                                </select>
+                            </div>
+                            <div class="estimator-field estimator-field-full">
+                                <button type="button" class="btn btn-primary estimator-submit" id="btn-calculate-est" data-en="Generate Solution Recommendation" data-ar="توليد توصية الحل الهندسي">Generate Solution Recommendation</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Display Output -->
+                    <div class="output-card">
+                        <div class="output-icon">
+                            <i class="fa-solid fa-microchip-outline" id="out-icon-graphic">⚙️</i>
+                        </div>
+                        <div class="output-status" id="out-status-title" data-en="Engineering Recommendation" data-ar="توصية الحل الهندسي">Engineering Recommendation</div>
+                        <p class="output-guide" id="out-desc" data-en="Select specifications and trigger the calculator to evaluate optimal manufacturing methods, estimated build cycles, and testing standards." data-ar="يرجى تحديد المواصفات وتشغيل المخمن لتحديد أساليب التصنيع المثلى ودورات الإنتاج المقدرة ومعايير الجودة الفنية.">Select specifications and trigger the calculator to evaluate optimal manufacturing methods, estimated build cycles, and testing standards.</p>
+                        
+                        <div class="output-metric-grid">
+                            <div class="output-metric">
+                                <div class="output-metric-title" data-en="Recommended Method" data-ar="طريقة التصنيع المقترحة">Recommended Method</div>
+                                <div class="output-metric-val" id="out-method">—</div>
+                            </div>
+                            <div class="output-metric">
+                                <div class="output-metric-title" data-en="Lead Time Estimate" data-ar="المدة الزمنية المقدرة">Lead Time Estimate</div>
+                                <div class="output-metric-val" id="out-lead">—</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Workflow Explorer Accordion -->
+            <section>
+                <h2 class="oem-section-title" data-en="OEM Contract Workflow" data-ar="خطوات وإجراءات التصنيع">OEM Contract Workflow</h2>
+                <div class="workflow-accordion">
+                    <!-- Step 1 -->
+                    <div class="workflow-item active">
+                        <div class="workflow-header">
+                            <div class="workflow-title-wrap">
+                                <div class="workflow-num">1</div>
+                                <span class="workflow-title" data-en="CAD Blueprint Engineering & FEA Simulation" data-ar="تخطيط وتصميم CAD ومحاكاة FEA">CAD Blueprint Engineering & FEA Simulation</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down workflow-chevron"></i>
+                        </div>
+                        <div class="workflow-body" style="max-height: 200px;">
+                            <div class="workflow-body-content" data-en="Clients supply technical mechanical blueprints (STEP, IGES, or DXF). Our design engineers verify fitment clearances and execute Finite Element Analysis (FEA) to confirm structure stress resilience under high physical load thresholds before cutting raw steel/aluminum." data-ar="يقدم العملاء المخططات الفنية ثنائية وثلاثية الأبعاد (STEP أو IGES أو DXF). يتحقق مهندسو التصميم لدينا من خلوص الملاءمة ويقومون بمحاكاة الإجهاد الحراري والميكانيكي (FEA) للتأكد من قدرة الهيكل على تحمل الأحمال القصوى قبل البدء في عمليات التشكيل المعدني.">
+                                Clients supply technical mechanical blueprints (STEP, IGES, or DXF). Our design engineers verify fitment clearances and execute Finite Element Analysis (FEA) to confirm structure stress resilience under high physical load thresholds before cutting raw steel/aluminum.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="workflow-item">
+                        <div class="workflow-header">
+                            <div class="workflow-title-wrap">
+                                <div class="workflow-num">2</div>
+                                <span class="workflow-title" data-en="CNC Toolpath Generation & Rapid Prototyping" data-ar="إنشاء مسارات تشكيل البرامج والنمذجة السريعة">CNC Toolpath Generation & Rapid Prototyping</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down workflow-chevron"></i>
+                        </div>
+                        <div class="workflow-body">
+                            <div class="workflow-body-content" data-en="We translate approved structural CAD mockups into precise multi-axis CNC machine toolpaths. A rapid physical prototype is milled within 48 hours for mechanical test checking and engineering sign-off." data-ar="نترجم النماذج ثلاثية الأبعاد المعتمدة إلى مسارات تشكيل آلي متعددة المحاور للكمبيوتر. يتم تصنيع النموذج الأولي الفعلي في غضون ٤٨ ساعة للفحص الميكانيكي وملاءمة التثبيت والتوقيع الهندسي المعتمد.">
+                                We translate approved structural CAD mockups into precise multi-axis CNC machine toolpaths. A rapid physical prototype is milled within 48 hours for mechanical test checking and engineering sign-off.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="workflow-item">
+                        <div class="workflow-header">
+                            <div class="workflow-title-wrap">
+                                <div class="workflow-num">3</div>
+                                <span class="workflow-title" data-en="ISO 9001:2015 Automated Production" data-ar="الإنتاج الآلي المعتمد بموجب معيار ISO 9001">ISO 9001:2015 Automated Production</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down workflow-chevron"></i>
+                        </div>
+                        <div class="workflow-body">
+                            <div class="workflow-body-content" data-en="Upon signed approval of the prototype, high-volume automated production cycles initiate. Material batches carry mill certifications to guarantee metal chemistry and structural load durability profiles." data-ar="بمجرد التوقيع على اعتماد النموذج الأولي، تبدأ دورات الإنتاج الآلي عالي الكثافة. تحمل جميع دفعات المواد شهادات فحص مصنع معتمدة لضمان جودة التركيب الكيميائي للمعادن ومتانة الأحمال الميكانيكية.">
+                                Upon signed approval of the prototype, high-volume automated production cycles initiate. Material batches carry mill certifications to guarantee metal chemistry and structural load durability profiles.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="workflow-item">
+                        <div class="workflow-header">
+                            <div class="workflow-title-wrap">
+                                <div class="workflow-num">4</div>
+                                <span class="workflow-title" data-en="CMM Inspection & Aerospace Anodization" data-ar="فحص الإحداثيات (CMM) وطلاء الأنودة المتقدم">CMM Inspection & Aerospace Anodization</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down workflow-chevron"></i>
+                        </div>
+                        <div class="workflow-body">
+                            <div class="workflow-body-content" data-en="Every production batch undergoes Coordinate Measuring Machine (CMM) dimensional checks relative to blueprint margins. Components then receive aerospace-grade powder coating, hard-coat anodizing, or custom laser engravings before secure packing." data-ar="تخضع كل دفعة إنتاج لفحوصات الأبعاد الدقيقة باستخدام جهاز CMM مقارنة بالهوامش المحددة في المخططات. بعد ذلك، تتلقى القطع طلاء أنودة متين للغاية، طلاء حماية، أو نقوشاً مخصصة بالليزر قبل التعبئة والشحن الآمن.">
+                                Every production batch undergoes Coordinate Measuring Machine (CMM) dimensional checks relative to blueprint margins. Components then receive aerospace-grade powder coating, hard-coat anodizing, or custom laser engravings before secure packing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Inquiry Form -->
+            <section id="inquiry-form-section">
+                <div class="oem-contact-card">
+                    <h2 class="oem-section-title" style="text-align: center; margin-bottom: var(--spacing-md);" data-en="Custom OEM Inquiry" data-ar="طلب تصنيع تعاقدي مخصص">Custom OEM Inquiry</h2>
+                    <p style="text-align: center; color: var(--color-text-muted); font-size: 0.9rem; max-width: 600px; margin: 0 auto var(--spacing-xl); line-height: 1.5;" data-en="Upload your CAD specifications or technical blueprint designs. Our engineering coordinators will review material tolerances and respond within one business day." data-ar="يرجى تحميل مواصفات تصميم CAD أو المخططات الفنية الخاصة بك. سيقوم منسقو الهندسة لدينا بمراجعة نسب التفاوت والمعادن والرد عليك بعرض سعر خلال يوم عمل واحد.">Upload your CAD specifications or technical blueprint designs. Our engineering coordinators will review material tolerances and respond within one business day.</p>
+                    <form class="newsletter-form" style="display: flex; flex-direction: column; gap: var(--spacing-md);" onsubmit="alert('OEM request simulated successfully!'); return false;">
+                        <div class="oem-contact-grid">
+                            <div class="estimator-field">
+                                <label data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                                <input type="text" placeholder="John Doe" data-en-placeholder="John Doe" data-ar-placeholder="الاسم الكامل" required>
+                            </div>
+                            <div class="estimator-field">
+                                <label data-en="Corporate Email" data-ar="البريد الإلكتروني للشركة">Corporate Email</label>
+                                <input type="email" placeholder="work@company.com" data-en-placeholder="work@company.com" data-ar-placeholder="البريد الإلكتروني للشركة" required>
+                            </div>
+                            <div class="estimator-field oem-contact-full">
+                                <label data-en="Design Specifications / CAD Files" data-ar="ملفات ومخططات تصميم CAD">Design Specifications / CAD Files</label>
+                                <div class="oem-upload-box">
+                                    <i class="fa-solid fa-file-arrow-up oem-upload-icon"></i>
+                                    <div class="oem-upload-text" data-en="Drag & drop CAD files here or click to browse" data-ar="اسحب وأفلت ملفات CAD هنا أو اضغط للتصفح">Drag & drop CAD files here or click to browse</div>
+                                    <div class="oem-upload-subtext" data-en="Supported formats: .STEP, .IGS, .DXF, .PDF (Max 50MB)" data-ar="الصيغ المدعومة: .STEP, .IGS, .DXF, .PDF (الحد الأقصى ٥٠ ميجابايت)">Supported formats: .STEP, .IGS, .DXF, .PDF (Max 50MB)</div>
+                                </div>
+                            </div>
+                            <div class="estimator-field oem-contact-full">
+                                <label data-en="Project Requirements Notes" data-ar="تفاصيل ومتطلبات المشروع">Project Requirements Notes</label>
+                                <textarea rows="4" style="padding: 0.65rem 0.75rem; border: 1px solid var(--color-border); background-color: var(--color-input-bg); color: var(--color-text-main); border-radius: var(--radius); outline: none; font-size: 0.9rem; font-weight: 600; width: 100%; font-family: inherit;" placeholder="Please outline target tolerances, volume runs, finishing coat needs..." data-en-placeholder="Please outline target tolerances, volume runs, finishing coat needs..." data-ar-placeholder="يرجير توضيح نسب التفاوت المسموح بها وحجم الإنتاج واحتياجات طلاء الأسطح..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="padding: 0.85rem; font-size: 0.95rem;" data-en="Submit Technical Package" data-ar="إرسال الحزمة الفنية">Submit Technical Package</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== INTERACTION SCRIPT ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* ---------- GLOBAL THEME & LANGUAGE ELEMENTS ---------- */
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+
+            /* ---------- THEME SWITCHER (Light / Dark) ---------- */
+            function applyTheme(theme) {
+                htmlEl.setAttribute('data-theme', theme);
+                themeSwitch.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+                localStorage.setItem('theme', theme);
+            }
+
+            const savedTheme = localStorage.getItem('theme');
+            applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+            themeSwitch.addEventListener('click', () => {
+                const current = htmlEl.getAttribute('data-theme') || 'light';
+                applyTheme(current === 'dark' ? 'light' : 'dark');
+            });
+
+            /* ---------- MULTI-LANGUAGE (EN / AR) ---------- */
+            const trans = {
+                en: {
+                    select_specs: "Select Specifications",
+                    generate_solution: "Generate Solution Recommendation",
+                    method_milling: "5-Axis CNC Milling",
+                    method_sheet: "Laser Sheet Metal & Press",
+                    method_casting: "Alloy Injection Casting",
+                    method_precision: "High-Tolerance Finishing",
+                    lead_prototype: "5-7 Business Days",
+                    lead_low: "10-14 Business Days",
+                    lead_production: "21-28 Business Days",
+                    lead_industrial: "30-45 Business Days",
+                    desc_auto_alu: "Optimal for high-strength vehicle bracket prototyping. Includes CNC tool checking and mill certification records.",
+                    desc_def_titanium: "Defense grade specification. Titanium Grade 5 structures under sub-micron tolerance. Undergoes complete FEA check & CMM inspection report.",
+                    desc_aero_titanium: "Aerospace custom mounts designed for thermal stress environments. Sub-micron tolerance verified under MIL-STD testing methods.",
+                    desc_ind_steel: "Heavy machinery grade structural steel. Ideal for production runs with protective powder coating cycles.",
+                    desc_generic: "Custom recommendation configured. High precision manufacturing calibrated for requested tolerance margins and material batch runs."
+                },
+                ar: {
+                    select_specs: "تحديد المواصفات الفنية",
+                    generate_solution: "توليد توصية الحل الهندسي",
+                    method_milling: "التفريز الآلي خماسي المحاور",
+                    method_sheet: "قص ألواح المعادن بالليزر وثنيها",
+                    method_casting: "سباكة سبائك الألومنيوم بالحقن",
+                    method_precision: "المعالجة الفائقة والتفاوت الدقيق",
+                    lead_prototype: "٥-٧ أيام عمل",
+                    lead_low: "١٠-١٤ يوم عمل",
+                    lead_production: "٢١-٢٨ يوم عمل",
+                    lead_industrial: "٣٠-٤٥ يوم عمل",
+                    desc_auto_alu: "مثالي لعمل النماذج الأولية لحوامل السيارات عالية المتانة. يشمل فحص أداة CNC وسجلات اعتماد المصنع.",
+                    desc_def_titanium: "مواصفات الفئة العسكرية والدفاعية. هياكل تيتانيوم من الدرجة 5 ضمن نسبة تفاوت فائقة الدقة. تخضع لفحص FEA الكامل وتقرير CMM.",
+                    desc_aero_titanium: "حوامل طيران مخصصة مصممة لبيئات الإجهاد الحراري والاهتزاز العالي. التفاوت المسموح للقطع خاضع لمعايير MIL-STD.",
+                    desc_ind_steel: "فولاذ هيكلي مخصص للمعدات الثقيلة. ممتاز للتشغيل المستمر مع تغطية الأسطح بالطلاء الحراري الواقي.",
+                    desc_generic: "تم إعداد توصية الحل الهندسي المخصص. تم معايرة التصنيع فائق الدقة بناءً على نسب التفاوت وحجم الإنتاج المحدد."
+                }
+            };
+
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.placeholder = text;
+                        } else {
+                            const icon = el.querySelector('i');
+                            if (icon) {
+                                el.innerHTML = '';
+                                el.appendChild(icon);
+                                el.appendChild(document.createTextNode(' ' + text));
+                            } else {
+                                el.textContent = text;
+                            }
+                        }
+                    }
+                });
+
+                // Placeholders translation for inputs that don't use standard data-en
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if (val) el.placeholder = val;
+                });
+
+                // Re-evaluate estimator display if already computed
+                evaluateSolutionEstimator();
+            }
+
+
+
+
+            /* ---------- INTERACTIVE SOLUTION ESTIMATOR ---------- */
+            const btnCalculate = document.getElementById('btn-calculate-est');
+            const outMethod = document.getElementById('out-method');
+            const outLead = document.getElementById('out-lead');
+            const outDesc = document.getElementById('out-desc');
+            const outIcon = document.getElementById('out-icon-graphic');
+
+            function evaluateSolutionEstimator() {
+                const lang = htmlEl.getAttribute('lang') || 'en';
+                const industry = document.getElementById('est-industry').value;
+                const material = document.getElementById('est-material').value;
+                const tolerance = document.getElementById('est-tolerance').value;
+                const volume = document.getElementById('est-volume').value;
+
+                // Simple estimation matrix logic
+                let method = trans[lang].method_milling;
+                let lead = trans[lang].lead_prototype;
+                let desc = trans[lang].desc_generic;
+                let icon = "⚙️";
+
+                // Map Lead Times
+                if (volume === 'prototype') lead = trans[lang].lead_prototype;
+                else if (volume === 'low') lead = trans[lang].lead_low;
+                else if (volume === 'production') lead = trans[lang].lead_production;
+                else if (volume === 'industrial') lead = trans[lang].lead_industrial;
+
+                // Determine Manufacturing Method & Description
+                if (material === 'polymer') {
+                    method = trans[lang].method_milling;
+                    icon = "🔧";
+                } else if (industry === 'automotive' && material === 'alu') {
+                    method = trans[lang].method_milling;
+                    desc = trans[lang].desc_auto_alu;
+                    icon = "🚗";
+                } else if (industry === 'defense' && material === 'titanium') {
+                    method = trans[lang].method_precision;
+                    desc = trans[lang].desc_def_titanium;
+                    icon = "🛡️";
+                } else if (industry === 'aerospace' && material === 'titanium') {
+                    method = trans[lang].method_precision;
+                    desc = trans[lang].desc_aero_titanium;
+                    icon = "🚀";
+                } else if (material === 'steel' && (volume === 'production' || volume === 'industrial')) {
+                    method = trans[lang].method_sheet;
+                    desc = trans[lang].desc_ind_steel;
+                    icon = "🏭";
+                } else if (volume === 'industrial') {
+                    method = trans[lang].method_casting;
+                    icon = "🔥";
+                }
+
+                // Update Output Fields
+                outMethod.textContent = method;
+                outLead.textContent = lead;
+                outDesc.textContent = desc;
+                outIcon.textContent = icon;
+            }
+
+            btnCalculate.addEventListener('click', evaluateSolutionEstimator);
+
+
+            /* ---------- INTERACTIVE WORKFLOW ACCORDION ---------- */
+            const accordionHeaders = document.querySelectorAll('.workflow-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const body = item.querySelector('.workflow-body');
+                    const isActive = item.classList.contains('active');
+
+                    // Close all accordion panels
+                    document.querySelectorAll('.workflow-item').forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.workflow-body').style.maxHeight = '0';
+                    });
+
+                    // If it was not active, open it
+                    if (!isActive) {
+                        item.classList.add('active');
+                        body.style.maxHeight = body.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // Initial language application after all elements are initialized
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - FAQ</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles for FAQ Page */
+        .faq-hero-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-bottom: var(--spacing-xl);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(0, 90, 140, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(0, 163, 255, 0.25) 0%, transparent 50%),
+                linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-2) 100%);
+            z-index: -1;
+        }
+
+        .faq-hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .faq-hero-eyebrow {
+            color: var(--color-accent-cyan);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .faq-hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4DE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+
+
+        /* Categories Navigation */
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-lg);
+            padding: 0 var(--spacing-sm);
+        }
+
+        .faq-cat-btn {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-main);
+            padding: 10px 18px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-cat-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .faq-cat-btn.active {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 12px var(--color-primary-soft);
+        }
+
+        /* Accordion Structure */
+        .faq-accordion-container {
+            max-width: 100%;
+            margin: 0 auto var(--spacing-xxl) auto;
+            padding: 0 var(--spacing-sm);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .faq-item {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .faq-item.active {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .faq-question-header {
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            gap: var(--spacing-sm);
+        }
+
+        .faq-question-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item.active .faq-question-text {
+            color: var(--color-primary);
+        }
+
+        .faq-toggle-ico {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.3s ease;
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--color-bg-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-item.active .faq-toggle-ico {
+            transform: rotate(180deg);
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .faq-answer-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), padding 0.3s ease;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .faq-item.active .faq-answer-panel {
+            max-height: 300px;
+            padding: 0 var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
+            border-top: 1px solid var(--color-border);
+            padding-top: var(--spacing-sm);
+        }
+
+        .faq-answer-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+        }
+
+        .faq-no-results {
+            text-align: center;
+            padding: var(--spacing-xl);
+            background-color: var(--color-bg-sidebar);
+            border: 1px dashed var(--color-border);
+            border-radius: var(--radius-lg);
+            color: var(--color-text-muted);
+            display: none;
+        }
+
+        .faq-no-results i {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-muted);
+            opacity: 0.5;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 600px) {
+            .faq-hero-title {
+                font-size: 2.2rem;
+            }
+            .faq-cat-btn {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+            .faq-question-header {
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+            .faq-item.active .faq-answer-panel {
+                padding: 0 var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+                padding-top: var(--spacing-xs);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</span>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="faq-hero-section">
+                <span class="faq-hero-eyebrow" data-en="Quick Answers & Support" data-ar="إجابات سريعة ودعم فني">Quick Answers & Support</span>
+                <h1 class="faq-hero-title" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h1>
+            </section>
+
+
+            <!-- Category Filtering Navigation -->
+            <nav class="faq-categories" aria-label="FAQ Categories">
+                <button class="faq-cat-btn active" data-category="all" type="button">
+                    <i class="fa-solid fa-border-all"></i>
+                    <span data-en="All" data-ar="الكل">All</span>
+                </button>
+                <button class="faq-cat-btn" data-category="account" type="button">
+                    <i class="fa-regular fa-user"></i>
+                    <span data-en="Account" data-ar="الحساب">Account</span>
+                </button>
+                <button class="faq-cat-btn" data-category="payment" type="button">
+                    <i class="fa-regular fa-credit-card"></i>
+                    <span data-en="Payments" data-ar="المدفوعات">Payments</span>
+                </button>
+                <button class="faq-cat-btn" data-category="shipping" type="button">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span data-en="Shipping" data-ar="الشحن">Shipping</span>
+                </button>
+                <button class="faq-cat-btn" data-category="returns" type="button">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span data-en="Returns" data-ar="المرتجعات">Returns</span>
+                </button>
+                <button class="faq-cat-btn" data-category="warranty" type="button">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span data-en="Warranty" data-ar="الضمان">Warranty</span>
+                </button>
+            </nav>
+
+            <!-- FAQ Accordions Container -->
+            <div class="faq-accordion-container" id="faqAccordionContainer">
+
+                <!-- FAQ 1: Account -->
+                <div class="faq-item" data-cat="account">
+                    <div class="faq-question-header" role="button" aria-expanded="false">
+                        <span class="faq-question-text" data-en="How do I create an account?" data-ar="كيف يمكنني إنشاء حساب؟">How do I create an account?</span>
+                        <div class="faq-toggle-ico"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <p class="faq-answer-text" data-en="Click on the &ldquo;Register&rdquo; button in the top navigation, fill in your details, and you'll have an account in minutes." data-ar="انقر فوق زر &ldquo;التسجيل&rdquo; في الجزء العلوي من شريط التنقل، واملأ بياناتك، وسيكون لديك حساب في غضون دقائق معدودة.">
+                            Click on the &ldquo;Register&rdquo; button in the top navigation, fill in your details, and you'll have an account in minutes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2: Payment -->
+                <div class="faq-item" data-cat="payment">
+                    <div class="faq-question-header" role="button" aria-expanded="false">
+                        <span class="faq-question-text" data-en="What payment methods do you accept?" data-ar="ما هي طرق الدفع التي تقبلونها؟">What payment methods do you accept?</span>
+                        <div class="faq-toggle-ico"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <p class="faq-answer-text" data-en="We accept all major credit cards, debit cards, and online payment methods for your convenience." data-ar="نحن نقبل جميع بطاقات الائتمان وبطاقات الخصم الرئيسية وطرق الدفع الآمنة عبر الإنترنت لتوفير أقصى درجات الراحة لك.">
+                            We accept all major credit cards, debit cards, and online payment methods for your convenience.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3: Shipping -->
+                <div class="faq-item" data-cat="shipping">
+                    <div class="faq-question-header" role="button" aria-expanded="false">
+                        <span class="faq-question-text" data-en="How long does shipping take?" data-ar="كم من الوقت يستغرق الشحن؟">How long does shipping take?</span>
+                        <div class="faq-toggle-ico"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <p class="faq-answer-text" data-en="Standard shipping typically takes 3-5 business days. Express shipping options are also available at checkout." data-ar="يستغرق الشحن القياسي عادةً من 3 إلى 5 أيام عمل. تتوفر أيضاً خيارات شحن سريعة وممتازة عند إتمام عملية الشراء والدفع.">
+                            Standard shipping typically takes 3-5 business days. Express shipping options are also available at checkout.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4: Returns -->
+                <div class="faq-item" data-cat="returns">
+                    <div class="faq-question-header" role="button" aria-expanded="false">
+                        <span class="faq-question-text" data-en="What is your return policy?" data-ar="ما هي سياسة الإرجاع الخاصة بكم؟">What is your return policy?</span>
+                        <div class="faq-toggle-ico"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <p class="faq-answer-text" data-en="We offer a 30-day return policy on most items. Please visit our Returns page for more details." data-ar="نحن نقدم سياسة إرجاع مرنة لمدة 30 يوماً على معظم العناصر والمنتجات. يرجى زيارة صفحة المرتجعات للحصول على مزيد من التفاصيل.">
+                            We offer a 30-day return policy on most items. Please visit our Returns page for more details.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5: Shipping -->
+                <div class="faq-item" data-cat="shipping">
+                    <div class="faq-question-header" role="button" aria-expanded="false">
+                        <span class="faq-question-text" data-en="How can I track my order?" data-ar="كيف يمكنني تتبع طلبي؟">How can I track my order?</span>
+                        <div class="faq-toggle-ico"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <p class="faq-answer-text" data-en="Once your order ships, you'll receive a tracking number via email. You can also track your order on our Track Order page." data-ar="بمجرد شحن طلبك، ستتلقى رقم تتبع شحنة عبر البريد الإلكتروني. يمكنك أيضاً تتبع طلبك مباشرةً على صفحة تتبع الطلبات لدينا.">
+                            Once your order ships, you'll receive a tracking number via email. You can also track your order on our Track Order page.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6: Warranty -->
+                <div class="faq-item" data-cat="warranty">
+                    <div class="faq-question-header" role="button" aria-expanded="false">
+                        <span class="faq-question-text" data-en="Do you offer warranty on your products?" data-ar="هل تقدمون ضماناً على منتجاتكم؟">Do you offer warranty on your products?</span>
+                        <div class="faq-toggle-ico"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <p class="faq-answer-text" data-en="Yes! Most of our products come with a manufacturer's warranty. Check our Warranty page for specific details." data-ar="نعم بكل تأكيد! تأتي معظم منتجاتنا مع ضمان شامل من الشركة المصنعة. يرجى التحقق من صفحة الضمان للحصول على تفاصيل محددة لكل منتج.">
+                            Yes! Most of our products come with a manufacturer's warranty. Check our Warranty page for specific details.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7: Warranty -->
+                <div class="faq-item" data-cat="warranty">
+                    <div class="faq-question-header" role="button" aria-expanded="false">
+                        <span class="faq-question-text" data-en="How do I contact customer support?" data-ar="كيف يمكنني الاتصال بدعم العملاء؟">How do I contact customer support?</span>
+                        <div class="faq-toggle-ico"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer-panel">
+                        <p class="faq-answer-text" data-en="You can reach our customer support team through the Contact page or email us at info@q8mount.com." data-ar="يمكنك الوصول إلى فريق دعم العملاء والمهندسين من خلال صفحة الاتصال بنا أو مراسلتنا مباشرة عبر البريد الإلكتروني info@q8mount.com.">
+                            You can reach our customer support team through the Contact page or email us at info@q8mount.com.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Fallback: No Results -->
+                <div class="faq-no-results" id="faqNoResults">
+                    <i class="fa-regular fa-folder-open"></i>
+                    <h3 data-en="No Questions Found" data-ar="لم يتم العثور على نتائج">No Questions Found</h3>
+                    <p data-en="Try searching for another keyword or select a different category." data-ar="حاول البحث بكلمة رئيسية أخرى أو حدد قسماً مختلفاً من الأعلى.">Try searching for another keyword or select a different category.</p>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+            
+            const categoryButtons = document.querySelectorAll('.faq-cat-btn');
+            const faqItems = document.querySelectorAll('.faq-item');
+            const noResults = document.getElementById('faqNoResults');
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Translate placeholder text for inputs
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if (val) el.placeholder = val;
+                });
+
+                // Run filters to re-match terms under the correct language
+                filterFAQs();
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+
+            /* ---------- ACCORDION LOGIC ---------- */
+            faqItems.forEach(item => {
+                const header = item.querySelector('.faq-question-header');
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other accordions
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-question-header').setAttribute('aria-expanded', 'false');
+                        otherItem.querySelector('.faq-answer-panel').style.maxHeight = '0px';
+                    });
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                        header.setAttribute('aria-expanded', 'true');
+                        const panel = item.querySelector('.faq-answer-panel');
+                        // Calculate standard height based on content
+                        panel.style.maxHeight = panel.scrollHeight + 40 + 'px';
+                    }
+                });
+            });
+
+            /* ---------- FILTER LOGIC ---------- */
+            function filterFAQs() {
+                const activeCategory = document.querySelector('.faq-cat-btn.active').dataset.category;
+                let visibleCount = 0;
+
+                faqItems.forEach(item => {
+                    const cat = item.dataset.cat;
+                    const matchesCategory = (activeCategory === 'all' || cat === activeCategory);
+
+                    if (matchesCategory) {
+                        item.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer-panel').style.maxHeight = '0px';
+                        item.querySelector('.faq-question-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+            }
+
+            // Category buttons click listener
+            categoryButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    categoryButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterFAQs();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

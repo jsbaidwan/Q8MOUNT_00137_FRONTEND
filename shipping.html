@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Shipping Information</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles for Shipping Information Page */
+        .shipping-hero-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-bottom: var(--spacing-xl);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .shipping-hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 15% 15%, rgba(0, 90, 140, 0.3) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(201, 0, 0, 0.15) 0%, transparent 45%),
+                linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-2) 100%);
+            z-index: -1;
+        }
+
+        .shipping-hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .shipping-hero-eyebrow {
+            color: var(--color-accent-cyan);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .shipping-hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4DE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Section Titles */
+        .shipping-section-header {
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .shipping-section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .shipping-section-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--color-primary);
+            border-radius: var(--radius);
+            transform: translateX(-50%);
+        }
+
+        /* Methods Grid */
+        .shipping-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .shipping-method-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shipping-method-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .shipping-method-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
+        }
+
+        .shipping-method-card:hover::before {
+            background-color: var(--color-primary);
+        }
+
+        .shipping-method-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: var(--spacing-xs);
+            transition: all 0.3s ease;
+        }
+
+        .shipping-method-card:hover .shipping-method-icon {
+            background-color: var(--color-primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .shipping-method-card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .shipping-method-time {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .shipping-method-card p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+
+        /* Locations & Processing Split Section */
+        .shipping-details-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .shipping-detail-block {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: flex-start;
+        }
+
+        .shipping-detail-block:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .shipping-detail-icon {
+            width: 56px;
+            height: 56px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .shipping-detail-content h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .shipping-detail-content p {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Call To Action Block */
+        .shipping-cta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .shipping-cta-card {
+            background-color: var(--color-bg-dark);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shipping-cta-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% 10%, rgba(0, 163, 255, 0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .shipping-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 400px;
+        }
+
+        .shipping-cta-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+            color: #FFFFFF;
+        }
+
+        .shipping-cta-desc {
+            font-size: 0.95rem;
+            color: #9CA3AF;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .shipping-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 90, 140, 0.4);
+            text-decoration: none;
+        }
+
+        .shipping-cta-btn:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 90, 140, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1024px) {
+            .shipping-methods-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .shipping-methods-grid > *:last-child {
+                grid-column: span 2;
+            }
+            .shipping-details-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .shipping-hero-title {
+                font-size: 2.2rem;
+            }
+            .shipping-methods-grid {
+                grid-template-columns: 1fr;
+            }
+            .shipping-methods-grid > *:last-child {
+                grid-column: span 1;
+            }
+            .shipping-cta-grid {
+                grid-template-columns: 1fr;
+            }
+            .shipping-detail-block {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</span>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="shipping-hero-section">
+                <span class="shipping-hero-eyebrow" data-en="Fast & Reliable Logistics" data-ar="خدمات لوجستية سريعة وموثوقة">Fast & Reliable Logistics</span>
+                <h1 class="shipping-hero-title" data-en="Shipping Information" data-ar="معلومات الشحن">Shipping Information</h1>
+            </section>
+
+            <!-- Section: Shipping Methods -->
+            <section style="margin-bottom: var(--spacing-xxl);">
+                <div class="shipping-section-header">
+                    <h2 class="shipping-section-title" data-en="Shipping Methods" data-ar="طرق الشحن المتوفرة">Shipping Methods</h2>
+                </div>
+                
+                <div class="shipping-methods-grid">
+                    <!-- Method 1: Standard -->
+                    <div class="shipping-method-card">
+                        <div class="shipping-method-icon"><i class="fa-solid fa-truck"></i></div>
+                        <h3 data-en="Standard Shipping" data-ar="الشحن العادي">Standard Shipping</h3>
+                        <span class="shipping-method-time" data-en="3-5 Business Days" data-ar="٣-٥ أيام عمل">3-5 Business Days</span>
+                        <p data-en="Free for orders over KD 50. Otherwise, KD 5 shipping fee applies." data-ar="مجاني للطلبات التي تزيد قيمتها عن 50 د.ك. وإلا، يتم تطبيق رسوم شحن بقيمة 5 د.ك.">
+                            Free for orders over KD 50. Otherwise, KD 5 shipping fee applies.
+                        </p>
+                    </div>
+                    <!-- Method 2: Express -->
+                    <div class="shipping-method-card">
+                        <div class="shipping-method-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3 data-en="Express Shipping" data-ar="الشحن السريع">Express Shipping</h3>
+                        <span class="shipping-method-time" data-en="1-2 Business Days" data-ar="١-٢ يوم عمل">1-2 Business Days</span>
+                        <p data-en="Flat rate of KD 10 for all orders." data-ar="رسوم شحن ثابتة بقيمة 10 د.ك. لجميع الطلبات.">
+                            Flat rate of KD 10 for all orders.
+                        </p>
+                    </div>
+                    <!-- Method 3: Same Day -->
+                    <div class="shipping-method-card">
+                        <div class="shipping-method-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3 data-en="Same Day Delivery" data-ar="التوصيل في نفس اليوم">Same Day Delivery</h3>
+                        <span class="shipping-method-time" data-en="Immediate Delivery" data-ar="توصيل فوري">Immediate Delivery</span>
+                        <p data-en="Available in select areas for KD 15. Order before 2 PM." data-ar="متوفر في مناطق محددة مقابل 15 د.ك. يجب إتمام الطلب قبل الساعة 2 ظهراً.">
+                            Available in select areas for KD 15. Order before 2 PM.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Locations & Order Processing -->
+            <section class="shipping-details-container">
+                <!-- Block 1: Locations -->
+                <div class="shipping-detail-block">
+                    <div class="shipping-detail-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div class="shipping-detail-content">
+                        <h3 data-en="Shipping Locations" data-ar="مناطق الشحن">Shipping Locations</h3>
+                        <p data-en="We currently ship to all locations within Kuwait. International shipping is not available at this time." data-ar="نشحن حالياً إلى جميع المناطق داخل دولة الكويت. الشحن الدولي غير متوفر في الوقت الحالي.">
+                            We currently ship to all locations within Kuwait. International shipping is not available at this time.
+                        </p>
+                    </div>
+                </div>
+                <!-- Block 2: Order Processing -->
+                <div class="shipping-detail-block">
+                    <div class="shipping-detail-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div class="shipping-detail-content">
+                        <h3 data-en="Order Processing" data-ar="معالجة وتجهيز الطلبات">Order Processing</h3>
+                        <p data-en="Orders are processed within 1-2 business days. You will receive a confirmation email once your order has been shipped with tracking information." data-ar="يتم معالجة وتجهيز الطلبات خلال 1-2 أيام عمل. ستتلقى بريداً إلكترونياً لتأكيد الشحن بمجرد إرسال طلبك مع تفاصيل التتبع.">
+                            Orders are processed within 1-2 business days. You will receive a confirmation email once your order has been shipped with tracking information.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: CTAs -->
+            <section class="shipping-cta-grid">
+                <!-- CTA 1: Track Order -->
+                <div class="shipping-cta-card">
+                    <div class="shipping-cta-content">
+                        <h3 class="shipping-cta-title" data-en="Track Your Order" data-ar="تتبع طلبك المباشر">Track Your Order</h3>
+                        <p class="shipping-cta-desc" data-en="Have a tracking number? Check the real-time shipping status of your package." data-ar="هل لديك رقم تتبع؟ تحقق من حالة الشحن المباشرة لطلبك الفني الآن.">
+                            Have a tracking number? Check the real-time shipping status of your package.
+                        </p>
+                        <a href="track.html" class="shipping-cta-btn">
+                            <i class="fa-solid fa-magnifying-glass-location"></i>
+                            <span data-en="Track Order" data-ar="تتبع الطلب">Track Order</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- CTA 2: Contact Support -->
+                <div class="shipping-cta-card">
+                    <div class="shipping-cta-content">
+                        <h3 class="shipping-cta-title" data-en="Need Help?" data-ar="هل تحتاج مساعدة؟">Need Help?</h3>
+                        <p class="shipping-cta-desc" data-en="If you have any questions about shipping, please don't hesitate to contact us." data-ar="إذا كانت لديك أي أسئلة أو استفسارات حول تفاصيل الشحن، فلا تتردد في الاتصال بفر يق الدعم الفني لدينا.">
+                            If you have any questions about shipping, please don't hesitate to contact us.
+                        </p>
+                        <a href="contact.html" class="shipping-cta-btn">
+                            <i class="fa-solid fa-headset"></i>
+                            <span data-en="Contact Support" data-ar="الاتصال بالدعم">Contact Support</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Translate placeholder text for inputs
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if (val) el.placeholder = val;
+                });
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Search Products</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-sidebar-container {
+            padding: var(--spacing-sm);
+        }
+        
+        .search-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--spacing-lg);
+            align-items: start;
+            margin-top: var(--spacing-lg);
+            width: 100%;
+        }
+
+        .search-sidebar {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+        }
+
+        .search-sidebar-section {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .search-sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .search-sidebar-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-text-muted);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            padding-left: 0.5rem;
+        }
+        
+        [dir="rtl"] .search-sidebar-title {
+            padding-left: 0;
+            padding-right: 0.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .search-layout {
+                grid-template-columns: 1fr;
+            }
+            .search-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content products-main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="Search" data-ar="البحث">Search</span>
+            </nav>
+
+            <div class="search-layout">
+                
+                <!-- Left Sidebar Filters -->
+                <aside class="search-sidebar">
+                    <div class="search-sidebar-section">
+                        <h3 class="search-sidebar-title" data-en="Filter by Type" data-ar="تصفية حسب النوع">Filter by Type</h3>
+                        <ul class="search-sidebar-nav">
+                            <li><a href="#" class="active" data-type="all"><i class="fa-solid fa-list"></i> <span data-en="All" data-ar="الكل">All</span></a></li>
+                            <li><a href="#" data-type="products"><i class="fa-solid fa-box"></i> <span data-en="Products" data-ar="المنتجات">Products</span></a></li>
+                            <li><a href="#" data-type="brands"><i class="fa-solid fa-certificate"></i> <span data-en="Brands" data-ar="العلامات التجارية">Brands</span></a></li>
+                            <li><a href="#" data-type="categories"><i class="fa-regular fa-folder-open"></i> <span data-en="Categories" data-ar="الفئات">Categories</span></a></li>
+                            <li><a href="#" data-type="keywords"><i class="fa-solid fa-hashtag"></i> <span data-en="Keywords" data-ar="الكلمات الرئيسية">Keywords</span></a></li>
+                            <li><a href="#" data-type="tags"><i class="fa-solid fa-tag"></i> <span data-en="Tags" data-ar="الوسوم">Tags</span></a></li>
+                            <li><a href="#" data-type="part_numbers"><i class="fa-solid fa-barcode"></i> <span>Part_numbers</span></a></li>
+                            <li><a href="#" data-type="part_number_crosses"><i class="fa-solid fa-shuffle"></i> <span>Part_number_crosses</span></a></li>
+                            <li><a href="#" data-type="part_number_aliases"><i class="fa-regular fa-copy"></i> <span>Part_number_aliases</span></a></li>
+                            <li><a href="#" data-type="part_number_media"><i class="fa-regular fa-images"></i> <span>Part_number_media</span></a></li>
+                            <li><a href="#" data-type="product_part_numbers"><i class="fa-solid fa-boxes-stacked"></i> <span>Product_part_numbers</span></a></li>
+                            <li><a href="#" data-type="product_vehicle_fitments"><i class="fa-solid fa-screwdriver-wrench"></i> <span>Product_vehicle_fitments</span></a></li>
+                            <li><a href="#" data-type="vehicles"><i class="fa-solid fa-car"></i> <span>Vehicles</span></a></li>
+                            <li><a href="#" data-type="suppliers"><i class="fa-solid fa-truck-moving"></i> <span>Suppliers</span></a></li>
+                            <li><a href="#" data-type="product_keywords"><i class="fa-solid fa-key"></i> <span>Product_keywords</span></a></li>
+                            <li><a href="#" data-type="product_tags"><i class="fa-solid fa-tags"></i> <span>Product_tags</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="search-sidebar-section">
+                        <h3 class="search-sidebar-title" data-en="Browse" data-ar="تصفح">Browse</h3>
+                        <ul class="search-sidebar-nav">
+                            <li><a href="products.html" data-type="browse_categories"><i class="fa-regular fa-folder"></i> <span data-en="All Categories" data-ar="جميع الفئات">All Categories</span></a></li>
+                            <li><a href="products.html" data-type="browse_products"><i class="fa-solid fa-box"></i> <span data-en="All Products" data-ar="جميع المنتجات">All Products</span></a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Right Side Content -->
+                <div style="flex-grow: 1;">
+                    <h1 class="hero-title" id="search-title" style="font-size: 2.2rem; text-align: left; margin-bottom: var(--spacing-md);" data-en="Search Products" data-ar="البحث في المنتجات">Search Products</h1>
+
+                    <!-- Empty State Card -->
+                    <div class="search-empty-card" id="search-card">
+                        <i class="fa-solid fa-search search-empty-icon" id="search-card-icon"></i>
+                        <h2 class="search-empty-title" id="search-card-title" data-en="What are you looking for?" data-ar="عن ماذا تبحث؟">What are you looking for?</h2>
+                        <p class="search-empty-desc" id="search-card-desc" data-en="Enter a search term above to find products, brands, and more." data-ar="أدخل عبارة البحث أعلاه للعثور على المنتجات والعلامات التجارية والمزيد.">
+                            Enter a search term above to find products, brands, and more.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const globalSearch = document.getElementById('global-search-input');
+            const searchTitle = document.getElementById('search-title');
+            
+            // Sidebar Navigation
+            const sidebarLinks = document.querySelectorAll('.search-sidebar-nav li a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const dataType = link.getAttribute('data-type');
+                    if (dataType === 'browse_categories' || dataType === 'browse_products') return; // let default href navigation occur
+                    e.preventDefault();
+                    
+                    // Toggle active state
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // Update page Title and icons/descriptions if needed
+                    const enName = link.querySelector('[data-en]') ? link.querySelector('[data-en]').getAttribute('data-en') : link.innerText.trim();
+                    const arName = link.querySelector('[data-ar]') ? link.querySelector('[data-ar]').getAttribute('data-ar') : link.innerText.trim();
+                    
+                    searchTitle.setAttribute('data-en', 'Search ' + enName);
+                    searchTitle.setAttribute('data-ar', 'البحث في ' + arName);
+                    
+                    const lang = htmlEl.getAttribute('lang') || 'en';
+                    searchTitle.textContent = lang === 'ar' ? 'البحث في ' + arName : 'Search ' + enName;
+                });
+            });
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            const trans = {
+                en: {
+                    search_products: "Search Products",
+                    what_looking_for: "What are you looking for?",
+                    enter_search_term: "Enter a search term above to find products, brands, and more.",
+                    results_for: "Results for",
+                    placeholder: "Search Technical Database..."
+                },
+                ar: {
+                    search_products: "البحث في المنتجات",
+                    what_looking_for: "عن ماذا تبحث؟",
+                    enter_search_term: "أدخل عبارة البحث أعلاه للعثور على المنتجات والعلامات التجارية والمزيد.",
+                    results_for: "نتائج البحث عن",
+                    placeholder: "البحث في قاعدة البيانات الفنية..."
+                }
+            };
+
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                globalSearch.placeholder = trans[lang].placeholder;
+
+                const activeLink = document.querySelector('.search-sidebar-nav li a.active');
+                if (activeLink) {
+                    const enName = activeLink.querySelector('[data-en]') ? activeLink.querySelector('[data-en]').getAttribute('data-en') : activeLink.innerText.trim();
+                    const arName = activeLink.querySelector('[data-ar]') ? activeLink.querySelector('[data-ar]').getAttribute('data-ar') : activeLink.innerText.trim();
+                    searchTitle.textContent = lang === 'ar' ? 'البحث في ' + arName : 'Search ' + enName;
+                }
+
+                // Update card text based on search input
+                updateSearchState(globalSearch.value, lang);
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+
+            /* ---------- REAL-TIME SEARCH STATE ---------- */
+            function updateSearchState(query, lang) {
+                const cardIcon = document.getElementById('search-card-icon');
+                const cardTitle = document.getElementById('search-card-title');
+                const cardDesc = document.getElementById('search-card-desc');
+
+                if (query.trim() === '') {
+                    cardIcon.className = 'fa-solid fa-search search-empty-icon';
+                    cardTitle.textContent = trans[lang].what_looking_for;
+                    cardDesc.textContent = trans[lang].enter_search_term;
+                } else {
+                    cardIcon.className = 'fa-solid fa-circle-info search-empty-icon';
+                    cardTitle.textContent = lang === 'ar' ? `البحث عن: "${query}"` : `Searching for: "${query}"`;
+                    cardDesc.innerHTML = lang === 'ar' ? 
+                        `عرض نتائج المحاكاة لـ <strong>"${query}"</strong>. انقر <a href="products.html">هنا</a> لتصفح كتالوج المنتجات بالكامل.` :
+                        `Showing simulated matches for <strong>"${query}"</strong>. Click <a href="products.html">here</a> to browse the full products catalog.`;
+                }
+            }
+
+            globalSearch.addEventListener('input', () => {
+                const lang = htmlEl.getAttribute('lang') || 'en';
+                updateSearchState(globalSearch.value, lang);
+            });
+        });
+    </script>
+</body>
+
+</html>

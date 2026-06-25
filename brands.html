@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Brands Directory</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" class="active" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content products-main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="Brands" data-ar="العلامات التجارية">Brands</span>
+            </nav>
+
+            <h1 class="hero-title" style="font-size: 2.2rem; text-align: left; margin-bottom: var(--spacing-sm);" data-en="Brands Directory" data-ar="دليل العلامات التجارية">Brands Directory</h1>
+            <p class="text-muted" style="margin-bottom: var(--spacing-lg); font-weight: 600;" data-en="Browse products and specs from your favorite performance brands." data-ar="تصفح المنتجات والمواصفات من العلامات التجارية المفضلة لديك.">Browse products and specs from your favorite performance brands.</p>
+
+            <!-- Search and Alphabet filter container -->
+            <div class="brands-filter-container">
+                <div class="brands-search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="brand-directory-search" placeholder="Search brands..." data-en-placeholder="Search brands..." data-ar-placeholder="البحث عن علامة تجارية...">
+                </div>
+
+                <div class="alphabet-row" id="alphabet-filter-row">
+                    <button class="alphabet-pill active" data-letter="all" data-en="All" data-ar="الكل">All</button>
+                    <!-- A-Z buttons populated dynamically via script -->
+                </div>
+            </div>
+
+            <!-- Brand Cards Grid -->
+            <div class="brand-cards-grid" id="brand-grid">
+                <!-- Numerical / # -->
+                <div class="brand-card" data-name="50 Resto" data-letter="#">
+                    <div class="brand-card-logo-placeholder">50</div>
+                    <span class="brand-card-name">50 Resto</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="12 SKUs" data-ar="١٢ منتج">12 SKUs</span>
+                </div>
+
+                <!-- A -->
+                <div class="brand-card" data-name="A-Premium" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AP</div>
+                    <span class="brand-card-name">A-Premium</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="48 SKUs" data-ar="٤٨ منتج">48 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="AC Delco" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AC</div>
+                    <span class="brand-card-name">AC Delco</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="148 SKUs" data-ar="١٤٨ منتج">148 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Accel" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AC</div>
+                    <span class="brand-card-name">Accel</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="32 SKUs" data-ar="٣٢ منتج">32 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="ACT" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AC</div>
+                    <span class="brand-card-name">ACT</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="25 SKUs" data-ar="٢٥ منتج">25 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Acura" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AC</div>
+                    <span class="brand-card-name">Acura</span>
+                    
+                    <span class="brand-card-origin" data-en="Japan" data-ar="اليابان">Japan</span>
+                    <span class="brand-card-count" data-en="80 SKUs" data-ar="٨٠ منتج">80 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Aisin" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AI</div>
+                    <span class="brand-card-name">Aisin</span>
+                    
+                    <span class="brand-card-origin" data-en="Japan" data-ar="اليابان">Japan</span>
+                    <span class="brand-card-count" data-en="42 SKUs" data-ar="٤٢ منتج">42 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Akebono" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AK</div>
+                    <span class="brand-card-name">Akebono</span>
+                    
+                    <span class="brand-card-origin" data-en="Japan" data-ar="اليابان">Japan</span>
+                    <span class="brand-card-count" data-en="55 SKUs" data-ar="٥٥ منتج">55 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Alfa Romeo" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AR</div>
+                    <span class="brand-card-name">Alfa Romeo</span>
+                    
+                    <span class="brand-card-origin" data-en="Italy" data-ar="إيطاليا">Italy</span>
+                    <span class="brand-card-count" data-en="30 SKUs" data-ar="٣٠ منتج">30 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="ALL Classic Parts Inc" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AC</div>
+                    <span class="brand-card-name">ALL Classic Parts Inc</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="75 SKUs" data-ar="٧٥ منتج">75 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="American Autowire" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AA</div>
+                    <span class="brand-card-name">American Autowire</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="64 SKUs" data-ar="٦٤ منتج">64 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="American Racing" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AR</div>
+                    <span class="brand-card-name">American Racing</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="110 SKUs" data-ar="١١٠ منتج">110 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="APR Performance" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AP</div>
+                    <span class="brand-card-name">APR Performance</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="45 SKUs" data-ar="٤٥ منتج">45 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Arkon" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AR</div>
+                    <span class="brand-card-name">Arkon</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="18 SKUs" data-ar="١٨ منتج">18 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Aston Martin" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AM</div>
+                    <span class="brand-card-name">Aston Martin</span>
+                    
+                    <span class="brand-card-origin" data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</span>
+                    <span class="brand-card-count" data-en="15 SKUs" data-ar="١٥ منتج">15 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Audi" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AU</div>
+                    <span class="brand-card-name">Audi</span>
+                    
+                    <span class="brand-card-origin" data-en="Germany" data-ar="ألمانيا">Germany</span>
+                    <span class="brand-card-count" data-en="120 SKUs" data-ar="١٢٠ منتج">120 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Ausley's Chevelle Parts" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AC</div>
+                    <span class="brand-card-name">Ausley's Chevelle Parts</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="38 SKUs" data-ar="٣٨ منتج">38 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Auto Custom Carpets" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AC</div>
+                    <span class="brand-card-name">Auto Custom Carpets</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="50 SKUs" data-ar="٥٠ منتج">50 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Auto Pro USA" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AP</div>
+                    <span class="brand-card-name">Auto Pro USA</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="28 SKUs" data-ar="٢٨ منتج">28 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Auto Ventshade" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AV</div>
+                    <span class="brand-card-name">Auto Ventshade</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="34 SKUs" data-ar="٣٤ منتج">34 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Autolite" data-letter="A">
+                    <div class="brand-card-logo-placeholder">AL</div>
+                    <span class="brand-card-name">Autolite</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="60 SKUs" data-ar="٦٠ منتج">60 SKUs</span>
+                </div>
+
+                <!-- B -->
+                <div class="brand-card" data-name="BMW" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BM</div>
+                    <span class="brand-card-name">BMW</span>
+                    
+                    <span class="brand-card-origin" data-en="Germany" data-ar="ألمانيا">Germany</span>
+                    <span class="brand-card-count" data-en="160 SKUs" data-ar="١٦٠ منتج">160 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Beck Arnley" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BA</div>
+                    <span class="brand-card-name">Beck Arnley</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="85 SKUs" data-ar="٨٥ منتج">85 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Belltech" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BE</div>
+                    <span class="brand-card-name">Belltech</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="40 SKUs" data-ar="٤٠ منتج">40 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Bendix" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BX</div>
+                    <span class="brand-card-name">Bendix</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="95 SKUs" data-ar="٩٥ منتج">95 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Bentley" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BT</div>
+                    <span class="brand-card-name">Bentley</span>
+                    
+                    <span class="brand-card-origin" data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</span>
+                    <span class="brand-card-count" data-en="22 SKUs" data-ar="٢٢ منتج">22 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Bilstein" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BL</div>
+                    <span class="brand-card-name">Bilstein</span>
+                    
+                    <span class="brand-card-origin" data-en="Germany" data-ar="ألمانيا">Germany</span>
+                    <span class="brand-card-count" data-en="85 SKUs" data-ar="٨٥ منتج">85 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="BMR Suspension" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BM</div>
+                    <span class="brand-card-name">BMR Suspension</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="70 SKUs" data-ar="٧٠ منتج">70 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Borgeson" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BO</div>
+                    <span class="brand-card-name">Borgeson</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="48 SKUs" data-ar="٤٨ منتج">48 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Borgeson Universal" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BU</div>
+                    <span class="brand-card-name">Borgeson Universal</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="35 SKUs" data-ar="٣٥ منتج">35 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Bosch" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BS</div>
+                    <span class="brand-card-name">Bosch</span>
+                    
+                    <span class="brand-card-origin" data-en="Germany" data-ar="ألمانيا">Germany</span>
+                    <span class="brand-card-count" data-en="210 SKUs" data-ar="٢١٠ منتج">210 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="BrakeQuip" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BQ</div>
+                    <span class="brand-card-name">BrakeQuip</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="18 SKUs" data-ar="١٨ منتج">18 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Brembo" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BR</div>
+                    <span class="brand-card-name">Brembo</span>
+                    
+                    <span class="brand-card-origin" data-en="Italy" data-ar="إيطاليا">Italy</span>
+                    <span class="brand-card-count" data-en="70 SKUs" data-ar="٧٠ منتج">70 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Built Right Industries" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BR</div>
+                    <span class="brand-card-name">Built Right Industries</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="15 SKUs" data-ar="١٥ منتج">15 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="BYD" data-letter="B">
+                    <div class="brand-card-logo-placeholder">BY</div>
+                    <span class="brand-card-name">BYD</span>
+                    
+                    <span class="brand-card-origin" data-en="China" data-ar="الصين">China</span>
+                    <span class="brand-card-count" data-en="30 SKUs" data-ar="٣٠ منتج">30 SKUs</span>
+                </div>
+
+                <!-- C -->
+                <div class="brand-card" data-name="Caddy Daddy" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CD</div>
+                    <span class="brand-card-name">Caddy Daddy</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="25 SKUs" data-ar="٢٥ منتج">25 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Cadillac" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CA</div>
+                    <span class="brand-card-name">Cadillac</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="90 SKUs" data-ar="٩٠ منتج">90 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="California Import Parts Ltd" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CI</div>
+                    <span class="brand-card-name">California Import Parts Ltd</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="55 SKUs" data-ar="٥٥ منتج">55 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="California Pony Cars" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CP</div>
+                    <span class="brand-card-name">California Pony Cars</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="40 SKUs" data-ar="٤٠ منتج">40 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Callies" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CL</div>
+                    <span class="brand-card-name">Callies</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="32 SKUs" data-ar="٣٢ منتج">32 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Cardone" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CR</div>
+                    <span class="brand-card-name">Cardone</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="105 SKUs" data-ar="١٠٥ منتج">105 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Castrol" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CS</div>
+                    <span class="brand-card-name">Castrol</span>
+                    
+                    <span class="brand-card-origin" data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</span>
+                    <span class="brand-card-count" data-en="75 SKUs" data-ar="٧٥ منتج">75 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Centerforce" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CF</div>
+                    <span class="brand-card-name">Centerforce</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="45 SKUs" data-ar="٤٥ منتج">45 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Centric" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CN</div>
+                    <span class="brand-card-name">Centric</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="115 SKUs" data-ar="١١٥ منتج">115 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Champion" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CH</div>
+                    <span class="brand-card-name">Champion</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="80 SKUs" data-ar="٨٠ منتج">80 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Chevrolet" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CH</div>
+                    <span class="brand-card-name">Chevrolet</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="230 SKUs" data-ar="٢٣٠ منتج">230 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Citroën" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CT</div>
+                    <span class="brand-card-name">Citroën</span>
+                    
+                    <span class="brand-card-origin" data-en="France" data-ar="فرنسا">France</span>
+                    <span class="brand-card-count" data-en="65 SKUs" data-ar="٦٥ منتج">65 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="CJ Pony Parts" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CJ</div>
+                    <span class="brand-card-name">CJ Pony Parts</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="140 SKUs" data-ar="١٤٠ منتج">140 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Classic Headquarters Products" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CH</div>
+                    <span class="brand-card-name">Classic Headquarters Products</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="38 SKUs" data-ar="٣٨ منتج">38 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Classic Industries" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CI</div>
+                    <span class="brand-card-name">Classic Industries</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="180 SKUs" data-ar="١٨٠ منتج">180 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Cloyes" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CL</div>
+                    <span class="brand-card-name">Cloyes</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="28 SKUs" data-ar="٢٨ منتج">28 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Cognito" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CG</div>
+                    <span class="brand-card-name">Cognito</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="34 SKUs" data-ar="٣٤ منتج">34 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="COMP Cams" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CC</div>
+                    <span class="brand-card-name">COMP Cams</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="95 SKUs" data-ar="٩٥ منتج">95 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Continental" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CO</div>
+                    <span class="brand-card-name">Continental</span>
+                    
+                    <span class="brand-card-origin" data-en="Germany" data-ar="ألمانيا">Germany</span>
+                    <span class="brand-card-count" data-en="110 SKUs" data-ar="١١٠ منتج">110 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Corvette Central" data-letter="C">
+                    <div class="brand-card-logo-placeholder">CC</div>
+                    <span class="brand-card-name">Corvette Central</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="85 SKUs" data-ar="٨٥ منتج">85 SKUs</span>
+                </div>
+
+                <!-- D -->
+                <div class="brand-card" data-name="DNJ" data-letter="D">
+                    <div class="brand-card-logo-placeholder">DN</div>
+                    <span class="brand-card-name">DNJ</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="70 SKUs" data-ar="٧٠ منتج">70 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Dodge" data-letter="D">
+                    <div class="brand-card-logo-placeholder">DG</div>
+                    <span class="brand-card-name">Dodge</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="115 SKUs" data-ar="١١٥ منتج">115 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Dorman" data-letter="D">
+                    <div class="brand-card-logo-placeholder">DM</div>
+                    <span class="brand-card-name">Dorman</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="250 SKUs" data-ar="٢٥٠ منتج">250 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Doug Shelby Engineering" data-letter="D">
+                    <div class="brand-card-logo-placeholder">DS</div>
+                    <span class="brand-card-name">Doug Shelby Engineering</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="12 SKUs" data-ar="١٢ منتج">12 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Dynacorn" data-letter="D">
+                    <div class="brand-card-logo-placeholder">DY</div>
+                    <span class="brand-card-name">Dynacorn</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="90 SKUs" data-ar="٩٠ منتج">90 SKUs</span>
+                </div>
+
+                <!-- E -->
+                <div class="brand-card" data-name="Eagle Specialties" data-letter="E">
+                    <div class="brand-card-logo-placeholder">ES</div>
+                    <span class="brand-card-name">Eagle Specialties</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="35 SKUs" data-ar="٣٥ منتج">35 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Eaton Detroit Spring" data-letter="E">
+                    <div class="brand-card-logo-placeholder">ED</div>
+                    <span class="brand-card-name">Eaton Detroit Spring</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="48 SKUs" data-ar="٤٨ منتج">48 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="EBC" data-letter="E">
+                    <div class="brand-card-logo-placeholder">EB</div>
+                    <span class="brand-card-name">EBC</span>
+                    
+                    <span class="brand-card-origin" data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</span>
+                    <span class="brand-card-count" data-en="80 SKUs" data-ar="٨٠ منتج">80 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Eckler's" data-letter="E">
+                    <div class="brand-card-logo-placeholder">EC</div>
+                    <span class="brand-card-name">Eckler's</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="95 SKUs" data-ar="٩٥ منتج">95 SKUs</span>
+                </div>
+
+                <!-- I -->
+                <div class="brand-card" data-name="Infiniti" data-letter="I">
+                    <div class="brand-card-logo-placeholder">IF</div>
+                    <span class="brand-card-name">Infiniti</span>
+                    
+                    <span class="brand-card-origin" data-en="Japan" data-ar="اليابان">Japan</span>
+                    <span class="brand-card-count" data-en="65 SKUs" data-ar="٦٥ منتج">65 SKUs</span>
+                </div>
+
+                <!-- J -->
+                <div class="brand-card" data-name="Jaguar" data-letter="J">
+                    <div class="brand-card-logo-placeholder">JG</div>
+                    <span class="brand-card-name">Jaguar</span>
+                    
+                    <span class="brand-card-origin" data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</span>
+                    <span class="brand-card-count" data-en="50 SKUs" data-ar="٥٠ منتج">50 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Japanparts" data-letter="J">
+                    <div class="brand-card-logo-placeholder">JP</div>
+                    <span class="brand-card-name">Japanparts</span>
+                    
+                    <span class="brand-card-origin" data-en="Italy" data-ar="إيطاليا">Italy</span>
+                    <span class="brand-card-count" data-en="85 SKUs" data-ar="٨٥ منتج">85 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="JE Pistons" data-letter="J">
+                    <div class="brand-card-logo-placeholder">JE</div>
+                    <span class="brand-card-name">JE Pistons</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="40 SKUs" data-ar="٤٠ منتج">40 SKUs</span>
+                </div>
+
+                <!-- M -->
+                <div class="brand-card" data-name="Motorcraft" data-letter="M">
+                    <div class="brand-card-logo-placeholder">MC</div>
+                    <span class="brand-card-name">Motorcraft</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="190 SKUs" data-ar="١٩٠ منتج">190 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="MSD" data-letter="M">
+                    <div class="brand-card-logo-placeholder">MS</div>
+                    <span class="brand-card-name">MSD</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="120 SKUs" data-ar="١٢٠ منتج">120 SKUs</span>
+                </div>
+
+                <!-- N -->
+                <div class="brand-card" data-name="Napa" data-letter="N">
+                    <div class="brand-card-logo-placeholder">NP</div>
+                    <span class="brand-card-name">Napa</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="175 SKUs" data-ar="١٧٥ منتج">175 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="NewYall" data-letter="N">
+                    <div class="brand-card-logo-placeholder">NY</div>
+                    <span class="brand-card-name">NewYall</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="45 SKUs" data-ar="٤٥ منتج">45 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="NGK" data-letter="N">
+                    <div class="brand-card-logo-placeholder">NG</div>
+                    <span class="brand-card-name">NGK</span>
+                    
+                    <span class="brand-card-origin" data-en="Japan" data-ar="اليابان">Japan</span>
+                    <span class="brand-card-count" data-en="150 SKUs" data-ar="١٥٠ منتج">150 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="NTN" data-letter="N">
+                    <div class="brand-card-logo-placeholder">NT</div>
+                    <span class="brand-card-name">NTN</span>
+                    
+                    <span class="brand-card-origin" data-en="Japan" data-ar="اليابان">Japan</span>
+                    <span class="brand-card-count" data-en="60 SKUs" data-ar="٦٠ منتج">60 SKUs</span>
+                </div>
+
+                <!-- O -->
+                <div class="brand-card" data-name="OER" data-letter="O">
+                    <div class="brand-card-logo-placeholder">OE</div>
+                    <span class="brand-card-name">OER</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="110 SKUs" data-ar="١١٠ منتج">110 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Opel" data-letter="O">
+                    <div class="brand-card-logo-placeholder">OP</div>
+                    <span class="brand-card-name">Opel</span>
+                    
+                    <span class="brand-card-origin" data-en="Germany" data-ar="ألمانيا">Germany</span>
+                    <span class="brand-card-count" data-en="40 SKUs" data-ar="٤٠ منتج">40 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Original Parts Group" data-letter="O">
+                    <div class="brand-card-logo-placeholder">OP</div>
+                    <span class="brand-card-name">Original Parts Group</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="95 SKUs" data-ar="٩٥ منتج">95 SKUs</span>
+                </div>
+
+                <!-- P -->
+                <div class="brand-card" data-name="Pertronix" data-letter="P">
+                    <div class="brand-card-logo-placeholder">PT</div>
+                    <span class="brand-card-name">Pertronix</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="55 SKUs" data-ar="٥٥ منتج">55 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Prothane Motion Control" data-letter="P">
+                    <div class="brand-card-logo-placeholder">PR</div>
+                    <span class="brand-card-name">Prothane Motion Control</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="64 SKUs" data-ar="٦٤ منتج">64 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="PSC" data-letter="P">
+                    <div class="brand-card-logo-placeholder">PS</div>
+                    <span class="brand-card-name">PSC</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="30 SKUs" data-ar="٣٠ منتج">30 SKUs</span>
+                </div>
+
+                <!-- Q -->
+                <div class="brand-card" data-name="QA1" data-letter="Q">
+                    <div class="brand-card-logo-placeholder">QA</div>
+                    <span class="brand-card-name">QA1</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="85 SKUs" data-ar="٨٥ منتج">85 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Quick Fist" data-letter="Q">
+                    <div class="brand-card-logo-placeholder">QF</div>
+                    <span class="brand-card-name">Quick Fist</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="25 SKUs" data-ar="٢٥ منتج">25 SKUs</span>
+                </div>
+
+                <!-- R -->
+                <div class="brand-card" data-name="RAM Clutches" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RC</div>
+                    <span class="brand-card-name">RAM Clutches</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="50 SKUs" data-ar="٥٠ منتج">50 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="RAM Mounts" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RM</div>
+                    <span class="brand-card-name">RAM Mounts</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="120 SKUs" data-ar="١٢٠ منتج">120 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Raybestos" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RY</div>
+                    <span class="brand-card-name">Raybestos</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="140 SKUs" data-ar="١٤٠ منتج">140 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Rebuilders Choice" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RC</div>
+                    <span class="brand-card-name">Rebuilders Choice</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="38 SKUs" data-ar="٣٨ منتج">38 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Remy" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RM</div>
+                    <span class="brand-card-name">Remy</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="75 SKUs" data-ar="٧٥ منتج">75 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Renault" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RN</div>
+                    <span class="brand-card-name">Renault</span>
+                    
+                    <span class="brand-card-origin" data-en="France" data-ar="فرنسا">France</span>
+                    <span class="brand-card-count" data-en="80 SKUs" data-ar="٨٠ منتج">80 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Repops Automotive Reproductions" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RP</div>
+                    <span class="brand-card-name">Repops Automotive Reproductions</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="32 SKUs" data-ar="٣٢ منتج">32 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Rolls-Royce" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RR</div>
+                    <span class="brand-card-name">Rolls-Royce</span>
+                    
+                    <span class="brand-card-origin" data-en="United Kingdom" data-ar="المملكة المتحدة">United Kingdom</span>
+                    <span class="brand-card-count" data-en="15 SKUs" data-ar="١٥ منتج">15 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Rough Country" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RC</div>
+                    <span class="brand-card-name">Rough Country</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="110 SKUs" data-ar="١١٠ منتج">110 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Roush Performance" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RP</div>
+                    <span class="brand-card-name">Roush Performance</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="65 SKUs" data-ar="٦٥ منتج">65 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Rugged Ridge" data-letter="R">
+                    <div class="brand-card-logo-placeholder">RR</div>
+                    <span class="brand-card-name">Rugged Ridge</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="85 SKUs" data-ar="٨٥ منتج">85 SKUs</span>
+                </div>
+
+                <!-- S -->
+                <div class="brand-card" data-name="Scott Drake" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SD</div>
+                    <span class="brand-card-name">Scott Drake</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="135 SKUs" data-ar="١٣٥ منتج">135 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Screaming Chicken" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SC</div>
+                    <span class="brand-card-name">Screaming Chicken</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="22 SKUs" data-ar="٢٢ منتج">22 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Sealed Power Auto Parts" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SP</div>
+                    <span class="brand-card-name">Sealed Power Auto Parts</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="90 SKUs" data-ar="٩٠ منتج">90 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Seatbelt Solutions" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SS</div>
+                    <span class="brand-card-name">Seatbelt Solutions</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="28 SKUs" data-ar="٢٨ منتج">28 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Seintex" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SX</div>
+                    <span class="brand-card-name">Seintex</span>
+                    
+                    <span class="brand-card-origin" data-en="Russia" data-ar="روسيا">Russia</span>
+                    <span class="brand-card-count" data-en="45 SKUs" data-ar="٤٥ منتج">45 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Skyjacker" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SJ</div>
+                    <span class="brand-card-name">Skyjacker</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="80 SKUs" data-ar="٨٠ منتج">80 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="SlingMods" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SM</div>
+                    <span class="brand-card-name">SlingMods</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="60 SKUs" data-ar="٦٠ منتج">60 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="South Bend Clutch" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SB</div>
+                    <span class="brand-card-name">South Bend Clutch</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="55 SKUs" data-ar="٥٥ منتج">55 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="SPC" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SP</div>
+                    <span class="brand-card-name">SPC</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="40 SKUs" data-ar="٤٠ منتج">40 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Spec Clutch" data-letter="S">
+                    <div class="brand-card-logo-placeholder">SP</div>
+                    <span class="brand-card-name">Spec Clutch</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="50 SKUs" data-ar="٥٠ منتج">50 SKUs</span>
+                </div>
+
+                <!-- W -->
+                <div class="brand-card" data-name="Wilwood Disc Brakes" data-letter="W">
+                    <div class="brand-card-logo-placeholder">WI</div>
+                    <span class="brand-card-name">Wilwood Disc Brakes</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="115 SKUs" data-ar="١١٥ منتج">115 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Wiseco" data-letter="W">
+                    <div class="brand-card-logo-placeholder">WS</div>
+                    <span class="brand-card-name">Wiseco</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="70 SKUs" data-ar="٧٠ منتج">70 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="WRAN Industries" data-letter="W">
+                    <div class="brand-card-logo-placeholder">WR</div>
+                    <span class="brand-card-name">WRAN Industries</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="25 SKUs" data-ar="٢٥ منتج">25 SKUs</span>
+                </div>
+
+                <!-- Y -->
+                <div class="brand-card" data-name="YEARONE" data-letter="Y">
+                    <div class="brand-card-logo-placeholder">YO</div>
+                    <span class="brand-card-name">YEARONE</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="130 SKUs" data-ar="١٣٠ منتج">130 SKUs</span>
+                </div>
+                <div class="brand-card" data-name="Yukon Gear & Axle" data-letter="Y">
+                    <div class="brand-card-logo-placeholder">YK</div>
+                    <span class="brand-card-name">Yukon Gear & Axle</span>
+                    
+                    <span class="brand-card-origin" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                    <span class="brand-card-count" data-en="105 SKUs" data-ar="١٠٥ منتج">105 SKUs</span>
+                </div>
+
+                <!-- Z -->
+                <div class="brand-card" data-name="ZF" data-letter="Z">
+                    <div class="brand-card-logo-placeholder">Z</div>
+                    <span class="brand-card-name">ZF</span>
+                    
+                    <span class="brand-card-origin" data-en="Germany" data-ar="ألمانيا">Germany</span>
+                    <span class="brand-card-count" data-en="50 SKUs" data-ar="٥٠ منتج">50 SKUs</span>
+                </div>
+
+                <div class="no-brands-msg" id="no-brands-message" style="display: none;" data-en="No brands found matching your filters." data-ar="لم يتم العثور على علامات تجارية تطابق خيارات التصفية الخاصة بك.">No brands found matching your filters.</div>
+            </div>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const mainTitle = document.querySelector('.hero-title');
+            
+            // Search & filter DOM elements
+            const searchInput = document.getElementById('brand-directory-search');
+            const alphabetRow = document.getElementById('alphabet-filter-row');
+            const brandGrid = document.getElementById('brand-grid');
+            const brandCards = brandGrid.querySelectorAll('.brand-card');
+            const noBrandsMessage = document.getElementById('no-brands-message');
+
+            /* ---------- POPULATE ALPHABET FILTERS ---------- */
+            const letters = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+            letters.forEach(letter => {
+                const btn = document.createElement('button');
+                btn.className = 'alphabet-pill';
+                btn.dataset.letter = letter;
+                btn.textContent = letter;
+                alphabetRow.appendChild(btn);
+            });
+
+            // Filter letters event delegation
+            let activeLetter = 'all';
+            alphabetRow.addEventListener('click', (e) => {
+                const btn = e.target.closest('.alphabet-pill');
+                if (!btn) return;
+                
+                alphabetRow.querySelectorAll('.alphabet-pill').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                activeLetter = btn.dataset.letter;
+                filterBrands();
+            });
+
+            // Live search
+            searchInput.addEventListener('input', () => {
+                filterBrands();
+            });
+
+            function filterBrands() {
+                const query = searchInput.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                brandCards.forEach(card => {
+                    const name = card.dataset.name.toLowerCase();
+                    const letter = card.dataset.letter;
+                    
+                    let matchLetter = activeLetter === 'all' || letter === activeLetter;
+                    let matchQuery = name.includes(query);
+
+                    if (matchLetter && matchQuery) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                noBrandsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Placeholders translation for inputs
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if(val) el.placeholder = val;
+                });
+
+                // Adjust title text alignment
+                if (mainTitle) {
+                    mainTitle.style.textAlign = lang === 'ar' ? 'right' : 'left';
+                }
+
+                // Translate all SKU counts
+                brandCards.forEach(card => {
+                    const countEl = card.querySelector('.brand-card-count');
+                    const skusVal = card.dataset.name === 'Ford' ? 280 : 100; // rough representation
+                    countEl.textContent = lang === 'ar' ? countEl.getAttribute('data-ar') : countEl.getAttribute('data-en');
+                });
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

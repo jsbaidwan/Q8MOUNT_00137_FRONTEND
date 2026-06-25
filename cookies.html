@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Cookie Policy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles for Cookie Policy Page */
+        .cookies-hero-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-bottom: var(--spacing-xl);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .cookies-hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 15% 15%, rgba(0, 90, 140, 0.3) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(201, 0, 0, 0.15) 0%, transparent 45%),
+                linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-2) 100%);
+            z-index: -1;
+        }
+
+        .cookies-hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .cookies-hero-eyebrow {
+            color: var(--color-accent-cyan);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .cookies-hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4DE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .cookies-hero-date {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+
+        /* Lead Card / What Are Cookies */
+        .cookies-lead-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+
+        [dir="rtl"] .cookies-lead-card {
+            border-left: 1px solid var(--color-border);
+            border-right: 5px solid var(--color-primary);
+        }
+
+        .cookies-lead-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .cookies-lead-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .cookies-lead-content h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: 6px;
+        }
+
+        .cookies-lead-content p {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Section Titles */
+        .cookies-section-header {
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .cookies-section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .cookies-section-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--color-primary);
+            border-radius: var(--radius);
+            transform: translateX(-50%);
+        }
+
+        /* Grid Category Cards */
+        .cookies-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .cookie-type-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg) var(--spacing-sm);
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .cookie-type-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
+        }
+
+        .cookie-type-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-xs);
+            transition: all 0.3s ease;
+        }
+
+        .cookie-type-card:hover .cookie-type-icon {
+            background-color: var(--color-primary);
+            color: white;
+            transform: rotate(360deg);
+        }
+
+        .cookie-type-card h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .cookie-type-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        /* Detail Callout Boxes (Managing Cookies & Third-Party) */
+        .cookies-details-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .cookies-detail-block {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: flex-start;
+        }
+
+        .cookies-detail-block:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .cookies-detail-icon {
+            width: 56px;
+            height: 56px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .cookies-detail-content h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .cookies-detail-content p {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Call To Action Block */
+        .cookies-cta-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookies-cta-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% 10%, rgba(0, 163, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .cookies-cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cookies-cta-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+            color: #FFFFFF;
+        }
+
+        .cookies-cta-desc {
+            font-size: 1rem;
+            color: #9CA3AF;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .cookies-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 90, 140, 0.4);
+            text-decoration: none;
+        }
+
+        .cookies-cta-btn:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 90, 140, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1024px) {
+            .cookies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .cookies-hero-title {
+                font-size: 2.2rem;
+            }
+            .cookies-lead-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cookies-grid {
+                grid-template-columns: 1fr;
+            }
+            .cookies-details-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            .cookies-detail-block {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</span>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="cookies-hero-section">
+                <span class="cookies-hero-eyebrow" data-en="Interactive Preferences" data-ar="تفضيلات ملفات التعريف">Interactive Preferences</span>
+                <h1 class="cookies-hero-title" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</h1>
+                <span class="cookies-hero-date" data-en="Last updated: June 25, 2026" data-ar="آخر تحديث: ٢٥ يونيو ٢٠٢٦">Last updated: June 25, 2026</span>
+            </section>
+
+            <!-- Lead Section: What Are Cookies -->
+            <section class="cookies-lead-card">
+                <div class="cookies-lead-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+                <div class="cookies-lead-content">
+                    <h2 data-en="What Are Cookies" data-ar="ما هي ملفات الارتباط">What Are Cookies</h2>
+                    <p data-en="Cookies are small text files that are placed on your computer or mobile device when you visit our website. They help us provide you with a better experience and allow certain features to function properly." data-ar="ملفات تعريف الارتباط (الكوكيز) هي ملفات نصية صغيرة يتم وضعها على جهاز الكمبيوتر أو الهاتف المحمول الخاص بك عند زيارة موقعنا الإلكتروني. وهي تساعدنا في توفير تجربة مستخدم أفضل وتسمح لبعض ميزات الموقع بالعمل بشكل صحيح.">
+                        Cookies are small text files that are placed on your computer or mobile device when you visit our website. They help us provide you with a better experience and allow certain features to function properly.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section: How We Use Cookies -->
+            <section style="margin-bottom: var(--spacing-xxl);">
+                <div class="cookies-section-header">
+                    <h2 class="cookies-section-title" data-en="How We Use Cookies" data-ar="كيفية استخدامنا لملفات الارتباط">How We Use Cookies</h2>
+                </div>
+
+                <div class="cookies-grid">
+                    <!-- 1. Essential -->
+                    <div class="cookie-type-card">
+                        <div class="cookie-type-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+                        <h3 data-en="Essential Cookies" data-ar="الملفات الأساسية">Essential Cookies</h3>
+                        <p data-en="Required for the website to function properly and securely (e.g., login, shopping cart)." data-ar="ضرورية ومطلوبة لتشغيل الموقع بشكل صحيح وآمن (مثل عمليات تسجيل الدخول وسلة التسوق).">Required for the website to function properly</p>
+                    </div>
+                    <!-- 2. Preference -->
+                    <div class="cookie-type-card">
+                        <div class="cookie-type-icon"><i class="fa-solid fa-sliders"></i></div>
+                        <h3 data-en="Preference Cookies" data-ar="تفضيلات المستخدم">Preference Cookies</h3>
+                        <p data-en="Remember your settings and configurations (like language and theme selection)." data-ar="تذكر الإعدادات والتفضيلات المحددة الخاصة بك (مثل اللغة وتحديد المظهر الداكن).">Remember your settings and preferences (like theme)</p>
+                    </div>
+                    <!-- 3. Analytics -->
+                    <div class="cookie-type-card">
+                        <div class="cookie-type-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 data-en="Analytics Cookies" data-ar="الملفات التحليلية">Analytics Cookies</h3>
+                        <p data-en="Help us understand how visitors interact with our website to improve usability." data-ar="تساعدنا في فهم كيفية تفاعل الزوار مع موقعنا لتحسين كفاءة وسهولة الاستخدام.">Help us understand how visitors use our website</p>
+                    </div>
+                    <!-- 4. Marketing -->
+                    <div class="cookie-type-card">
+                        <div class="cookie-type-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h3 data-en="Marketing Cookies" data-ar="ملفات التسويق">Marketing Cookies</h3>
+                        <p data-en="Used to deliver relevant advertisements and measure campaign effectiveness." data-ar="تُستخدم لتقديم إعلانات ومحتويات ترويجية ذات صلة وقياس مدى فعالية الحملات.">Used to deliver relevant advertisements</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Management & Third-Party -->
+            <section class="cookies-details-container">
+                <!-- Managing Cookies -->
+                <div class="cookies-detail-block">
+                    <div class="cookies-detail-icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <div class="cookies-detail-content">
+                        <h3 data-en="Managing Cookies" data-ar="إدارة ملفات الارتباط">Managing Cookies</h3>
+                        <p data-en="Most web browsers allow you to control cookies through their settings. However, limiting cookies may impact your experience on our website and prevent you from using certain features." data-ar="تتيح لك معظم متصفحات الويب التحكم في ملفات تعريف الارتباط من خلال إعداداتها الخاصة. ومع ذلك، فإن الحد من ملفات تعريف الارتباط قد يؤثر على تجربتك في موقعنا ويمنعك من استخدام بعض الميزات.">
+                            Most web browsers allow you to control cookies through their settings. However, limiting cookies may impact your experience on our website and prevent you from using certain features.
+                        </p>
+                    </div>
+                </div>
+                <!-- Third-Party Cookies -->
+                <div class="cookies-detail-block">
+                    <div class="cookies-detail-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="cookies-detail-content">
+                        <h3 data-en="Third-Party Cookies" data-ar="ملفات أطراف ثالثة">Third-Party Cookies</h3>
+                        <p data-en="We may use third-party services that also set cookies on your device to provide their services. We do not control these cookies and recommend reviewing the privacy policies of these third parties." data-ar="قد نستخدم خدمات من جهات خارجية تقوم أيضاً بتعيين ملفات تعريف الارتباط على جهازك لتقديم خدماتها. نحن لا نتحكم في هذه الملفات وننصحك بمراجعة سياسات الخصوصية الخاصة بتلك الجهات.">
+                            We may use third-party services that also set cookies on your device to provide their services. We do not control these cookies and recommend reviewing the privacy policies of these third parties.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- More Information / Privacy Link CTA -->
+            <section class="cookies-cta-section">
+                <div class="cookies-cta-container">
+                    <h3 class="cookies-cta-title" data-en="More Information" data-ar="مزيد من المعلومات">More Information</h3>
+                    <p class="cookies-cta-desc" data-en="For more information about our use of cookies and your privacy, please see our Privacy Policy." data-ar="لمزيد من التفاصيل الدقيقة حول كيفية استخدامنا لملفات تعريف الارتباط وحماية خصوصيتك، يرجى قراءة سياسة الخصوصية الخاصة بنا.">
+                        For more information about our use of cookies and your privacy, please see our Privacy Policy.
+                    </p>
+                    <a href="privacy.html" class="cookies-cta-btn">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span data-en="View Privacy Policy" data-ar="عرض سياسة الخصوصية">View Privacy Policy</span>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Translate placeholder text for inputs
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if (val) el.placeholder = val;
+                });
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

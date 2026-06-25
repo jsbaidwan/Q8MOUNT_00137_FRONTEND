@@ -19,22 +19,25 @@
 
 <body>
 
-    <!-- ============== HEADER ============== -->
+            <!-- ============== HEADER ============== -->
     <header class="header">
         <div class="header-left">
             <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
             <a href="index.html" class="logo">Q8MOUNT</a>
             <nav class="main-nav">
-                <a href="products.html" class="active">Products</a>
-                <a href="#">Fleet Solutions</a>
-                <a href="#">OEM Services</a>
-                <a href="#">Support</a>
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
             </nav>
         </div>
         <div class="header-right">
             <div class="search-bar">
-                <i class="fa-solid fa-search text-muted"></i>
-                <input type="text" placeholder="Search Technical Database...">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
             </div>
 
             <!-- Language Switcher -->
@@ -84,7 +87,7 @@
 
             <div class="sidebar-footer">
                 <ul class="sidebar-nav">
-                    <li><a href="#"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a></li>
+                    <li><a href="track.html"><i class="fa-solid fa-clock-rotate-left"></i> Order History</a></li>
                     <li><a href="#"><i class="fa-solid fa-file-arrow-up"></i> Bulk Upload</a></li>
                 </ul>
             </div>
@@ -159,8 +162,7 @@
                 <div class="category-grid">
                     <a href="#" class="category-card">
                         <div class="category-img">
-                            <img src="images/chassis_systems.png"
-                                alt="Chassis Systems">
+                            <img src="images/chassis_systems.png" alt="Chassis Systems">
                             <div class="category-overlay">
                                 <i class="fa-solid fa-sliders"></i>
                             </div>
@@ -172,8 +174,7 @@
                     </a>
                     <a href="#" class="category-card">
                         <div class="category-img">
-                            <img src="images/drivetrain.png"
-                                alt="Drivetrain">
+                            <img src="images/drivetrain.png" alt="Drivetrain">
                             <div class="category-overlay">
                                 <i class="fa-solid fa-gear"></i>
                             </div>
@@ -185,8 +186,7 @@
                     </a>
                     <a href="#" class="category-card">
                         <div class="category-img">
-                            <img src="images/engine.png"
-                                alt="Electrical">
+                            <img src="images/engine.png" alt="Electrical">
                             <div class="category-overlay">
                                 <i class="fa-solid fa-bolt"></i>
                             </div>
@@ -198,8 +198,7 @@
                     </a>
                     <a href="#" class="category-card">
                         <div class="category-img">
-                            <img src="images/bolts.png"
-                                alt="Mounting Hardware">
+                            <img src="images/bolts.png" alt="Mounting Hardware">
                             <div class="category-overlay">
                                 <i class="fa-solid fa-wrench"></i>
                             </div>
@@ -211,8 +210,7 @@
                     </a>
                     <a href="#" class="category-card">
                         <div class="category-img">
-                            <img src="images/exhaust.png"
-                                alt="Exhaust & Headers">
+                            <img src="images/exhaust.png" alt="Exhaust & Headers">
                             <div class="category-overlay">
                                 <i class="fa-solid fa-fire"></i>
                             </div>
@@ -224,8 +222,7 @@
                     </a>
                     <a href="#" class="category-card">
                         <div class="category-img">
-                            <img src="images/suspension.png"
-                                alt="Suspension">
+                            <img src="images/suspension.png" alt="Suspension">
                             <div class="category-overlay">
                                 <i class="fa-solid fa-car-burst"></i>
                             </div>
@@ -254,16 +251,17 @@
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-dark">In Stock</span>
                                 <span class="badge badge-danger">Hot Item</span>
                             </div>
-                            <img src="images/chassis_systems.png"
-                                alt="Chassis Mount">
+                            <img src="images/chassis_systems.png" alt="Chassis Mount">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-MT-990-XL</span>
                             <h3 class="product-title">HD Heavy-Duty Chassis Mount</h3>
+                            <p class="product-description">Heavy-duty chassis mount designed to withstand high tension and extreme vibrations.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -288,15 +286,16 @@
 
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-info">Fleet Ready</span>
                             </div>
-                            <img src="images/bolts.png"
-                                alt="Precision Bolt Kit">
+                            <img src="images/bolts.png" alt="Precision Bolt Kit">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-HD-FAST-12</span>
                             <h3 class="product-title">Precision Bolt Kit (Grade 12.9)</h3>
+                            <p class="product-description">Complete set of grade 12.9 alloy steel mounting bolts for extreme load capacity.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -321,15 +320,16 @@
 
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-warning">Low Stock</span>
                             </div>
-                            <img src="images/engine.png"
-                                alt="Engine Cradle">
+                            <img src="images/engine.png" alt="Engine Cradle">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-ENG-V8-SL</span>
                             <h3 class="product-title">Universal V8 Engine Cradle</h3>
+                            <p class="product-description">Vibration-dampened steel engine cradle compatible with GM, Ford, and Mopar.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -354,15 +354,16 @@
 
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-dark">In Stock</span>
                             </div>
-                            <img src="images/drivetrain.png"
-                                alt="Transmission Mount">
+                            <img src="images/drivetrain.png" alt="Transmission Mount">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-TR-MNT-04</span>
                             <h3 class="product-title">Reinforced Transmission Mount</h3>
+                            <p class="product-description">High-durability polyurethane transmission mount absorbing drivetrain shocks.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -410,8 +411,7 @@
                         <button class="btn btn-cart">Activate Offer <i class="fa-solid fa-arrow-right"
                                 style="margin-left:0.5rem"></i></button>
                         <div class="promo-image-bg">
-                            <img src="images/chassis_systems.png"
-                                alt="Fleet Discount">
+                            <img src="images/chassis_systems.png" alt="Fleet Discount">
                         </div>
                     </div>
 
@@ -449,15 +449,16 @@
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-dark">#1 Seller</span>
                             </div>
-                            <img src="images/suspension.png"
-                                alt="Performance Suspension">
+                            <img src="images/suspension.png" alt="Performance Suspension">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-SUS-PRO-1</span>
                             <h3 class="product-title">Pro-Series Suspension Arm</h3>
+                            <p class="product-description">Forged aluminum control arm offering extreme alignment adjustments and lifetime structural warranty.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -481,15 +482,16 @@
                     </article>
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-dark">#2 Seller</span>
                             </div>
-                            <img src="images/suspension.png"
-                                alt="Brake Caliper">
+                            <img src="images/suspension.png" alt="Brake Caliper">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-BRK-CAL-6</span>
                             <h3 class="product-title">6-Piston Heavy Duty Caliper</h3>
+                            <p class="product-description">High-performance billet aluminum 6-piston caliper designed for maximum stopping force.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -513,15 +515,16 @@
                     </article>
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-dark">#3 Seller</span>
                             </div>
-                            <img src="images/exhaust.png"
-                                alt="Exhaust Header">
+                            <img src="images/exhaust.png" alt="Exhaust Header">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-EXH-HDR-8</span>
                             <h3 class="product-title">High-Flow Exhaust Headers</h3>
+                            <p class="product-description">Stainless steel headers with primary ceramic thermal coating for increased power output.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -545,15 +548,16 @@
                     </article>
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-dark">#4 Seller</span>
                             </div>
-                            <img src="images/drivetrain.png"
-                                alt="Hub Assembly">
+                            <img src="images/drivetrain.png" alt="Hub Assembly">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-HUB-ASM-2</span>
                             <h3 class="product-title">Heavy-Duty Hub Assembly</h3>
+                            <p class="product-description">High-load capacity hub assembly engineered specifically for extreme truck and utility loads.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -592,8 +596,7 @@
                     <article class="kit-card">
                         <div class="kit-image">
                             <span class="kit-save-badge">SAVE $112</span>
-                            <img src="images/chassis_systems.png"
-                                alt="Chassis Install Kit">
+                            <img src="images/chassis_systems.png" alt="Chassis Install Kit">
                         </div>
                         <div class="kit-info">
                             <span class="product-sku">KIT: Q8-CHS-INSTALL-FX</span>
@@ -617,8 +620,7 @@
                     <article class="kit-card">
                         <div class="kit-image">
                             <span class="kit-save-badge">SAVE $89</span>
-                            <img src="images/engine.png"
-                                alt="Engine Mount Kit">
+                            <img src="images/engine.png" alt="Engine Mount Kit">
                         </div>
                         <div class="kit-info">
                             <span class="product-sku">KIT: Q8-ENG-MNT-V8</span>
@@ -642,8 +644,7 @@
                     <article class="kit-card">
                         <div class="kit-image">
                             <span class="kit-save-badge">SAVE $145</span>
-                            <img src="images/suspension.png"
-                                alt="Suspension Kit">
+                            <img src="images/suspension.png" alt="Suspension Kit">
                         </div>
                         <div class="kit-info">
                             <span class="product-sku">KIT: Q8-SUS-LIFT-4</span>
@@ -679,15 +680,16 @@
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-info">Recommended</span>
                             </div>
-                            <img src="images/radiator.png"
-                                alt="Cooling Mount">
+                            <img src="images/radiator.png" alt="Cooling Mount">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-COOL-MNT-3</span>
                             <h3 class="product-title">Radiator Support Mount</h3>
+                            <p class="product-description">Stamped steel radiator mount with corrosion-resistant black E-coat finish.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -707,15 +709,16 @@
                     </article>
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-info">Recommended</span>
                             </div>
-                            <img src="images/drivetrain.png"
-                                alt="Driveshaft Carrier">
+                            <img src="images/drivetrain.png" alt="Driveshaft Carrier">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-DSH-CAR-2</span>
                             <h3 class="product-title">Driveshaft Carrier Bearing</h3>
+                            <p class="product-description">Modular driveshaft carrier bearing featuring durable rubber-steel hybrid structure.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -735,15 +738,16 @@
                     </article>
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-info">Recommended</span>
                             </div>
-                            <img src="images/chassis_systems.png"
-                                alt="Skid Plate">
+                            <img src="images/chassis_systems.png" alt="Skid Plate">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-SKD-PLT-1</span>
                             <h3 class="product-title">Aluminum Skid Plate</h3>
+                            <p class="product-description">Underbody protection skid plate crafted from heavy-duty 1/4 inch structural aluminum.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -763,15 +767,16 @@
                     </article>
                     <article class="product-card">
                         <div class="product-image-container">
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
                             <div class="product-badges">
                                 <span class="badge badge-info">Recommended</span>
                             </div>
-                            <img src="images/chassis_systems.png"
-                                alt="Bumper Bracket">
+                            <img src="images/chassis_systems.png" alt="Bumper Bracket">
                         </div>
                         <div class="product-info">
                             <span class="product-sku">SKU: Q8-BMP-BRK-4</span>
                             <h3 class="product-title">HD Bumper Bracket Set</h3>
+                            <p class="product-description">Heavy-duty powder-coated steel bumper bracket set rated for up to 12,000 LBS towing.</p>
                             <table class="product-specs">
                                 <tr>
                                     <td>Material</td>
@@ -805,8 +810,7 @@
                 <div class="accessory-grid">
                     <article class="accessory-card">
                         <div class="accessory-img">
-                            <img src="images/clamp.png"
-                                alt="Heavy-Duty Clamp">
+                            <img src="images/clamp.png" alt="Heavy-Duty Clamp">
                         </div>
                         <div class="accessory-info">
                             <span class="product-sku">Q8-CLP-204</span>
@@ -820,8 +824,7 @@
                     </article>
                     <article class="accessory-card">
                         <div class="accessory-img">
-                            <img src="images/bolts.png"
-                                alt="Bushing">
+                            <img src="images/bolts.png" alt="Bushing">
                         </div>
                         <div class="accessory-info">
                             <span class="product-sku">Q8-BSH-085</span>
@@ -835,8 +838,7 @@
                     </article>
                     <article class="accessory-card">
                         <div class="accessory-img">
-                            <img src="images/bolts.png"
-                                alt="Washer Set">
+                            <img src="images/bolts.png" alt="Washer Set">
                         </div>
                         <div class="accessory-info">
                             <span class="product-sku">Q8-WSH-M12</span>
@@ -850,8 +852,7 @@
                     </article>
                     <article class="accessory-card">
                         <div class="accessory-img">
-                            <img src="images/bolts.png"
-                                alt="Grommet">
+                            <img src="images/bolts.png" alt="Grommet">
                         </div>
                         <div class="accessory-info">
                             <span class="product-sku">Q8-GRM-019</span>
@@ -865,8 +866,7 @@
                     </article>
                     <article class="accessory-card">
                         <div class="accessory-img">
-                            <img src="images/clamp.png"
-                                alt="Cable Tie">
+                            <img src="images/clamp.png" alt="Cable Tie">
                         </div>
                         <div class="accessory-info">
                             <span class="product-sku">Q8-CBT-100</span>
@@ -880,8 +880,7 @@
                     </article>
                     <article class="accessory-card">
                         <div class="accessory-img">
-                            <img src="images/exhaust.png"
-                                alt="Heat Shield">
+                            <img src="images/exhaust.png" alt="Heat Shield">
                         </div>
                         <div class="accessory-info">
                             <span class="product-sku">Q8-HTS-12X</span>
@@ -917,8 +916,7 @@
                     </div>
                 </div>
                 <div class="qa-image">
-                    <img src="images/engine.png"
-                        alt="Precision Engine Parts">
+                    <img src="images/engine.png" alt="Precision Engine Parts">
                 </div>
             </section>
 
@@ -973,7 +971,10 @@
 
             <!-- ====== BRAND LOGOS ====== -->
             <section class="brands-section">
-                <h3>Trusted By Industry Leaders</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md); border-bottom: 2px solid var(--color-border); padding-bottom: var(--spacing-sm);">
+                    <h3 style="font-size: 1.25rem; font-weight: 900; text-transform: uppercase; margin-bottom: 0;">Trusted By Industry Leaders</h3>
+                    <a href="brands.html" class="section-link" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--color-primary); display: flex; align-items: center; gap: 0.4rem;">See All Brands <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
                 <div class="brand-logos">
                     <img src="https://cdn.simpleicons.org/ford/1A1A1A" alt="Ford" loading="lazy">
                     <img src="https://cdn.simpleicons.org/bmw/1A1A1A" alt="BMW" loading="lazy">
@@ -991,26 +992,24 @@
         </main>
     </div>
 
-    <!-- ============== FOOTER ============== -->
+            <!-- ============== FOOTER ============== -->
     <footer class="footer">
         <!-- Newsletter strip -->
         <div class="footer-newsletter">
             <div class="newsletter-text">
-                <h3>Engineer-Grade Updates. No Noise.</h3>
-                <p>New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.
-                </p>
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
             </div>
             <form class="newsletter-form" onsubmit="return false;">
                 <input type="email" placeholder="your.work@email.com" required>
-                <button class="btn btn-cart" type="submit">Subscribe</button>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
             </form>
         </div>
 
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo footer-logo">Q8MOUNT</a>
-                <p>High-performance mounting solutions engineered for industrial and automotive applications. Delivering
-                    technical excellence through precision manufacturing since 1994.</p>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -1019,40 +1018,35 @@
                 </div>
             </div>
             <div class="footer-column">
-                <h4>Shop</h4>
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
                 <nav class="footer-nav">
-                    <a href="#">Chassis Systems</a>
-                    <a href="#">Drivetrain</a>
-                    <a href="#">Electrical</a>
-                    <a href="#">Mounting Hardware</a>
-                    <a href="#">Suspension</a>
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <h4>Resources</h4>
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
                 <nav class="footer-nav">
-                    <a href="#">Technical Specs</a>
-                    <a href="#">Compliance Docs</a>
-                    <a href="#">Installation Guides</a>
-                    <a href="#">Warranty Info</a>
-                    <a href="#">CAD Library</a>
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <h4>Corporate</h4>
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
                 <nav class="footer-nav">
-                    <a href="#">About Us</a>
-                    <a href="#">Contact Engineering</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Sale</a>
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
                 </nav>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
-            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN
-                USA</span>
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
         </div>
     </footer>
 
@@ -1086,6 +1080,27 @@
                 btn.classList.toggle('active', btn.dataset.lang === lang);
                 btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
             });
+
+            // Update text elements with data-en/data-ar
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                if (text) {
+                    const icon = el.querySelector('i');
+                    if (icon) {
+                        el.innerHTML = '';
+                        el.appendChild(icon);
+                        el.appendChild(document.createTextNode(' ' + text));
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Translate placeholder text for inputs
+            document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                if (val) el.placeholder = val;
+            });
         }
 
         const savedLang = localStorage.getItem('lang') || 'en';
@@ -1093,6 +1108,20 @@
 
         langButtons.forEach(btn => {
             btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+        });
+
+        /* ---------- PRODUCT WISHLIST TOGGLE ---------- */
+        document.addEventListener('click', (e) => {
+            const imgBtn = e.target.closest('.product-card-wishlist-btn');
+            if (imgBtn) {
+                imgBtn.classList.toggle('active');
+                const icon = imgBtn.querySelector('i');
+                if (imgBtn.classList.contains('active')) {
+                    icon.className = 'fa-solid fa-heart';
+                } else {
+                    icon.className = 'fa-regular fa-heart';
+                }
+            }
         });
     </script>
 </body>

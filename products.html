@@ -8,7 +8,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -18,38 +20,38 @@
         .product-card.hidden {
             display: none !important;
         }
-        
+
         /* Grid view vs List view custom overrides */
         .product-grid.list-view {
             display: flex;
             flex-direction: column;
             gap: var(--spacing-md);
         }
-        
+
         .product-grid.list-view .product-card {
             flex-direction: row;
             height: auto;
             align-items: stretch;
         }
-        
+
         .product-grid.list-view .product-image-container {
             width: 240px;
             height: auto;
             flex-shrink: 0;
         }
-        
+
         .product-grid.list-view .product-info {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        
+
         .product-grid.list-view .product-footer {
             margin-top: 0;
             padding-bottom: var(--spacing-xs);
         }
-        
+
         .product-grid.list-view .product-card-actions {
             margin-top: 0;
             display: flex;
@@ -84,6 +86,7 @@
             .product-grid.list-view .product-card {
                 flex-direction: column;
             }
+
             .product-grid.list-view .product-image-container {
                 width: 100%;
                 height: 200px;
@@ -101,15 +104,20 @@
             <a href="index.html" class="logo">Q8MOUNT</a>
             <nav class="main-nav">
                 <a href="products.html" class="active" data-en="Products" data-ar="المنتجات">Products</a>
-                <a href="#" data-en="Fleet Solutions" data-ar="حلول الأساطيل">Fleet Solutions</a>
-                <a href="#" data-en="OEM Services" data-ar="خدمات OEM">OEM Services</a>
-                <a href="#" data-en="Support" data-ar="الدعم">Support</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
             </nav>
         </div>
         <div class="header-right">
             <div class="search-bar">
-                <i class="fa-solid fa-search text-muted"></i>
-                <input type="text" id="global-search" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..."
+                    data-en-placeholder="Search Technical Database..."
+                    data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
             </div>
 
             <!-- Language Switcher -->
@@ -139,7 +147,7 @@
     <!-- ============== MAIN LAYOUT ============== -->
     <div class="layout-wrapper">
         <main class="main-content products-main-content">
-            
+
             <!-- Breadcrumbs -->
             <nav class="breadcrumbs" aria-label="breadcrumb">
                 <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
@@ -147,16 +155,22 @@
                 <span class="active" id="breadcrumb-active" data-en="Products" data-ar="المنتجات">Products</span>
             </nav>
 
-            <h1 class="hero-title" id="page-main-title" style="font-size: 2.2rem; text-align: left; margin-bottom: var(--spacing-sm);" data-en="Product Catalog" data-ar="كتالوج المنتجات">Product Catalog</h1>
+            <h1 class="hero-title" id="page-main-title"
+                style="font-size: 2.2rem; text-align: left; margin-bottom: var(--spacing-sm);" data-en="Product Catalog"
+                data-ar="كتالوج المنتجات">Product Catalog</h1>
 
             <!-- Grid Layout containing Sidebar (Left) and Content (Right) -->
             <div class="catalog-layout">
-                
+
                 <!-- Left Sidebar Filters -->
                 <aside class="filter-sidebar">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-xs);">
-                        <h3 style="font-size: 0.95rem; font-weight: 900; text-transform: uppercase;" data-en="Filters" data-ar="التصفية">Filters</h3>
-                        <button type="button" id="btn-clear-filters-top" style="background: none; border: none; color: var(--color-primary); font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase;" data-en="Reset" data-ar="إعادة تعيين">Reset</button>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-xs);">
+                        <h3 style="font-size: 0.95rem; font-weight: 900; text-transform: uppercase;" data-en="Filters"
+                            data-ar="التصفية">Filters</h3>
+                        <button type="button" id="btn-clear-filters-top"
+                            style="background: none; border: none; color: var(--color-primary); font-size: 0.75rem; font-weight: 700; cursor: pointer; text-transform: uppercase;"
+                            data-en="Reset" data-ar="إعادة تعيين">Reset</button>
                     </div>
 
                     <!-- Category Filter -->
@@ -164,14 +178,21 @@
                         <h4 class="filter-title"><span data-en="Categories" data-ar="الفئات">Categories</span></h4>
                         <div class="filter-category-select">
                             <select id="category-filter-select">
-                                <option value="all" data-en="All Categories" data-ar="جميع الفئات">All Categories</option>
-                                <option value="chassis" data-en="Chassis Systems" data-ar="أنظمة الهيكل">Chassis Systems</option>
-                                <option value="drivetrain" data-en="Drivetrain" data-ar="مجموعة نقل الحركة">Drivetrain</option>
+                                <option value="all" data-en="All Categories" data-ar="جميع الفئات">All Categories
+                                </option>
+                                <option value="chassis" data-en="Chassis Systems" data-ar="أنظمة الهيكل">Chassis Systems
+                                </option>
+                                <option value="drivetrain" data-en="Drivetrain" data-ar="مجموعة نقل الحركة">Drivetrain
+                                </option>
                                 <option value="electrical" data-en="Electrical" data-ar="الكهرباء">Electrical</option>
-                                <option value="mounting" data-en="Mounting Hardware" data-ar="أجهزة التركيب">Mounting Hardware</option>
-                                <option value="tools" data-en="Tools & Shop" data-ar="الأدوات والورشة">Tools & Shop</option>
-                                <option value="exhaust" data-en="Exhaust & Headers" data-ar="العادم والرؤوس">Exhaust & Headers</option>
-                                <option value="suspension" data-en="Suspension" data-ar="أنظمة التعليق">Suspension</option>
+                                <option value="mounting" data-en="Mounting Hardware" data-ar="أجهزة التركيب">Mounting
+                                    Hardware</option>
+                                <option value="tools" data-en="Tools & Shop" data-ar="الأدوات والورشة">Tools & Shop
+                                </option>
+                                <option value="exhaust" data-en="Exhaust & Headers" data-ar="العادم والرؤوس">Exhaust &
+                                    Headers</option>
+                                <option value="suspension" data-en="Suspension" data-ar="أنظمة التعليق">Suspension
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -180,7 +201,8 @@
                     <div class="filter-section">
                         <h4 class="filter-title"><span data-en="Brands" data-ar="العلامات التجارية">Brands</span></h4>
                         <div class="filter-brand-search">
-                            <input type="text" id="brand-search-input" placeholder="Search brands..." data-en-placeholder="Search brands..." data-ar-placeholder="البحث عن علامة تجارية...">
+                            <input type="text" id="brand-search-input" placeholder="Search brands..."
+                                data-en-placeholder="Search brands..." data-ar-placeholder="البحث عن علامة تجارية...">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="filter-scroll-list" id="brands-checkbox-list">
@@ -237,7 +259,8 @@
 
                     <!-- Price Filter -->
                     <div class="filter-section">
-                        <h4 class="filter-title"><span data-en="Price Range" data-ar="نطاق السعر">Price Range</span></h4>
+                        <h4 class="filter-title"><span data-en="Price Range" data-ar="نطاق السعر">Price Range</span>
+                        </h4>
                         <div class="price-slider-group">
                             <div class="price-inputs-row">
                                 <div class="price-input-wrap">
@@ -249,8 +272,10 @@
                                     <input type="number" id="price-max" value="1000" min="0" max="1000">
                                 </div>
                             </div>
-                            <input type="range" class="price-slider" id="price-slider-control" min="0" max="1000" value="1000">
-                            <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 4px;">
+                            <input type="range" class="price-slider" id="price-slider-control" min="0" max="1000"
+                                value="1000">
+                            <div
+                                style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--color-text-muted); font-weight: 700; margin-top: 4px;">
                                 <span>KD 0</span>
                                 <span>KD 1000</span>
                             </div>
@@ -341,10 +366,37 @@
 
                 <!-- Right content container -->
                 <div class="catalog-content">
-                    
+
+                    <!-- Listing toolbar (Sort + view switch) -->
+                    <div class="listing-toolbar listing-toolbar-top">
+                        <div id="results-count">
+                            <h2 class="toolbar-title" data-en="All Products" data-ar="جميع المنتجات">All Products</h2>
+                            <span class="toolbar-subtitle">
+                                <span id="results-count-number">24</span> <span data-en="products found" data-ar="منتج تم العثور عليه">products found</span>
+                            </span>
+                        </div>
+                        <div class="listing-sort-wrap">
+                            <div class="listing-sort-select-wrapper">
+                                <span data-en="Sort: " data-ar="ترتيب: ">Sort: </span>
+                                <select id="sort-select">
+                                    <option value="featured" data-en="Default" data-ar="الافتراضي">Default</option>
+                                    <option value="price-low" data-en="Price: Low to High" data-ar="السعر: من الأقل للأعلى">Price: Low to High</option>
+                                    <option value="price-high" data-en="Price: High to Low" data-ar="السعر: من الأعلى للأقل">Price: High to Low</option>
+                                    <option value="rating" data-en="Best Rating" data-ar="الأعلى تقييمًا">Best Rating</option>
+                                </select>
+                            </div>
+                            <div class="view-toggles">
+                                <button class="view-toggle-btn active" id="view-grid-btn" aria-label="Grid View"><i class="fa-solid fa-table-cells"></i></button>
+                                <button class="view-toggle-btn" id="view-list-btn" aria-label="List View"><i class="fa-solid fa-list"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Horizontal Vehicle Parts Finder -->
                     <div class="parts-finder-bar">
-                        <h3 class="parts-finder-title"><i class="fa-solid fa-car"></i> <span data-en="Find Parts by Vehicle" data-ar="البحث عن قطع غيار حسب المركبة">Find Parts by Vehicle</span></h3>
+                        <h3 class="parts-finder-title"><i class="fa-solid fa-car"></i> <span
+                                data-en="Find Parts by Vehicle" data-ar="البحث عن قطع غيار حسب المركبة">Find Parts by
+                                Vehicle</span></h3>
                         <div class="parts-finder-row">
                             <div class="parts-finder-field">
                                 <label for="finder-year" data-en="Year" data-ar="السنة">Year</label>
@@ -376,147 +428,182 @@
                                 <label for="finder-app" data-en="Application" data-ar="التطبيق">Application</label>
                                 <select id="finder-app" disabled>
                                     <option value="" data-en="Select App" data-ar="اختر التطبيق">Select App</option>
-                                    <option value="chassis" data-en="Chassis Systems" data-ar="أنظمة الهيكل">Chassis Systems</option>
-                                    <option value="drivetrain" data-en="Drivetrain" data-ar="مجموعة نقل الحركة">Drivetrain</option>
-                                    <option value="mounting" data-en="Mounting Hardware" data-ar="أجهزة التركيب">Mounting Hardware</option>
-                                    <option value="exhaust" data-en="Exhaust & Headers" data-ar="العادم والرؤوس">Exhaust & Headers</option>
-                                    <option value="suspension" data-en="Suspension" data-ar="أنظمة التعليق">Suspension</option>
+                                    <option value="chassis" data-en="Chassis Systems" data-ar="أنظمة الهيكل">Chassis
+                                        Systems</option>
+                                    <option value="drivetrain" data-en="Drivetrain" data-ar="مجموعة نقل الحركة">
+                                        Drivetrain</option>
+                                    <option value="mounting" data-en="Mounting Hardware" data-ar="أجهزة التركيب">
+                                        Mounting Hardware</option>
+                                    <option value="exhaust" data-en="Exhaust & Headers" data-ar="العادم والرؤوس">Exhaust
+                                        & Headers</option>
+                                    <option value="suspension" data-en="Suspension" data-ar="أنظمة التعليق">Suspension
+                                    </option>
                                 </select>
                             </div>
-                            <button type="button" class="btn btn-primary parts-finder-submit" id="btn-find-parts" data-en="Find Parts" data-ar="البحث عن قطع">Find Parts</button>
+                            <button type="button" class="btn btn-primary parts-finder-submit" id="btn-find-parts"
+                                data-en="Find Parts" data-ar="البحث عن قطع">Find Parts</button>
                         </div>
                     </div>
 
-                    <!-- Listing toolbar (Sort + view switch) -->
-                    <div class="listing-toolbar">
-                        <div id="results-count">
-                            <span id="results-count-number">24</span> <span data-en="Products Found" data-ar="منتجات تم العثور عليها">Products Found</span>
-                        </div>
-                        <div class="listing-sort-wrap">
-                            <label for="sort-select" data-en="Sort By:" data-ar="ترتيب حسب:">Sort By:</label>
-                            <div class="listing-sort-select">
-                                <select id="sort-select">
-                                    <option value="featured" data-en="Featured" data-ar="المميز">Featured</option>
-                                    <option value="price-low" data-en="Price: Low to High" data-ar="السعر: من الأقل للأعلى">Price: Low to High</option>
-                                    <option value="price-high" data-en="Price: High to Low" data-ar="السعر: من الأعلى للأقل">Price: High to Low</option>
-                                    <option value="rating" data-en="Best Rating" data-ar="الأعلى تقييمًا">Best Rating</option>
-                                </select>
-                            </div>
-                            <div class="view-toggles">
-                                <button class="view-toggle-btn active" id="view-grid-btn" aria-label="Grid View"><i class="fa-solid fa-table-cells"></i></button>
-                                <button class="view-toggle-btn" id="view-list-btn" aria-label="List View"><i class="fa-solid fa-list"></i></button>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <!-- Product Grid (Constrained height with scrollbar matching sidebar height) -->
                     <div class="product-grid-scroll-container">
                         <div class="product-grid" id="catalog-product-grid">
-                            
+
                             <!-- 1. 1964 Chevrolet Chevelle Hood "Chevrolet" Letters Set | 4012 -->
-                            <article class="product-card" data-category="mounting" data-brand="trimparts" data-stock="out-of-stock" data-price="50.250" data-rating="0" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="mounting" data-brand="trimparts"
+                                data-stock="in-stock" data-price="50.250" data-rating="4.0" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/bolts.png" alt="Chevelle Letters Set">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Trimparts</span>
-                                    <h3 class="product-title" data-en="1964 Chevrolet Chevelle Hood &quot;Chevrolet&quot; Letters Set | 4012" data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٤ | ٤٠١٢">1964 Chevrolet Chevelle Hood "Chevrolet" Letters Set | 4012</h3>
-                                    <p class="product-description" data-en="Replacement &quot;Chevrolet&quot; Hood Letter set for 1964 Chevrolet..." data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٤ بديلة ومطابقة للأصل....">Replacement "Chevrolet" Hood Letter set for 1964 Chevrolet...</p>
+                                    <h3 class="product-title"
+                                        data-en="1964 Chevrolet Chevelle Hood &quot;Chevrolet&quot; Letters Set | 4012"
+                                        data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٤ | ٤٠١٢">1964 Chevrolet
+                                        Chevelle Hood "Chevrolet" Letters Set | 4012</h3>
+                                    <p class="product-description"
+                                        data-en="Replacement &quot;Chevrolet&quot; Hood Letter set for 1964 Chevrolet..."
+                                        data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٤ بديلة ومطابقة للأصل....">
+                                        Replacement "Chevrolet" Hood Letter set for 1964 Chevrolet...</p>
                                     <span class="product-sku">SKU: SKU-TRIMPARTS-026-14580</span>
-                                    <div class="product-rating unrated">
+                                    <div class="product-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
                                         <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
+                                        <span>(4.0)</span>
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 50.250</span>
-                                        <span class="badge" style="background-color: #c62828; color: #ffffff;" data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (8)" data-ar="متوفر (8)">In Stock (8)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" disabled data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 2. 1965 Chevrolet Chevelle Hood "Chevrolet" Letters Set | 4216 -->
-                            <article class="product-card" data-category="mounting" data-brand="trimparts" data-stock="out-of-stock" data-price="44.000" data-rating="0" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="mounting" data-brand="trimparts"
+                                data-stock="in-stock" data-price="44.000" data-rating="4.5" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/bolts.png" alt="Chevelle Letters Set 1965">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Trimparts</span>
-                                    <h3 class="product-title" data-en="1965 Chevrolet Chevelle Hood &quot;Chevrolet&quot; Letters Set | 4216" data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٥ | ٤٢١٦">1965 Chevrolet Chevelle Hood "Chevrolet" Letters Set | 4216</h3>
-                                    <p class="product-description" data-en="Replacement &quot;Chevrolet&quot; Hood Letter set for 1965 Chevrolet..." data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٥ بديلة ومطابقة للأصل....">Replacement "Chevrolet" Hood Letter set for 1965 Chevrolet...</p>
+                                    <h3 class="product-title"
+                                        data-en="1965 Chevrolet Chevelle Hood &quot;Chevrolet&quot; Letters Set | 4216"
+                                        data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٥ | ٤٢١٦">1965 Chevrolet
+                                        Chevelle Hood "Chevrolet" Letters Set | 4216</h3>
+                                    <p class="product-description"
+                                        data-en="Replacement &quot;Chevrolet&quot; Hood Letter set for 1965 Chevrolet..."
+                                        data-ar="مجموعة حروف غطاء المحرك شيفروليه شيفيل ١٩٦٥ بديلة ومطابقة للأصل....">
+                                        Replacement "Chevrolet" Hood Letter set for 1965 Chevrolet...</p>
                                     <span class="product-sku">SKU: SKU-TRIMPARTS-026-33372</span>
-                                    <div class="product-rating unrated">
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
+                                    <div class="product-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                        <span>(4.5)</span>
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 44.000</span>
-                                        <span class="badge" style="background-color: #c62828; color: #ffffff;" data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (12)" data-ar="متوفر (12)">In Stock (12)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" disabled data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 3. 1970 Chevrolet Chevelle Standard Grille Emblem Assembly (Each) |... -->
-                            <article class="product-card" data-category="chassis" data-brand="trimparts" data-stock="out-of-stock" data-price="58.000" data-rating="0" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="chassis" data-brand="trimparts"
+                                data-stock="in-stock" data-price="58.000" data-rating="5.0" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/chassis_systems.png" alt="Grille Emblem Assembly">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Trimparts</span>
-                                    <h3 class="product-title" data-en="1970 Chevrolet Chevelle Standard Grille Emblem Assembly (Each) |..." data-ar="مجموعة شعار الشبكة الأمامية شيفروليه شيفيل ١٩٧٠ |...">1970 Chevrolet Chevelle Standard Grille Emblem Assembly (Each) |...</h3>
-                                    <p class="product-description" data-en="Replacement Standard Grille Emblem Assembly for 1970..." data-ar="شعار شبكة التهوية الأمامية القياسية لسيارة شيفروليه شيفيل ١٩٧٠....">Replacement Standard Grille Emblem Assembly for 1970...</p>
+                                    <h3 class="product-title"
+                                        data-en="1970 Chevrolet Chevelle Standard Grille Emblem Assembly (Each) |..."
+                                        data-ar="مجموعة شعار الشبكة الأمامية شيفروليه شيفيل ١٩٧٠ |...">1970 Chevrolet
+                                        Chevelle Standard Grille Emblem Assembly (Each) |...</h3>
+                                    <p class="product-description"
+                                        data-en="Replacement Standard Grille Emblem Assembly for 1970..."
+                                        data-ar="شعار شبكة التهوية الأمامية القياسية لسيارة شيفروليه شيفيل ١٩٧٠....">
+                                        Replacement Standard Grille Emblem Assembly for 1970...</p>
                                     <span class="product-sku">SKU: SKU-TRIMPARTS-026-30111</span>
-                                    <div class="product-rating unrated">
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
+                                    <div class="product-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <span>(5.0)</span>
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 58.000</span>
-                                        <span class="badge" style="background-color: #c62828; color: #ffffff;" data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (15)" data-ar="متوفر (15)">In Stock (15)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" disabled data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 4. Weld Racing Wheel Center Cap P605 -->
-                            <article class="product-card" data-category="mounting" data-brand="weld-racing" data-stock="in-stock" data-price="12.000" data-rating="5.0" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="mounting" data-brand="weld-racing"
+                                data-stock="in-stock" data-price="12.000" data-rating="5.0" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
-                                    <img src="images/bolts.png" alt="Weld Racing Cap">
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <img src="images/weld_caps.png" alt="Weld Racing Cap">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Weld Racing</span>
-                                    <h3 class="product-title" data-en="Weld Racing Wheel Center Caps & Hub Covers | P605-5083" data-ar="أغطية مركز ومحاور عجلات ويلد ريسينغ | P605-5083">Weld Racing Wheel Center Caps & Hub Covers | P605-5083</h3>
-                                    <p class="product-description" data-en="Weld Racing Center Caps and Hub Covers for Weld Racing wheels. ..." data-ar="أغطية مركز العجلة وأغطية المحاور لعجلات ويلد ريسينغ. ...">Weld Racing Center Caps and Hub Covers for Weld Racing wheels. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Weld Racing Wheel Center Caps & Hub Covers | P605-5083"
+                                        data-ar="أغطية مركز ومحاور عجلات ويلد ريسينغ | P605-5083">Weld Racing Wheel
+                                        Center Caps & Hub Covers | P605-5083</h3>
+                                    <p class="product-description"
+                                        data-en="Weld Racing Center Caps and Hub Covers for Weld Racing wheels. ..."
+                                        data-ar="أغطية مركز العجلة وأغطية المحاور لعجلات ويلد ريسينغ. ...">Weld Racing
+                                        Center Caps and Hub Covers for Weld Racing wheels. ...</p>
                                     <span class="product-sku">SKU: SKU-WELDRACING-026-79876</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -528,59 +615,39 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 12.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (10)" data-ar="متوفر (١٠)">In Stock (10)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (10)" data-ar="متوفر (١٠)">In Stock (10)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!-- 5. 1991-93 Ford Mustang Pony Wheel Center Cap Chrome -->
-                            <article class="product-card" data-category="mounting" data-brand="50-resto" data-stock="out-of-stock" data-price="26.000" data-rating="4.5" data-new="true" data-sale="false">
-                                <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
-                                    <img src="images/bolts.png" alt="50 Resto Cap">
-                                </div>
-                                <div class="product-info">
-                                    <span class="product-brand-label">| 50 Resto</span>
-                                    <h3 class="product-title" data-en="1991-93 Ford Mustang Pony Wheel Center Cap Chrome | LRS..." data-ar="غطاء مركز عجلات فورد موستنج كروم ١٩٩١-١٩٩٣ | LRS...">1991-93 Ford Mustang Pony Wheel Center Cap Chrome | LRS...</h3>
-                                    <p class="product-description" data-en="Chrome Pony Wheel Center Cap for 1991-1993 Ford Mustang...." data-ar="غطاء مركز عجلات بوني كروم لسيارات فورد موستنج ١٩٩١-١٩٩٣....">Chrome Pony Wheel Center Cap for 1991-1993 Ford Mustang....</p>
-                                    <span class="product-sku">SKU: SKU-50RESTO-026-83839</span>
-                                    <div class="product-rating">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star-half-stroke"></i>
-                                        <span>(4.5)</span>
-                                    </div>
-                                    <div class="product-footer">
-                                        <span class="product-price">KD 26.000</span>
-                                        <span class="badge" style="background-color: #c62828; color: #ffffff;" data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
-                                    </div>
-                                    <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" disabled data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 6. Ford Mustang 5.0L Nitrous Injected Fender Emblem Black -->
-                            <article class="product-card" data-category="chassis" data-brand="late-model-restoration" data-stock="out-of-stock" data-price="6.000" data-rating="4.8" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="chassis" data-brand="late-model-restoration"
+                                data-stock="in-stock" data-price="6.000" data-rating="4.8" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/chassis_systems.png" alt="Mustang Emblem">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Late Model Restoration</span>
-                                    <h3 class="product-title" data-en="Ford Mustang 5.0L Nitrous Injected Fender Emblem Black |..." data-ar="شعار رفرف فورد موستنج 5.0 لتر أسود حقن نيتروز |...">Ford Mustang 5.0L Nitrous Injected Fender Emblem Black |...</h3>
-                                    <p class="product-description" data-en="Black 5.0L Nitrous Injected Fender Emblem for Ford Mustang. A bol..." data-ar="شعار رفرف أسود بقوة 5.0 لتر حقن نيتروز لسيارات فورد موستنج. تركيب مباشر....">Black 5.0L Nitrous Injected Fender Emblem for Ford Mustang. A bol...</p>
+                                    <h3 class="product-title"
+                                        data-en="Ford Mustang 5.0L Nitrous Injected Fender Emblem Black |..."
+                                        data-ar="شعار رفرف فورد موستنج 5.0 لتر أسود حقن نيتروز |...">Ford Mustang 5.0L
+                                        Nitrous Injected Fender Emblem Black |...</h3>
+                                    <p class="product-description"
+                                        data-en="Black 5.0L Nitrous Injected Fender Emblem for Ford Mustang. A bol..."
+                                        data-ar="شعار رفرف أسود بقوة 5.0 لتر حقن نيتروز لسيارات فورد موستنج. تركيب مباشر....">
+                                        Black 5.0L Nitrous Injected Fender Emblem for Ford Mustang. A bol...</p>
                                     <span class="product-sku">SKU: SKU-LATEMODELR-026-70695</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -592,27 +659,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 6.000</span>
-                                        <span class="badge" style="background-color: #c62828; color: #ffffff;" data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (5)" data-ar="متوفر (5)">In Stock (5)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" disabled data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 7. AC Delco Professional Alternator -->
-                            <article class="product-card" data-category="electrical" data-brand="ac-delco" data-stock="in-stock" data-price="78.000" data-rating="5.0" data-new="true" data-sale="true">
+                            <article class="product-card" data-category="electrical" data-brand="ac-delco"
+                                data-stock="in-stock" data-price="78.000" data-rating="5.0" data-new="true"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/engine.png" alt="AC Delco Alternator">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| AC Delco</span>
-                                    <h3 class="product-title" data-en="AC Delco Professional Alternator 130 Amps | AC-ALT-130" data-ar="دينامو إيه سي ديلكو احترافي بقوة ١٣٠ أمبير | AC-ALT-130">AC Delco Professional Alternator 130 Amps | AC-ALT-130</h3>
-                                    <p class="product-description" data-en="High-output professional alternator for stable vehicle power delivery under heavy electrical loads. ..." data-ar="دينامو احترافي عالي الإنتاجية لضمان إمداد طاقة مستقر للسيارة تحت الأحمال الكهربائية الكبيرة. ...">High-output professional alternator for stable vehicle power delivery under heavy electrical loads. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="AC Delco Professional Alternator 130 Amps | AC-ALT-130"
+                                        data-ar="دينامو إيه سي ديلكو احترافي بقوة ١٣٠ أمبير | AC-ALT-130">AC Delco
+                                        Professional Alternator 130 Amps | AC-ALT-130</h3>
+                                    <p class="product-description"
+                                        data-en="High-output professional alternator for stable vehicle power delivery under heavy electrical loads. ..."
+                                        data-ar="دينامو احترافي عالي الإنتاجية لضمان إمداد طاقة مستقر للسيارة تحت الأحمال الكهربائية الكبيرة. ...">
+                                        High-output professional alternator for stable vehicle power delivery under
+                                        heavy electrical loads. ...</p>
                                     <span class="product-sku">SKU: SKU-ACDELCO-402-1102</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -624,27 +704,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 78.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 8. ALL Classic Parts Tail Light Assembly -->
-                            <article class="product-card" data-category="chassis" data-brand="all-classic-parts" data-stock="in-stock" data-price="45.000" data-rating="4.2" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="chassis" data-brand="all-classic-parts"
+                                data-stock="in-stock" data-price="45.000" data-rating="4.2" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/chassis_systems.png" alt="Tail Light Assembly">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| ALL Classic Parts inc</span>
-                                    <h3 class="product-title" data-en="Tail Light Assembly Housing Set Chrome Trim | ACP-TL-903" data-ar="مجموعة مبيت المصابيح الخلفية بحواف كروم | ACP-TL-903">Tail Light Assembly Housing Set Chrome Trim | ACP-TL-903</h3>
-                                    <p class="product-description" data-en="Vintage reproduction tail light assembly housings with brilliant chrome detailing. ..." data-ar="مبيت مصابيح خلفية كلاسيكية معاد إنتاجها مع تفاصيل من الكروم اللامع. ...">Vintage reproduction tail light assembly housings with brilliant chrome detailing. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Tail Light Assembly Housing Set Chrome Trim | ACP-TL-903"
+                                        data-ar="مجموعة مبيت المصابيح الخلفية بحواف كروم | ACP-TL-903">Tail Light
+                                        Assembly Housing Set Chrome Trim | ACP-TL-903</h3>
+                                    <p class="product-description"
+                                        data-en="Vintage reproduction tail light assembly housings with brilliant chrome detailing. ..."
+                                        data-ar="مبيت مصابيح خلفية كلاسيكية معاد إنتاجها مع تفاصيل من الكروم اللامع. ...">
+                                        Vintage reproduction tail light assembly housings with brilliant chrome
+                                        detailing. ...</p>
                                     <span class="product-sku">SKU: SKU-ALLCLASSIC-902-8329</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -656,27 +749,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 45.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (6)" data-ar="متوفر (٦)">In Stock (6)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (6)" data-ar="متوفر (٦)">In Stock (6)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 9. American Autowire Classic Update Wiring Harness -->
-                            <article class="product-card" data-category="electrical" data-brand="american-autowire" data-stock="in-stock" data-price="280.000" data-rating="5.0" data-new="true" data-sale="false">
+                            <article class="product-card" data-category="electrical" data-brand="american-autowire"
+                                data-stock="in-stock" data-price="280.000" data-rating="5.0" data-new="true"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/engine.png" alt="Wiring Harness">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| American Autowire</span>
-                                    <h3 class="product-title" data-en="Classic Update Series Complete Wiring Harness Kit | AAW-5100" data-ar="مجموعة كاملة لظفيرة الأسلاك المحدثة كلاسيكياً | AAW-5100">Classic Update Series Complete Wiring Harness Kit | AAW-5100</h3>
-                                    <p class="product-description" data-en="Complete electrical wiring integration system for retrofits and automotive builds. ..." data-ar="نظام متكامل لتوصيل الأسلاك الكهربائية بالكامل مخصص للترميم والسيارات المعدلة. ...">Complete electrical wiring integration system for retrofits and automotive builds. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Classic Update Series Complete Wiring Harness Kit | AAW-5100"
+                                        data-ar="مجموعة كاملة لظفيرة الأسلاك المحدثة كلاسيكياً | AAW-5100">Classic
+                                        Update Series Complete Wiring Harness Kit | AAW-5100</h3>
+                                    <p class="product-description"
+                                        data-en="Complete electrical wiring integration system for retrofits and automotive builds. ..."
+                                        data-ar="نظام متكامل لتوصيل الأسلاك الكهربائية بالكامل مخصص للترميم والسيارات المعدلة. ...">
+                                        Complete electrical wiring integration system for retrofits and automotive
+                                        builds. ...</p>
                                     <span class="product-sku">SKU: SKU-AMERAUTO-110-3829</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -688,27 +794,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 280.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (4)" data-ar="متوفر (٤)">In Stock (4)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (4)" data-ar="متوفر (٤)">In Stock (4)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 10. American Racing Torq Thrust II Wheel -->
-                            <article class="product-card" data-category="mounting" data-brand="american-racing" data-stock="preorder" data-price="145.000" data-rating="4.9" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="mounting" data-brand="american-racing"
+                                data-stock="preorder" data-price="145.000" data-rating="4.9" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/bolts.png" alt="Torq Thrust Wheel">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| American Racing</span>
-                                    <h3 class="product-title" data-en="Torq Thrust II Polished Series Custom Wheel | AMR-TT-177" data-ar="رنج مخصص من سلسلة تورك ثروست ٢ المصقولة | AMR-TT-177">Torq Thrust II Polished Series Custom Wheel | AMR-TT-177</h3>
-                                    <p class="product-description" data-en="Polished finish Torq Thrust custom alloy wheel with vintage automotive spokes. ..." data-ar="جنوط ألومنيوم مخصصة ومصقولة من فئة تورك ثروست مع شفرات كلاسيكية مميزة. ...">Polished finish Torq Thrust custom alloy wheel with vintage automotive spokes. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Torq Thrust II Polished Series Custom Wheel | AMR-TT-177"
+                                        data-ar="رنج مخصص من سلسلة تورك ثروست ٢ المصقولة | AMR-TT-177">Torq Thrust II
+                                        Polished Series Custom Wheel | AMR-TT-177</h3>
+                                    <p class="product-description"
+                                        data-en="Polished finish Torq Thrust custom alloy wheel with vintage automotive spokes. ..."
+                                        data-ar="جنوط ألومنيوم مخصصة ومصقولة من فئة تورك ثروست مع شفرات كلاسيكية مميزة. ...">
+                                        Polished finish Torq Thrust custom alloy wheel with vintage automotive spokes.
+                                        ...</p>
                                     <span class="product-sku">SKU: SKU-AMERRACING-023-9382</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -720,27 +839,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 145.000</span>
-                                        <span class="badge badge-warning" data-en="Preorder (2)" data-ar="طلب مسبق (٢)">Preorder (2)</span>
+                                        <span class="badge badge-warning" data-en="Preorder (2)"
+                                            data-ar="طلب مسبق (٢)">Preorder (2)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 11. ARP Performance Exhaust Header Stud Kit -->
-                            <article class="product-card" data-category="mounting" data-brand="arp-performance" data-stock="in-stock" data-price="32.000" data-rating="5.0" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="mounting" data-brand="arp-performance"
+                                data-stock="in-stock" data-price="32.000" data-rating="5.0" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/bolts.png" alt="Header Studs">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| ARP Performance</span>
-                                    <h3 class="product-title" data-en="High-Tensile Stainless Steel Exhaust Header Studs | ARP-HS-12" data-ar="براغي رؤوس عادم عالية المتانة من الصلب المقاوم للصدأ | ARP-HS-12">High-Tensile Stainless Steel Exhaust Header Studs | ARP-HS-12</h3>
-                                    <p class="product-description" data-en="Premium high-tensile strength mounting stud kits designed specifically for performance headers. ..." data-ar="مجموعات براغي تركيب فاخرة عالية القوة مصممة خصيصاً للمحركات الرياضية والأداء العالي. ...">Premium high-tensile strength mounting stud kits designed specifically for performance headers. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="High-Tensile Stainless Steel Exhaust Header Studs | ARP-HS-12"
+                                        data-ar="براغي رؤوس عادم عالية المتانة من الصلب المقاوم للصدأ | ARP-HS-12">
+                                        High-Tensile Stainless Steel Exhaust Header Studs | ARP-HS-12</h3>
+                                    <p class="product-description"
+                                        data-en="Premium high-tensile strength mounting stud kits designed specifically for performance headers. ..."
+                                        data-ar="مجموعات براغي تركيب فاخرة عالية القوة مصممة خصيصاً للمحركات الرياضية والأداء العالي. ...">
+                                        Premium high-tensile strength mounting stud kits designed specifically for
+                                        performance headers. ...</p>
                                     <span class="product-sku">SKU: SKU-ARPPERF-293-8492</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -752,27 +884,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 32.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (40)" data-ar="متوفر (٤٠)">In Stock (40)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (40)" data-ar="متوفر (٤٠)">In Stock (40)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 12. Holley EFI Fuel Pressure Regulator -->
-                            <article class="product-card" data-category="drivetrain" data-brand="holley" data-stock="in-stock" data-price="115.000" data-rating="4.5" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="drivetrain" data-brand="holley"
+                                data-stock="in-stock" data-price="115.000" data-rating="4.5" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/drivetrain.png" alt="Holley Regulator">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Holley</span>
-                                    <h3 class="product-title" data-en="Holley EFI Bypass Fuel Pressure Regulator | HOL-12-848" data-ar="منظم ضغط وقود هولي الرياضي للحقن الإلكتروني | HOL-12-848">Holley EFI Bypass Fuel Pressure Regulator | HOL-12-848</h3>
-                                    <p class="product-description" data-en="Billet aluminum fuel pressure regulator ensuring consistent EFI fuel rail pressures. ..." data-ar="منظم ضغط وقود مصنوع من ألومنيوم بيلت يضمن ضغطاً متناسقاً في مسطرة الوقود. ...">Billet aluminum fuel pressure regulator ensuring consistent EFI fuel rail pressures. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Holley EFI Bypass Fuel Pressure Regulator | HOL-12-848"
+                                        data-ar="منظم ضغط وقود هولي الرياضي للحقن الإلكتروني | HOL-12-848">Holley EFI
+                                        Bypass Fuel Pressure Regulator | HOL-12-848</h3>
+                                    <p class="product-description"
+                                        data-en="Billet aluminum fuel pressure regulator ensuring consistent EFI fuel rail pressures. ..."
+                                        data-ar="منظم ضغط وقود مصنوع من ألومنيوم بيلت يضمن ضغطاً متناسقاً في مسطرة الوقود. ...">
+                                        Billet aluminum fuel pressure regulator ensuring consistent EFI fuel rail
+                                        pressures. ...</p>
                                     <span class="product-sku">SKU: SKU-HOLLEY-120-8482</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -784,27 +929,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 115.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (8)" data-ar="متوفر (٨)">In Stock (8)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (8)" data-ar="متوفر (٨)">In Stock (8)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 13. Mopar V8 Valve Cover Gasket Set -->
-                            <article class="product-card" data-category="mounting" data-brand="mopar" data-stock="preorder" data-price="24.500" data-rating="4.2" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="mounting" data-brand="mopar"
+                                data-stock="preorder" data-price="24.500" data-rating="4.2" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/engine.png" alt="Mopar Gasket Kit">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Mopar</span>
-                                    <h3 class="product-title" data-en="Mopar OEM Valve Cover Gaskets Gen III Hemi | MOP-V8-GSK" data-ar="حشيات غطاء صمامات مو بار الأصلية للجيل الثالث هيمي | MOP-V8-GSK">Mopar OEM Valve Cover Gaskets Gen III Hemi | MOP-V8-GSK</h3>
-                                    <p class="product-description" data-en="Molded rubber valve cover gasket set with steel inner core for ultimate leak prevention. ..." data-ar="طقم حشيات أغطية الصمامات من المطاط المقوى بالصلب لمنع تسريب الزيوت بكفاءة كاملة. ...">Molded rubber valve cover gasket set with steel inner core for ultimate leak prevention. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Mopar OEM Valve Cover Gaskets Gen III Hemi | MOP-V8-GSK"
+                                        data-ar="حشيات غطاء صمامات مو بار الأصلية للجيل الثالث هيمي | MOP-V8-GSK">Mopar
+                                        OEM Valve Cover Gaskets Gen III Hemi | MOP-V8-GSK</h3>
+                                    <p class="product-description"
+                                        data-en="Molded rubber valve cover gasket set with steel inner core for ultimate leak prevention. ..."
+                                        data-ar="طقم حشيات أغطية الصمامات من المطاط المقوى بالصلب لمنع تسريب الزيوت بكفاءة كاملة. ...">
+                                        Molded rubber valve cover gasket set with steel inner core for ultimate leak
+                                        prevention. ...</p>
                                     <span class="product-sku">SKU: SKU-MOPAR-530-10512</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -816,27 +974,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 24.500</span>
-                                        <span class="badge badge-warning" data-en="Preorder (3)" data-ar="طلب مسبق (٣)">Preorder (3)</span>
+                                        <span class="badge badge-warning" data-en="Preorder (3)"
+                                            data-ar="طلب مسبق (٣)">Preorder (3)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 14. Edelbrock Performer Carburetor 600 CFM -->
-                            <article class="product-card" data-category="drivetrain" data-brand="edelbrock" data-stock="in-stock" data-price="185.000" data-rating="4.9" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="drivetrain" data-brand="edelbrock"
+                                data-stock="in-stock" data-price="185.000" data-rating="4.9" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/engine.png" alt="Edelbrock Carburetor">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Edelbrock</span>
-                                    <h3 class="product-title" data-en="Edelbrock Performer Series 600 CFM Manual Choke | EDB-1406" data-ar="كاربراتير إيديلبروك بيرفورمر ٦٠٠ قدم مكعب مع خانق يدوي | EDB-1406">Edelbrock Performer Series 600 CFM Manual Choke | EDB-1406</h3>
-                                    <p class="product-description" data-en="Two-piece aluminum street carburetor tuned for outstanding performance and throttle response. ..." data-ar="كاربراتير ألومنيوم ثنائي القطع مصمم للشوارع ومعدل لأداء استثنائي واستجابة سريعة للوقود. ...">Two-piece aluminum street carburetor tuned for outstanding performance and throttle response. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Edelbrock Performer Series 600 CFM Manual Choke | EDB-1406"
+                                        data-ar="كاربراتير إيديلبروك بيرفورمر ٦٠٠ قدم مكعب مع خانق يدوي | EDB-1406">
+                                        Edelbrock Performer Series 600 CFM Manual Choke | EDB-1406</h3>
+                                    <p class="product-description"
+                                        data-en="Two-piece aluminum street carburetor tuned for outstanding performance and throttle response. ..."
+                                        data-ar="كاربراتير ألومنيوم ثنائي القطع مصمم للشوارع ومعدل لأداء استثنائي واستجابة سريعة للوقود. ...">
+                                        Two-piece aluminum street carburetor tuned for outstanding performance and
+                                        throttle response. ...</p>
                                     <span class="product-sku">SKU: SKU-EDELBROCK-140-1406</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -848,27 +1019,39 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 185.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (12)" data-ar="متوفر (١٢)">In Stock (12)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (12)" data-ar="متوفر (١٢)">In Stock (12)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 15. Weld Racing Center Cap Hub - Matte Black -->
-                            <article class="product-card" data-category="mounting" data-brand="weld-racing" data-stock="preorder" data-price="14.000" data-rating="4.3" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="mounting" data-brand="weld-racing"
+                                data-stock="preorder" data-price="14.000" data-rating="4.3" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/bolts.png" alt="Weld Racing Black Cap">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Weld Racing</span>
-                                    <h3 class="product-title" data-en="Weld Racing Billet Hub Cover Matte Black | WEL-P605-BLK" data-ar="غطاء مركز عجلات ويلد ريسينغ أسود مطفي | WEL-P605-BLK">Weld Racing Billet Hub Cover Matte Black | WEL-P605-BLK</h3>
-                                    <p class="product-description" data-en="Replacement push-through hub cover with sleek matte black finish. ..." data-ar="غطاء محاور بديل يتم تركيبه بالكبس بطلاء أسود مطفي أنيق وعصري. ...">Replacement push-through hub cover with sleek matte black finish. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Weld Racing Billet Hub Cover Matte Black | WEL-P605-BLK"
+                                        data-ar="غطاء مركز عجلات ويلد ريسينغ أسود مطفي | WEL-P605-BLK">Weld Racing
+                                        Billet Hub Cover Matte Black | WEL-P605-BLK</h3>
+                                    <p class="product-description"
+                                        data-en="Replacement push-through hub cover with sleek matte black finish. ..."
+                                        data-ar="غطاء محاور بديل يتم تركيبه بالكبس بطلاء أسود مطفي أنيق وعصري. ...">
+                                        Replacement push-through hub cover with sleek matte black finish. ...</p>
                                     <span class="product-sku">SKU: SKU-WELDRACING-026-98721</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -880,27 +1063,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 14.000</span>
-                                        <span class="badge badge-warning" data-en="Preorder (5)" data-ar="طلب مسبق (٥)">Preorder (5)</span>
+                                        <span class="badge badge-warning" data-en="Preorder (5)"
+                                            data-ar="طلب مسبق (٥)">Preorder (5)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 16. AC Delco Professional Water Pump -->
-                            <article class="product-card" data-category="drivetrain" data-brand="ac-delco" data-stock="in-stock" data-price="54.000" data-rating="4.6" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="drivetrain" data-brand="ac-delco"
+                                data-stock="in-stock" data-price="54.000" data-rating="4.6" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/radiator.png" alt="Water Pump">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| AC Delco</span>
-                                    <h3 class="product-title" data-en="AC Delco Professional Water Pump Assembly | AC-WP-902" data-ar="مضخة مياه المحرك إيه سي ديلكو الاحترافية | AC-WP-902">AC Delco Professional Water Pump Assembly | AC-WP-902</h3>
-                                    <p class="product-description" data-en="Thoroughly tested water pump assembly ensuring optimal cooling system circulation. ..." data-ar="طلمبة مياه للمحرك مختبرة بالكامل لضمان الدوران الأمثل لسائل التبريد داخل النظام. ...">Thoroughly tested water pump assembly ensuring optimal cooling system circulation. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="AC Delco Professional Water Pump Assembly | AC-WP-902"
+                                        data-ar="مضخة مياه المحرك إيه سي ديلكو الاحترافية | AC-WP-902">AC Delco
+                                        Professional Water Pump Assembly | AC-WP-902</h3>
+                                    <p class="product-description"
+                                        data-en="Thoroughly tested water pump assembly ensuring optimal cooling system circulation. ..."
+                                        data-ar="طلمبة مياه للمحرك مختبرة بالكامل لضمان الدوران الأمثل لسائل التبريد داخل النظام. ...">
+                                        Thoroughly tested water pump assembly ensuring optimal cooling system
+                                        circulation. ...</p>
                                     <span class="product-sku">SKU: SKU-ACDELCO-402-9201</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -912,27 +1108,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 54.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (14)" data-ar="متوفر (١٤)">In Stock (14)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (14)" data-ar="متوفر (١٤)">In Stock (14)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 17. ALL Classic Parts Hood Hinge Assembly -->
-                            <article class="product-card" data-category="chassis" data-brand="all-classic-parts" data-stock="in-stock" data-price="36.000" data-rating="4.1" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="chassis" data-brand="all-classic-parts"
+                                data-stock="in-stock" data-price="36.000" data-rating="4.1" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/chassis_systems.png" alt="Hood Hinge">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| ALL Classic Parts inc</span>
-                                    <h3 class="product-title" data-en="Classic Steel Hood Hinge Spring Assembly Left/Right | ACP-HH-12" data-ar="مفصلات غطاء المحرك الفولاذية الكلاسيكية يمين/يسار | ACP-HH-12">Classic Steel Hood Hinge Spring Assembly Left/Right | ACP-HH-12</h3>
-                                    <p class="product-description" data-en="Heavy duty spring-loaded steel hood hinges ensuring aligned engine bay closure. ..." data-ar="مفصلات غطاء المحرك الفولاذية المدعومة بنوابض لضمان محاذاة غلق غطاء المحرك تماماً. ...">Heavy duty spring-loaded steel hood hinges ensuring aligned engine bay closure. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Classic Steel Hood Hinge Spring Assembly Left/Right | ACP-HH-12"
+                                        data-ar="مفصلات غطاء المحرك الفولاذية الكلاسيكية يمين/يسار | ACP-HH-12">Classic
+                                        Steel Hood Hinge Spring Assembly Left/Right | ACP-HH-12</h3>
+                                    <p class="product-description"
+                                        data-en="Heavy duty spring-loaded steel hood hinges ensuring aligned engine bay closure. ..."
+                                        data-ar="مفصلات غطاء المحرك الفولاذية المدعومة بنوابض لضمان محاذاة غلق غطاء المحرك تماماً. ...">
+                                        Heavy duty spring-loaded steel hood hinges ensuring aligned engine bay closure.
+                                        ...</p>
                                     <span class="product-sku">SKU: SKU-ALLCLASSIC-902-1204</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -944,27 +1153,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 36.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (8)" data-ar="متوفر (٨)">In Stock (8)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (8)" data-ar="متوفر (٨)">In Stock (8)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 18. American Autowire Ground Strap Kit -->
-                            <article class="product-card" data-category="electrical" data-brand="american-autowire" data-stock="in-stock" data-price="9.500" data-rating="4.4" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="electrical" data-brand="american-autowire"
+                                data-stock="in-stock" data-price="9.500" data-rating="4.4" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/engine.png" alt="Ground Strap">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| American Autowire</span>
-                                    <h3 class="product-title" data-en="Engine to Chassis Copper Braided Ground Strap Kit | AAW-GSK" data-ar="طقم أحزمة تأريض نحاسية مجدولة من المحرك للهيكل | AAW-GSK">Engine to Chassis Copper Braided Ground Strap Kit | AAW-GSK</h3>
-                                    <p class="product-description" data-en="Braided copper electrical grounding components to prevent noise and electrical shorts. ..." data-ar="موصلات تأريض نحاسية مجدولة لمنع التشويش والتماسات الدوائر الكهربائية بالمحرك. ...">Braided copper electrical grounding components to prevent noise and electrical shorts. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Engine to Chassis Copper Braided Ground Strap Kit | AAW-GSK"
+                                        data-ar="طقم أحزمة تأريض نحاسية مجدولة من المحرك للهيكل | AAW-GSK">Engine to
+                                        Chassis Copper Braided Ground Strap Kit | AAW-GSK</h3>
+                                    <p class="product-description"
+                                        data-en="Braided copper electrical grounding components to prevent noise and electrical shorts. ..."
+                                        data-ar="موصلات تأريض نحاسية مجدولة لمنع التشويش والتماسات الدوائر الكهربائية بالمحرك. ...">
+                                        Braided copper electrical grounding components to prevent noise and electrical
+                                        shorts. ...</p>
                                     <span class="product-sku">SKU: SKU-AMERAUTO-110-9281</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -976,27 +1198,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 9.500</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (30)" data-ar="متوفر (٣٠)">In Stock (30)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (30)" data-ar="متوفر (٣٠)">In Stock (30)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 19. American Racing Center Cap Logo Emblem -->
-                            <article class="product-card" data-category="mounting" data-brand="american-racing" data-stock="in-stock" data-price="5.500" data-rating="4.7" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="mounting" data-brand="american-racing"
+                                data-stock="in-stock" data-price="5.500" data-rating="4.7" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/bolts.png" alt="Hub Chrome Emblem">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| American Racing</span>
-                                    <h3 class="product-title" data-en="Torq Thrust Hub Cover Chrome Emblem replacement | AMR-CC-5" data-ar="شعار كروم بديل لغطاء محاور عجلات تورك ثروست | AMR-CC-5">Torq Thrust Hub Cover Chrome Emblem replacement | AMR-CC-5</h3>
-                                    <p class="product-description" data-en="Brilliant chrome replacement wheel center cap badge with American Racing logo. ..." data-ar="شعار بديل من الكروم اللامع لأغطية العجلات يحمل هوية أمريكان ريسينغ. ...">Brilliant chrome replacement wheel center cap badge with American Racing logo. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Torq Thrust Hub Cover Chrome Emblem replacement | AMR-CC-5"
+                                        data-ar="شعار كروم بديل لغطاء محاور عجلات تورك ثروست | AMR-CC-5">Torq Thrust Hub
+                                        Cover Chrome Emblem replacement | AMR-CC-5</h3>
+                                    <p class="product-description"
+                                        data-en="Brilliant chrome replacement wheel center cap badge with American Racing logo. ..."
+                                        data-ar="شعار بديل من الكروم اللامع لأغطية العجلات يحمل هوية أمريكان ريسينغ. ...">
+                                        Brilliant chrome replacement wheel center cap badge with American Racing logo.
+                                        ...</p>
                                     <span class="product-sku">SKU: SKU-AMERRACING-023-1029</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -1008,27 +1243,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 5.500</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (50)" data-ar="متوفر (٥٠)">In Stock (50)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (50)" data-ar="متوفر (٥٠)">In Stock (50)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 20. ARP Performance Intake Manifold Bolts -->
-                            <article class="product-card" data-category="mounting" data-brand="arp-performance" data-stock="in-stock" data-price="18.000" data-rating="4.8" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="mounting" data-brand="arp-performance"
+                                data-stock="in-stock" data-price="18.000" data-rating="4.8" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/bolts.png" alt="Manifold Bolts">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| ARP Performance</span>
-                                    <h3 class="product-title" data-en="Hex Flange Black Oxide Intake Manifold Bolt Kit | ARP-IM-8" data-ar="طقم مسامير مجمع السحب أكسيد أسود بشفة سداسية | ARP-IM-8">Hex Flange Black Oxide Intake Manifold Bolt Kit | ARP-IM-8</h3>
-                                    <p class="product-description" data-en="Black oxide coated high-tensile fasteners preventing manifold warping and vacuum leaks. ..." data-ar="مسامير عالية القوة ومطلية بأكسيد الأسود لمنع تقوس وتضرر مجمع السحب ومنع تسريبات الهواء. ...">Black oxide coated high-tensile fasteners preventing manifold warping and vacuum leaks. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Hex Flange Black Oxide Intake Manifold Bolt Kit | ARP-IM-8"
+                                        data-ar="طقم مسامير مجمع السحب أكسيد أسود بشفة سداسية | ARP-IM-8">Hex Flange
+                                        Black Oxide Intake Manifold Bolt Kit | ARP-IM-8</h3>
+                                    <p class="product-description"
+                                        data-en="Black oxide coated high-tensile fasteners preventing manifold warping and vacuum leaks. ..."
+                                        data-ar="مسامير عالية القوة ومطلية بأكسيد الأسود لمنع تقوس وتضرر مجمع السحب ومنع تسريبات الهواء. ...">
+                                        Black oxide coated high-tensile fasteners preventing manifold warping and vacuum
+                                        leaks. ...</p>
                                     <span class="product-sku">SKU: SKU-ARPPERF-293-9204</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -1040,27 +1288,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 18.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (25)" data-ar="متوفر (٢٥)">In Stock (25)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (25)" data-ar="متوفر (٢٥)">In Stock (25)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 21. Holley EFI 3.5 Touch Screen Controller -->
-                            <article class="product-card" data-category="electrical" data-brand="holley" data-stock="in-stock" data-price="220.000" data-rating="5.0" data-new="true" data-sale="false">
+                            <article class="product-card" data-category="electrical" data-brand="holley"
+                                data-stock="in-stock" data-price="220.000" data-rating="5.0" data-new="true"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/engine.png" alt="Holley Handheld">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Holley</span>
-                                    <h3 class="product-title" data-en="Holley EFI Handheld Touch Screen Controller | HOL-553-106" data-ar="شاشة تحكم هولي الرياضية المحمولة تعمل باللمس | HOL-553-106">Holley EFI Handheld Touch Screen Controller | HOL-553-106</h3>
-                                    <p class="product-description" data-en="Handheld digital interface for live ECU tuning, sensor monitoring, and calibration. ..." data-ar="جهاز محمول يوفر شاشة تحكم لتعديل وتغيير خيارات كمبيوتر السيارة الرياضي ومراقبة الحساسات. ...">Handheld digital interface for live ECU tuning, sensor monitoring, and calibration. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Holley EFI Handheld Touch Screen Controller | HOL-553-106"
+                                        data-ar="شاشة تحكم هولي الرياضية المحمولة تعمل باللمس | HOL-553-106">Holley EFI
+                                        Handheld Touch Screen Controller | HOL-553-106</h3>
+                                    <p class="product-description"
+                                        data-en="Handheld digital interface for live ECU tuning, sensor monitoring, and calibration. ..."
+                                        data-ar="جهاز محمول يوفر شاشة تحكم لتعديل وتغيير خيارات كمبيوتر السيارة الرياضي ومراقبة الحساسات. ...">
+                                        Handheld digital interface for live ECU tuning, sensor monitoring, and
+                                        calibration. ...</p>
                                     <span class="product-sku">SKU: SKU-HOLLEY-120-1062</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -1072,27 +1333,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 220.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (6)" data-ar="متوفر (٦)">In Stock (6)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (6)" data-ar="متوفر (٦)">In Stock (6)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 22. Mopar Performance Leaf Spring Pack -->
-                            <article class="product-card" data-category="suspension" data-brand="mopar" data-stock="out-of-stock" data-price="165.000" data-rating="4.6" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="suspension" data-brand="mopar"
+                                data-stock="in-stock" data-price="165.000" data-rating="4.6" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/suspension.png" alt="Leaf Springs">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Mopar</span>
-                                    <h3 class="product-title" data-en="Mopar Performance HD Rear Leaf Spring Suspension | MOP-LS-4" data-ar="مجموعة نوابض ورقية خلفية رياضية من مو بار | MOP-LS-4">Mopar Performance HD Rear Leaf Spring Suspension | MOP-LS-4</h3>
-                                    <p class="product-description" data-en="Heavy duty rear leaf spring packs optimized for vehicle load capacity and traction. ..." data-ar="حزم نوابض خلفية متينة للغاية ومحسنة لقدرة تحميل السيارة وقوة الجر. ...">Heavy duty rear leaf spring packs optimized for vehicle load capacity and traction. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Mopar Performance HD Rear Leaf Spring Suspension | MOP-LS-4"
+                                        data-ar="مجموعة نوابض ورقية خلفية رياضية من مو بار | MOP-LS-4">Mopar Performance
+                                        HD Rear Leaf Spring Suspension | MOP-LS-4</h3>
+                                    <p class="product-description"
+                                        data-en="Heavy duty rear leaf spring packs optimized for vehicle load capacity and traction. ..."
+                                        data-ar="حزم نوابض خلفية متينة للغاية ومحسنة لقدرة تحميل السيارة وقوة الجر. ...">
+                                        Heavy duty rear leaf spring packs optimized for vehicle load capacity and
+                                        traction. ...</p>
                                     <span class="product-sku">SKU: SKU-MOPAR-530-29104</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -1104,27 +1378,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 165.000</span>
-                                        <span class="badge" style="background-color: #c62828; color: #ffffff;" data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (8)" data-ar="متوفر (8)">In Stock (8)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" disabled data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 23. Edelbrock Victor Junior Intake Manifold -->
-                            <article class="product-card" data-category="drivetrain" data-brand="edelbrock" data-stock="preorder" data-price="210.000" data-rating="4.7" data-new="false" data-sale="false">
+                            <article class="product-card" data-category="drivetrain" data-brand="edelbrock"
+                                data-stock="preorder" data-price="210.000" data-rating="4.7" data-new="false"
+                                data-sale="false">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/engine.png" alt="Victor Jr Manifold">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| Edelbrock</span>
-                                    <h3 class="product-title" data-en="Edelbrock Victor Jr Single Plane Intake Manifold | EDB-2908" data-ar="مجمع سحب إديلبروك فيكتور جي آر الرياضي | EDB-2908">Edelbrock Victor Jr Single Plane Intake Manifold | EDB-2908</h3>
-                                    <p class="product-description" data-en="Single-plane high-performance manifold designed for competitive racing and high RPM limits. ..." data-ar="مجمع سحب رياضي أحادي الاتجاه مصمم لسيارات السباق التنافسية ودورات المحرك العالية. ...">Single-plane high-performance manifold designed for competitive racing and high RPM limits. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="Edelbrock Victor Jr Single Plane Intake Manifold | EDB-2908"
+                                        data-ar="مجمع سحب إديلبروك فيكتور جي آر الرياضي | EDB-2908">Edelbrock Victor Jr
+                                        Single Plane Intake Manifold | EDB-2908</h3>
+                                    <p class="product-description"
+                                        data-en="Single-plane high-performance manifold designed for competitive racing and high RPM limits. ..."
+                                        data-ar="مجمع سحب رياضي أحادي الاتجاه مصمم لسيارات السباق التنافسية ودورات المحرك العالية. ...">
+                                        Single-plane high-performance manifold designed for competitive racing and high
+                                        RPM limits. ...</p>
                                     <span class="product-sku">SKU: SKU-EDELBROCK-140-2908</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -1136,27 +1423,40 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 210.000</span>
-                                        <span class="badge badge-warning" data-en="Preorder (4)" data-ar="طلب مسبق (٤)">Preorder (4)</span>
+                                        <span class="badge badge-warning" data-en="Preorder (4)"
+                                            data-ar="طلب مسبق (٤)">Preorder (4)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
                             <!-- 24. 50 Resto Door Weatherstrip Kit -->
-                            <article class="product-card" data-category="chassis" data-brand="50-resto" data-stock="in-stock" data-price="29.000" data-rating="4.3" data-new="false" data-sale="true">
+                            <article class="product-card" data-category="chassis" data-brand="50-resto"
+                                data-stock="in-stock" data-price="29.000" data-rating="4.3" data-new="false"
+                                data-sale="true">
                                 <div class="product-image-container">
-                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
-                                    <i class="fa-regular fa-image" style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
+                                    <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                            class="fa-regular fa-heart"></i></button>
+                                    <i class="fa-regular fa-image"
+                                        style="font-size: 3rem; color: rgba(255,255,255,0.1); position: absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1;"></i>
                                     <img src="images/chassis_systems.png" alt="Weatherstrip Seal">
                                 </div>
                                 <div class="product-info">
                                     <span class="product-brand-label">| 50 Resto</span>
-                                    <h3 class="product-title" data-en="1979-93 Ford Mustang Outer Door Weatherstrip Seal | LRS-WD" data-ar="جلد أبواب خارجية فورد موستنج ١٩٧٩-١٩٩٣ | LRS-WD">1979-93 Ford Mustang Outer Door Weatherstrip Seal | LRS-WD</h3>
-                                    <p class="product-description" data-en="Molded rubber door seal weatherstripping preventing wind noise and rain leaks. ..." data-ar="جلد أبواب مطاطي مقولب عازل للحرارة والماء يمنع تسرب مياه الأمطار وأصوات الرياح. ...">Molded rubber door seal weatherstripping preventing wind noise and rain leaks. ...</p>
+                                    <h3 class="product-title"
+                                        data-en="1979-93 Ford Mustang Outer Door Weatherstrip Seal | LRS-WD"
+                                        data-ar="جلد أبواب خارجية فورد موستنج ١٩٧٩-١٩٩٣ | LRS-WD">1979-93 Ford Mustang
+                                        Outer Door Weatherstrip Seal | LRS-WD</h3>
+                                    <p class="product-description"
+                                        data-en="Molded rubber door seal weatherstripping preventing wind noise and rain leaks. ..."
+                                        data-ar="جلد أبواب مطاطي مقولب عازل للحرارة والماء يمنع تسرب مياه الأمطار وأصوات الرياح. ...">
+                                        Molded rubber door seal weatherstripping preventing wind noise and rain leaks.
+                                        ...</p>
                                     <span class="product-sku">SKU: SKU-50RESTO-026-92842</span>
                                     <div class="product-rating">
                                         <i class="fa-solid fa-star"></i>
@@ -1168,17 +1468,21 @@
                                     </div>
                                     <div class="product-footer">
                                         <span class="product-price">KD 29.000</span>
-                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (18)" data-ar="متوفر (١٨)">In Stock (18)</span>
+                                        <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                            data-en="In Stock (18)" data-ar="متوفر (١٨)">In Stock (18)</span>
                                     </div>
                                     <div class="product-card-actions">
-                                        <button class="btn btn-secondary btn-wishlist" type="button"><i class="fa-regular fa-heart"></i> <span data-en="Wishlist" data-ar="المفضلة">Wishlist</span></button>
-                                        <a href="#" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                        <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                            data-ar="التفاصيل">Details</a>
+                                        <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                                class="fa-solid fa-cart-shopping"></i> Add</button>
                                     </div>
                                 </div>
                             </article>
 
-                            <div class="no-results-msg" id="no-products-message" data-en="No products found matching filters." data-ar="لم يتم العثور على منتجات تطابق شروط التصفية المحددة.">
+                            <div class="no-results-msg" id="no-products-message"
+                                data-en="No products found matching filters."
+                                data-ar="لم يتم العثور على منتجات تطابق شروط التصفية المحددة.">
                                 No products found matching filters.
                             </div>
 
@@ -1187,13 +1491,16 @@
 
                     <!-- Pagination Section -->
                     <div class="catalog-pagination">
-                        <div id="pagination-status" data-en="Showing 1-8 of 24" data-ar="عرض ١-٨ من ٢٤">Showing 1-8 of 24</div>
+                        <div id="pagination-status" data-en="Showing 1-8 of 24" data-ar="عرض ١-٨ من ٢٤">Showing 1-8 of
+                            24</div>
                         <div class="pagination-buttons" id="pagination-controls">
-                            <button class="pagination-btn disabled" id="prev-page-btn" data-en="&larr; Prev" data-ar="&larr; السابق">&larr; Prev</button>
+                            <button class="pagination-btn disabled" id="prev-page-btn" data-en="&larr; Prev"
+                                data-ar="&larr; السابق">&larr; Prev</button>
                             <button class="pagination-btn active" data-page="1">1</button>
                             <button class="pagination-btn" data-page="2">2</button>
                             <button class="pagination-btn" data-page="3">3</button>
-                            <button class="pagination-btn" id="next-page-btn" data-en="Next &rarr;" data-ar="التالي &rarr;">Next &rarr;</button>
+                            <button class="pagination-btn" id="next-page-btn" data-en="Next &rarr;"
+                                data-ar="التالي &rarr;">Next &rarr;</button>
                         </div>
                     </div>
 
@@ -1204,15 +1511,32 @@
         </main>
     </div>
 
+
     <!-- ============== FOOTER ============== -->
     <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">
+                    Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox."
+                    data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">
+                    New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.
+                </p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo footer-logo">Q8MOUNT</a>
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
                 <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994."
-                   data-ar="حلول تركيب عالية الأداء مصممة خصيصًا للتطبيقات الصناعية وتطبيقات السيارات. نقدم التميز التقني من خلال التصنيع الدقيق منذ عام ١٩٩٤.">
-                    High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.
-                </p>
+                    data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">
+                    High-performance mounting solutions engineered for industrial and automotive applications.
+                    Delivering technical excellence through precision manufacturing since 1994.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -1221,46 +1545,45 @@
                 </div>
             </div>
             <div class="footer-column">
-                <h4 data-en="Shop" data-ar="المتجر">Shop</h4>
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
                 <nav class="footer-nav">
-                    <a href="#" data-en="Chassis Systems" data-ar="أنظمة الهيكل">Chassis Systems</a>
-                    <a href="#" data-en="Drivetrain" data-ar="مجموعة نقل الحركة">Drivetrain</a>
-                    <a href="#" data-en="Electrical" data-ar="الكهرباء">Electrical</a>
-                    <a href="#" data-en="Mounting Hardware" data-ar="أجهزة التركيب">Mounting Hardware</a>
-                    <a href="#" data-en="Suspension" data-ar="أنظمة التعليق">Suspension</a>
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <h4 data-en="Resources" data-ar="الموارد">Resources</h4>
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
                 <nav class="footer-nav">
-                    <a href="#" data-en="Technical Specs" data-ar="المواصفات الفنية">Technical Specs</a>
-                    <a href="#" data-en="Compliance Docs" data-ar="مستندات الامتثال">Compliance Docs</a>
-                    <a href="#" data-en="Installation Guides" data-ar="أدلة التركيب">Installation Guides</a>
-                    <a href="#" data-en="Warranty Info" data-ar="معلومات الضمان">Warranty Info</a>
-                    <a href="#" data-en="CAD Library" data-ar="مكتبة رسومات كاد">CAD Library</a>
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <h4 data-en="Corporate" data-ar="الشركة">Corporate</h4>
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
                 <nav class="footer-nav">
-                    <a href="#" data-en="About Us" data-ar="من نحن">About Us</a>
-                    <a href="#" data-en="Contact Engineering" data-ar="الاتصال بالهندسة">Contact Engineering</a>
-                    <a href="#" data-en="Careers" data-ar="الوظائف">Careers</a>
-                    <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
-                    <a href="#" data-en="Terms of Sale" data-ar="شروط البيع">Terms of Sale</a>
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
                 </nav>
             </div>
         </div>
         <div class="footer-bottom">
-            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
-            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN USA</span>
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE."
+                data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL.
+                PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN
+                KUWAIT</span>
         </div>
     </footer>
 
     <!-- ============== INTERACTION SCRIPT ============== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
+
             /* ---------- GLOBAL ELEMENTS ---------- */
             const htmlEl = document.documentElement;
             const themeSwitch = document.querySelector('.theme-switch');
@@ -1272,7 +1595,7 @@
             const paginationStatus = document.getElementById('pagination-status');
             const prevPageBtn = document.getElementById('prev-page-btn');
             const nextPageBtn = document.getElementById('next-page-btn');
-            
+
             /* ---------- PAGINATION STATE ---------- */
             let currentPage = 1;
             const pageSize = 8;
@@ -1380,7 +1703,7 @@
                 htmlEl.setAttribute('lang', lang);
                 htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
                 localStorage.setItem('lang', lang);
-                
+
                 langButtons.forEach(btn => {
                     btn.classList.toggle('active', btn.dataset.lang === lang);
                 });
@@ -1407,7 +1730,7 @@
                 // Placeholders translation for inputs that don't use standard data-en
                 document.querySelectorAll('[data-en-placeholder]').forEach(el => {
                     const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
-                    if(val) el.placeholder = val;
+                    if (val) el.placeholder = val;
                 });
 
                 // Mirror icons if needed
@@ -1418,7 +1741,7 @@
                         icon.style.transform = 'none';
                     }
                 });
-                
+
                 // Align page title text alignment
                 const mainTitle = document.getElementById('page-main-title');
                 if (mainTitle) {
@@ -1452,55 +1775,14 @@
 
             /* ---------- PRODUCT WISHLIST TOGGLE ---------- */
             gridContainer.addEventListener('click', (e) => {
-                const btn = e.target.closest('.btn-wishlist');
-                if (btn) {
-                    btn.classList.toggle('active');
-                    const icon = btn.querySelector('i');
-                    const card = btn.closest('.product-card');
-                    const imageWishlistBtn = card.querySelector('.product-image-container .product-card-wishlist-btn');
-                    
-                    if (btn.classList.contains('active')) {
-                        btn.style.color = 'var(--color-cart)';
-                        btn.style.borderColor = 'var(--color-cart)';
-                        icon.className = 'fa-solid fa-heart';
-                        if(imageWishlistBtn) {
-                            imageWishlistBtn.classList.add('active');
-                            imageWishlistBtn.querySelector('i').className = 'fa-solid fa-heart';
-                        }
-                    } else {
-                        btn.style.color = '';
-                        btn.style.borderColor = '';
-                        icon.className = 'fa-regular fa-heart';
-                        if(imageWishlistBtn) {
-                            imageWishlistBtn.classList.remove('active');
-                            imageWishlistBtn.querySelector('i').className = 'fa-regular fa-heart';
-                        }
-                    }
-                }
-
                 const imgBtn = e.target.closest('.product-card-wishlist-btn');
                 if (imgBtn) {
                     imgBtn.classList.toggle('active');
                     const icon = imgBtn.querySelector('i');
-                    const card = imgBtn.closest('.product-card');
-                    const bottomWishlistBtn = card.querySelector('.btn-wishlist');
-                    
                     if (imgBtn.classList.contains('active')) {
                         icon.className = 'fa-solid fa-heart';
-                        if (bottomWishlistBtn) {
-                            bottomWishlistBtn.classList.add('active');
-                            bottomWishlistBtn.style.color = 'var(--color-cart)';
-                            bottomWishlistBtn.style.borderColor = 'var(--color-cart)';
-                            bottomWishlistBtn.querySelector('i').className = 'fa-solid fa-heart';
-                        }
                     } else {
                         icon.className = 'fa-regular fa-heart';
-                        if (bottomWishlistBtn) {
-                            bottomWishlistBtn.classList.remove('active');
-                            bottomWishlistBtn.style.color = '';
-                            bottomWishlistBtn.style.borderColor = '';
-                            bottomWishlistBtn.querySelector('i').className = 'fa-regular fa-heart';
-                        }
                     }
                 }
             });
@@ -1549,7 +1831,7 @@
                 const make = finderMake.value;
                 const lang = htmlEl.getAttribute('lang') || 'en';
                 finderModel.innerHTML = `<option value="">${trans[lang].select_model}</option>`;
-                
+
                 if (make !== "" && vehicleModels[make]) {
                     vehicleModels[make].forEach(modelName => {
                         const opt = document.createElement('option');
@@ -1592,7 +1874,7 @@
                 if (appValue !== "") {
                     categoryFilterSelect.value = appValue;
                     filterCatalog();
-                    
+
                     const toolbar = document.querySelector('.listing-toolbar');
                     toolbar.scrollIntoView({ behavior: 'smooth' });
                 }
@@ -1609,7 +1891,7 @@
             const stockCheckboxes = document.querySelectorAll('input[name="stock-status"]');
             const ratingCheckboxes = document.querySelectorAll('input[name="rating"]');
             const sortSelect = document.getElementById('sort-select');
-            
+
             priceSliderControl.addEventListener('input', () => {
                 priceMaxInput.value = priceSliderControl.value;
                 currentPage = 1;
@@ -1633,7 +1915,7 @@
                 currentPage = 1;
                 filterCatalog();
             });
-            
+
             brandSearchInput.addEventListener('input', () => {
                 const searchVal = brandSearchInput.value.toLowerCase();
                 const checkboxRows = document.querySelectorAll('#brands-checkbox-list .filter-checkbox-row');
@@ -1667,7 +1949,7 @@
             function resetAllFilters() {
                 categoryFilterSelect.value = "all";
                 brandSearchInput.value = "";
-                
+
                 const checkboxRows = document.querySelectorAll('#brands-checkbox-list .filter-checkbox-row');
                 checkboxRows.forEach(row => row.style.display = 'flex');
 
@@ -1678,6 +1960,14 @@
                 stockCheckboxes.forEach(chk => chk.checked = false);
                 ratingCheckboxes.forEach(chk => chk.checked = true);
                 sortSelect.value = "featured";
+
+                // Reset pills active state
+                if (typeof categoryPills !== 'undefined') {
+                    categoryPills.forEach(p => {
+                        p.classList.toggle('active', p.getAttribute('data-value') === 'all');
+                    });
+                }
+
                 currentPage = 1;
 
                 filterCatalog();
@@ -1685,25 +1975,61 @@
 
             document.getElementById('btn-clear-filters-top').addEventListener('click', resetAllFilters);
 
+            // Accordion Toggle for Filters
+            document.querySelectorAll('.filter-title').forEach(title => {
+                title.addEventListener('click', () => {
+                    const section = title.parentElement;
+                    section.classList.toggle('collapsed');
+                });
+            });
+
+            // Category Pills Click logic
+            const categoryPills = document.querySelectorAll('.category-pill-btn');
+            categoryPills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    const val = pill.getAttribute('data-value');
+                    categoryFilterSelect.value = val;
+
+                    // Toggle active class on pills
+                    categoryPills.forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+
+                    currentPage = 1;
+                    filterCatalog();
+                });
+            });
+
+            // Keep pills in sync when the select changes (e.g. via reset or other scripts)
+            categoryFilterSelect.addEventListener('change', () => {
+                const val = categoryFilterSelect.value;
+                categoryPills.forEach(p => {
+                    if (p.getAttribute('data-value') === val) {
+                        p.classList.add('active');
+                    } else {
+                        p.classList.remove('active');
+                    }
+                });
+            });
+
             function filterCatalog() {
                 const selectedCategory = categoryFilterSelect.value;
                 const minPrice = parseFloat(priceMinInput.value) || 0;
                 const maxPrice = parseFloat(priceMaxInput.value) || 1000;
-                
+
                 const checkedBrands = Array.from(brandCheckboxes)
                     .filter(chk => chk.checked)
                     .map(chk => chk.value);
-                
+
                 const showInStockOnly = Array.from(stockCheckboxes).some(chk => chk.value === 'in-stock-only' && chk.checked);
                 const showNewArrivals = Array.from(stockCheckboxes).some(chk => chk.value === 'new-arrivals' && chk.checked);
                 const showOnSale = Array.from(stockCheckboxes).some(chk => chk.value === 'on-sale' && chk.checked);
-                
+
                 const checkedRatings = Array.from(ratingCheckboxes)
                     .filter(chk => chk.checked)
                     .map(chk => parseFloat(chk.value));
 
                 const cards = Array.from(gridContainer.querySelectorAll('.product-card'));
-                
+
                 // Track filtered products list
                 totalFilteredProducts = [];
 
@@ -1808,7 +2134,7 @@
                 document.getElementById('pagination-controls').style.display = 'flex';
 
                 const totalPages = Math.ceil(totalVisible / pageSize);
-                
+
                 // Bound check currentPage
                 if (currentPage > totalPages) currentPage = totalPages;
                 if (currentPage < 1) currentPage = 1;

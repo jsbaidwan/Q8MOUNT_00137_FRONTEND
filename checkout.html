@@ -19,22 +19,25 @@
 
 <body>
 
-    <!-- ============== HEADER ============== -->
+            <!-- ============== HEADER ============== -->
     <header class="header">
         <div class="header-left">
             <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
             <a href="index.html" class="logo">Q8MOUNT</a>
             <nav class="main-nav">
-                <a href="products.html">Products</a>
-                <a href="#">Fleet Solutions</a>
-                <a href="#">OEM Services</a>
-                <a href="#">Support</a>
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
             </nav>
         </div>
         <div class="header-right">
             <div class="search-bar">
-                <i class="fa-solid fa-search text-muted"></i>
-                <input type="text" placeholder="Search Technical Database...">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
             </div>
 
             <!-- Language Switcher -->
@@ -421,24 +424,24 @@
         </main>
     </div>
 
-    <!-- ============== FOOTER ============== -->
+            <!-- ============== FOOTER ============== -->
     <footer class="footer">
         <!-- Newsletter strip -->
         <div class="footer-newsletter">
             <div class="newsletter-text">
-                <h3>Engineer-Grade Updates. No Noise.</h3>
-                <p>New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
             </div>
             <form class="newsletter-form" onsubmit="return false;">
                 <input type="email" placeholder="your.work@email.com" required>
-                <button class="btn btn-cart" type="submit">Subscribe</button>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
             </form>
         </div>
 
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo footer-logo">Q8MOUNT</a>
-                <p>High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -447,39 +450,35 @@
                 </div>
             </div>
             <div class="footer-column">
-                <h4>Shop</h4>
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
                 <nav class="footer-nav">
-                    <a href="#">Chassis Systems</a>
-                    <a href="#">Drivetrain</a>
-                    <a href="#">Electrical</a>
-                    <a href="#">Mounting Hardware</a>
-                    <a href="#">Suspension</a>
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <h4>Resources</h4>
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
                 <nav class="footer-nav">
-                    <a href="#">Technical Specs</a>
-                    <a href="#">Compliance Docs</a>
-                    <a href="#">Installation Guides</a>
-                    <a href="#">Warranty Info</a>
-                    <a href="#">CAD Library</a>
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <h4>Corporate</h4>
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
                 <nav class="footer-nav">
-                    <a href="#">About Us</a>
-                    <a href="#">Contact Engineering</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Sale</a>
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
                 </nav>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
-            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN USA</span>
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
         </div>
     </footer>
 
@@ -582,6 +581,27 @@
             langButtons.forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
                 btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+            });
+
+            // Update text elements with data-en/data-ar
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                if (text) {
+                    const icon = el.querySelector('i');
+                    if (icon) {
+                        el.innerHTML = '';
+                        el.appendChild(icon);
+                        el.appendChild(document.createTextNode(' ' + text));
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Translate placeholder text for inputs
+            document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                if (val) el.placeholder = val;
             });
             
             if(lang === 'ar') {

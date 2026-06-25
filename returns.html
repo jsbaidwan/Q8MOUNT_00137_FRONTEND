@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Returns Policy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles for Returns Policy Page */
+        .returns-hero-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-bottom: var(--spacing-xl);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .returns-hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 15% 15%, rgba(0, 90, 140, 0.3) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(201, 0, 0, 0.15) 0%, transparent 45%),
+                linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-2) 100%);
+            z-index: -1;
+        }
+
+        .returns-hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .returns-hero-eyebrow {
+            color: var(--color-accent-cyan);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .returns-hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4DE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Lead Callout Card */
+        .returns-lead-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+
+        [dir="rtl"] .returns-lead-card {
+            border-left: 1px solid var(--color-border);
+            border-right: 5px solid var(--color-primary);
+        }
+
+        .returns-lead-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .returns-lead-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .returns-lead-content h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: 6px;
+        }
+
+        .returns-lead-content p {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Section Titles */
+        .returns-section-header {
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .returns-section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .returns-section-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--color-primary);
+            border-radius: var(--radius);
+            transform: translateX(-50%);
+        }
+
+        /* Eligibility Grid */
+        .returns-eligibility-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .returns-eligibility-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg) var(--spacing-sm);
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .returns-eligibility-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--color-primary);
+        }
+
+        .returns-eligibility-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-xs);
+            transition: all 0.3s ease;
+        }
+
+        .returns-eligibility-card:hover .returns-eligibility-icon {
+            background-color: var(--color-primary);
+            color: white;
+            transform: rotate(360deg);
+        }
+
+        .returns-eligibility-card h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .returns-eligibility-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        /* Stepper/Process Timeline */
+        .returns-stepper-container {
+            position: relative;
+            max-width: 900px;
+            margin: var(--spacing-xl) auto var(--spacing-xxl) auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .returns-step-item {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            align-items: flex-start;
+        }
+
+        .returns-step-item::after {
+            content: "";
+            position: absolute;
+            top: 44px;
+            left: 22px;
+            bottom: calc(-1 * var(--spacing-lg));
+            width: 2px;
+            background-color: var(--color-border);
+            z-index: 1;
+        }
+
+        [dir="rtl"] .returns-step-item::after {
+            left: auto;
+            right: 22px;
+        }
+
+        .returns-step-item:last-child::after {
+            display: none;
+        }
+
+        .returns-step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .returns-step-number {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--color-bg-sidebar);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 5;
+            box-shadow: 0 0 0 6px var(--color-bg-main);
+            transition: all 0.3s ease;
+        }
+
+        .returns-step-item:hover .returns-step-number {
+            background-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 0 10px var(--color-primary-soft);
+            transform: scale(1.1);
+        }
+
+        .returns-step-content {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            flex-grow: 1;
+            transition: all 0.3s ease;
+        }
+
+        .returns-step-item:hover .returns-step-content {
+            transform: translateX(4px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        [dir="rtl"] .returns-step-item:hover .returns-step-content {
+            transform: translateX(-4px);
+        }
+
+        .returns-step-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: 4px;
+        }
+
+        .returns-step-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Refund Callout Alert Box */
+        .returns-refund-callout {
+            background: var(--color-primary-soft);
+            border: 1px solid rgba(0, 90, 140, 0.15);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .returns-refund-callout:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .returns-refund-icon {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            flex-shrink: 0;
+            background: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .returns-refund-info h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: 6px;
+        }
+
+        .returns-refund-info p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Call To Action Block */
+        .returns-cta-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .returns-cta-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% 10%, rgba(0, 163, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .returns-cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .returns-cta-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+            color: #FFFFFF;
+        }
+
+        .returns-cta-desc {
+            font-size: 1rem;
+            color: #9CA3AF;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .returns-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 90, 140, 0.4);
+        }
+
+        .returns-cta-btn:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 90, 140, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1024px) {
+            .returns-eligibility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .returns-hero-title {
+                font-size: 2.2rem;
+            }
+            .returns-lead-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .returns-eligibility-grid {
+                grid-template-columns: 1fr;
+            }
+            .returns-step-item::after {
+                top: 36px;
+                left: 18px;
+            }
+            [dir="rtl"] .returns-step-item::after {
+                left: auto;
+                right: 18px;
+            }
+            .returns-step-number {
+                width: 36px;
+                height: 36px;
+                font-size: 0.95rem;
+                box-shadow: 0 0 0 4px var(--color-bg-main);
+            }
+            .returns-step-item {
+                gap: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="Returns Policy" data-ar="سياسة الإرجاع">Returns Policy</span>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="returns-hero-section">
+                <span class="returns-hero-eyebrow" data-en="Hassle-Free Post-Purchase Support" data-ar="دعم ما بعد البيع خالي من المتاعب">Hassle-Free Post-Purchase Support</span>
+                <h1 class="returns-hero-title" data-en="Returns Policy" data-ar="سياسة الإرجاع">Returns Policy</h1>
+            </section>
+
+            <!-- Core Lead Policy Card -->
+            <section class="returns-lead-card">
+                <div class="returns-lead-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                <div class="returns-lead-content">
+                    <h2 data-en="30-Day Return Policy" data-ar="سياسة الإرجاع خلال ٣٠ يوماً">30-Day Return Policy</h2>
+                    <p data-en="We offer a 30-day return policy on most items. If you're not satisfied with your purchase, you can return it within 30 days of delivery for a full refund or exchange." data-ar="نحن نقدم سياسة إرجاع مرنة لمدة 30 يوماً على معظم السلع. إذا لم تكن راضياً تماماً عن مشترياتك، يمكنك إرجاعها في غضون 30 يوماً من تاريخ الاستلام لاسترداد كامل المبلغ أو الاستبدال.">
+                        We offer a 30-day return policy on most items. If you're not satisfied with your purchase, you can return it within 30 days of delivery for a full refund or exchange.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section: Return Eligibility -->
+            <section style="margin-bottom: var(--spacing-xxl);">
+                <div class="returns-section-header">
+                    <h2 class="returns-section-title" data-en="Return Eligibility" data-ar="أهلية وشروط الإرجاع">Return Eligibility</h2>
+                </div>
+                
+                <div class="returns-eligibility-grid">
+                    <!-- Eligibility 1 -->
+                    <div class="returns-eligibility-card">
+                        <div class="returns-eligibility-icon"><i class="fa-solid fa-box-open"></i></div>
+                        <h3 data-en="Original Condition" data-ar="الحالة الأصلية">Original Condition</h3>
+                        <p data-en="Items must be in original condition and packaging." data-ar="يجب أن تكون السلع في حالتها الأصلية وعبوتها الأصلية غير المفتوحة.">Be in original condition and packaging</p>
+                    </div>
+                    <!-- Eligibility 2 -->
+                    <div class="returns-eligibility-card">
+                        <div class="returns-eligibility-icon"><i class="fa-solid fa-paperclip"></i></div>
+                        <h3 data-en="Complete Set" data-ar="مجموعة كاملة">Complete Set</h3>
+                        <p data-en="Include all original accessories and documentation." data-ar="يجب إرفاق جميع الملحقات والكتيبات والمستندات الأصلية.">Include all original accessories and documentation</p>
+                    </div>
+                    <!-- Eligibility 3 -->
+                    <div class="returns-eligibility-card">
+                        <div class="returns-eligibility-icon"><i class="fa-solid fa-ban"></i></div>
+                        <h3 data-en="No Damage" data-ar="خالٍ من التلف">No Damage</h3>
+                        <p data-en="Items must not be damaged or show signs of wear." data-ar="يجب ألا تكون السلع تالفة أو تظهر عليها أي علامات استخدام أو تركيب.">Not be damaged or show signs of wear</p>
+                    </div>
+                    <!-- Eligibility 4 -->
+                    <div class="returns-eligibility-card">
+                        <div class="returns-eligibility-icon"><i class="fa-solid fa-tag"></i></div>
+                        <h3 data-en="Original Tags" data-ar="التاج الأصلي">Original Tags</h3>
+                        <p data-en="Have original tags attached (for clothing and fitments)." data-ar="يجب أن تكون العلامات (التاغات) والملصقات الأصلية مثبتة بالمنتج.">Have original tags attached (for clothing)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: How to Return -->
+            <section style="margin-bottom: var(--spacing-xxl);">
+                <div class="returns-section-header">
+                    <h2 class="returns-section-title" data-en="How to Return" data-ar="خطوات وإجراءات الإرجاع">How to Return</h2>
+                </div>
+
+                <div class="returns-stepper-container">
+                    <!-- Step 1 -->
+                    <div class="returns-step-item">
+                        <div class="returns-step-number">1</div>
+                        <div class="returns-step-content">
+                            <h4 class="returns-step-title" data-en="Initiate Return" data-ar="بدء طلب الإرجاع">Initiate Return</h4>
+                            <p class="returns-step-desc" data-en="Contact our customer service to initiate a return." data-ar="اتصل بفريق خدمة العملاء لدينا لبدء طلب الإرجاع الخاص بك.">Step 1: Contact our customer service to initiate a return</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="returns-step-item">
+                        <div class="returns-step-number">2</div>
+                        <div class="returns-step-content">
+                            <h4 class="returns-step-title" data-en="Pack the Item" data-ar="تعبئة وتغليف المنتج">Pack the Item</h4>
+                            <p class="returns-step-desc" data-en="Pack the item securely in its original packaging." data-ar="قم بتعبئة وتغليف المنتج بشكل آمن في عبوته وصندوقه الأصلي.">Step 2: Pack the item securely in its original packaging</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="returns-step-item">
+                        <div class="returns-step-number">3</div>
+                        <div class="returns-step-content">
+                            <h4 class="returns-step-title" data-en="Ship Back" data-ar="شحن المنتج إلينا">Ship Back</h4>
+                            <p class="returns-step-desc" data-en="Ship the item to our returns address (provided by customer service)." data-ar="قم بشحن المنتج إلى عنوان المرتجعات الخاص بنا (الذي سيزودك به فريق خدمة العملاء).">Step 3: Ship the item to our returns address (provided by customer service)</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="returns-step-item">
+                        <div class="returns-step-number">4</div>
+                        <div class="returns-step-content">
+                            <h4 class="returns-step-title" data-en="Refund Processed" data-ar="معالجة واسترداد الأموال">Refund Processed</h4>
+                            <p class="returns-step-desc" data-en="Receive your refund within 5-7 business days after we receive the item." data-ar="استلم أمولك المستردة في غضون 5-7 أيام عمل من استلامنا للمنتج والتحقق منه.">Step 4: Receive your refund within 5-7 business days after we receive the item</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Refund Process Callout -->
+            <section class="returns-refund-callout">
+                <div class="returns-refund-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <div class="returns-refund-info">
+                    <h3 data-en="Refund Process" data-ar="عملية استرداد الأموال">Refund Process</h3>
+                    <p data-en="Refunds will be issued to the original payment method. Please allow 5-7 business days for the refund to appear in your account." data-ar="سيتم إصدار المبالغ المستردة وإعادتها إلى طريقة الدفع الأصلية. يرجى الانتظار من 5 إلى 7 أيام عمل حتى يظهر المبلغ في حسابك البنكي.">
+                        Refunds will be issued to the original payment method. Please allow 5-7 business days for the refund to appear in your account.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Questions / Contact Call to Action -->
+            <section class="returns-cta-section">
+                <div class="returns-cta-container">
+                    <h3 class="returns-cta-title" data-en="Questions?" data-ar="هل لديك أي استفسار؟">Questions?</h3>
+                    <p class="returns-cta-desc" data-en="If you have any questions about our returns policy, please contact our customer service team." data-ar="إذا كانت لديك أي أسئلة أو استفسارات حول سياسة الإرجاع الخاصة بنا، فلا تتردد في الاتصال بفريق خدمة العملاء لدينا.">
+                        If you have any questions about our returns policy, please contact our customer service team.
+                    </p>
+                    <a href="contact.html" class="returns-cta-btn">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                        <span data-en="Contact Us" data-ar="اتصل بنا">Contact Us</span>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Translate placeholder text for inputs
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if (val) el.placeholder = val;
+                });
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

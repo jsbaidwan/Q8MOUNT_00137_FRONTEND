@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Warranty Information</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles for Warranty Information Page */
+        .warranty-hero-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            padding: var(--spacing-xxl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-bottom: var(--spacing-xl);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .warranty-hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 15% 15%, rgba(0, 90, 140, 0.3) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(201, 0, 0, 0.15) 0%, transparent 45%),
+                linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-2) 100%);
+            z-index: -1;
+        }
+
+        .warranty-hero-section::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .warranty-hero-eyebrow {
+            color: var(--color-accent-cyan);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .warranty-hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0C4DE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Lead Callout Card */
+        .warranty-lead-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-left: 5px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+
+        [dir="rtl"] .warranty-lead-card {
+            border-left: 1px solid var(--color-border);
+            border-right: 5px solid var(--color-primary);
+        }
+
+        .warranty-lead-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .warranty-lead-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--color-primary-soft);
+            color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .warranty-lead-content h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: 6px;
+        }
+
+        .warranty-lead-content p {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Section Titles */
+        .warranty-section-header {
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .warranty-section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.5px;
+        }
+
+        .warranty-section-title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--color-primary);
+            border-radius: var(--radius);
+            transform: translateX(-50%);
+        }
+
+        /* Coverage Grid */
+        .warranty-coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .warranty-list-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .warranty-list-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .warranty-list-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .warranty-list-card.covered h3 {
+            border-bottom-color: var(--color-primary);
+        }
+
+        .warranty-list-card.not-covered h3 {
+            border-bottom-color: var(--color-cart);
+        }
+
+        .warranty-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .warranty-list-items li {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .warranty-list-items li i {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .warranty-list-card.covered li i {
+            color: var(--color-primary);
+        }
+
+        .warranty-list-card.not-covered li i {
+            color: var(--color-cart);
+        }
+
+        /* Claim Stepper */
+        .warranty-stepper-container {
+            position: relative;
+            max-width: 900px;
+            margin: var(--spacing-xl) auto var(--spacing-xxl) auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .warranty-step-item {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            align-items: flex-start;
+        }
+
+        .warranty-step-item::after {
+            content: "";
+            position: absolute;
+            top: 44px;
+            left: 22px;
+            bottom: calc(-1 * var(--spacing-lg));
+            width: 2px;
+            background-color: var(--color-border);
+            z-index: 1;
+        }
+
+        [dir="rtl"] .warranty-step-item::after {
+            left: auto;
+            right: 22px;
+        }
+
+        .warranty-step-item:last-child::after {
+            display: none;
+        }
+
+        .warranty-step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .warranty-step-number {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--color-bg-sidebar);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 5;
+            box-shadow: 0 0 0 6px var(--color-bg-main);
+            transition: all 0.3s ease;
+        }
+
+        .warranty-step-item:hover .warranty-step-number {
+            background-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 0 10px var(--color-primary-soft);
+            transform: scale(1.1);
+        }
+
+        .warranty-step-content {
+            background-color: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            flex-grow: 1;
+            transition: all 0.3s ease;
+        }
+
+        .warranty-step-item:hover .warranty-step-content {
+            transform: translateX(4px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        [dir="rtl"] .warranty-step-item:hover .warranty-step-content {
+            transform: translateX(-4px);
+        }
+
+        .warranty-step-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: 4px;
+        }
+
+        .warranty-step-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Extended Warranty Box */
+        .warranty-extended-callout {
+            background: var(--color-primary-soft);
+            border: 1px solid rgba(0, 90, 140, 0.15);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .warranty-extended-callout:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card-hover);
+        }
+
+        .warranty-extended-icon {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            flex-shrink: 0;
+            background: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .warranty-extended-info h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--color-text-main);
+            margin-bottom: 6px;
+        }
+
+        .warranty-extended-info p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* Call To Action Block */
+        .warranty-cta-section {
+            background-color: var(--color-bg-dark);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .warranty-cta-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% 10%, rgba(0, 163, 255, 0.15) 0%, transparent 50%);
+        }
+
+        .warranty-cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .warranty-cta-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+            color: #FFFFFF;
+        }
+
+        .warranty-cta-desc {
+            font-size: 1rem;
+            color: #9CA3AF;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .warranty-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 90, 140, 0.4);
+            text-decoration: none;
+        }
+
+        .warranty-cta-btn:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 90, 140, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 900px) {
+            .warranty-coverage-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .warranty-hero-title {
+                font-size: 2.2rem;
+            }
+            .warranty-lead-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .warranty-step-number {
+                width: 36px;
+                height: 36px;
+                font-size: 0.95rem;
+                box-shadow: 0 0 0 4px var(--color-bg-main);
+            }
+            .warranty-step-item {
+                gap: var(--spacing-sm);
+            }
+            .warranty-step-item::after {
+                top: 36px;
+                left: 18px;
+            }
+            [dir="rtl"] .warranty-step-item::after {
+                left: auto;
+                right: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="Warranty Info" data-ar="معلومات الضمان">Warranty Info</span>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="warranty-hero-section">
+                <span class="warranty-hero-eyebrow" data-en="Premium Product Protection" data-ar="حماية متميزة للمنتجات">Premium Product Protection</span>
+                <h1 class="warranty-hero-title" data-en="Warranty Information" data-ar="معلومات الضمان">Warranty Information</h1>
+            </section>
+
+            <!-- Core Lead Policy Card -->
+            <section class="warranty-lead-card">
+                <div class="warranty-lead-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="warranty-lead-content">
+                    <h2 data-en="Manufacturer's Warranty" data-ar="ضمان الشركة المصنعة">Manufacturer's Warranty</h2>
+                    <p data-en="Most products sold by Q8mount come with a manufacturer's warranty. The warranty period and coverage vary by product and manufacturer." data-ar="معظم المنتجات التي تباع بواسطة كيو 8 ماونت تأتي مغطاة بضمان الشركة المصنعة. تختلف مدة الضمان وتفاصيل التغطية حسب نوع المنتج والشركة المصنعة له.">
+                        Most products sold by Q8mount come with a manufacturer's warranty. The warranty period and coverage vary by product and manufacturer.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section: Warranty Coverage Lists -->
+            <section class="warranty-coverage-grid">
+                <!-- What's Covered -->
+                <div class="warranty-list-card covered">
+                    <h3 data-en="Warranty Coverage" data-ar="ما يغطيه الضمان"><i class="fa-regular fa-circle-check"></i> Warranty Coverage</h3>
+                    <p style="margin-bottom: var(--spacing-sm); font-size: 0.9rem; color: var(--color-text-muted);" data-en="Typical warranty coverage includes:" data-ar="تشمل تغطية الضمان النموذجية ما يلي:">Typical warranty coverage includes:</p>
+                    <ul class="warranty-list-items">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span data-en="Manufacturing defects" data-ar="عيوب التصنيع والخلل المصنعي">Manufacturing defects</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span data-en="Malfunctions under normal use" data-ar="الأعطال الفنية أثناء الاستخدام العادي">Malfunctions under normal use</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            <span data-en="Parts and labor (varies by manufacturer)" data-ar="قطع الغيار وأجور الإصلاح (تختلف حسب الشركة المصنعة)">Parts and labor (varies by manufacturer)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- What's Not Covered -->
+                <div class="warranty-list-card not-covered">
+                    <h3 data-en="Not Covered" data-ar="ما لا يغطيه الضمان"><i class="fa-regular fa-circle-xmark"></i> Not Covered</h3>
+                    <p style="margin-bottom: var(--spacing-sm); font-size: 0.9rem; color: var(--color-text-muted);" data-en="Warranties typically do NOT cover:" data-ar="لا تغطي الضمانات عادةً ما يلي:">Warranties typically do NOT cover:</p>
+                    <ul class="warranty-list-items">
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            <span data-en="Accidental damage or misuse" data-ar="التلف العرضي وسوء الاستخدام أو التركيب الخاطئ">Accidental damage or misuse</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            <span data-en="Normal wear and tear" data-ar="البلى والاستهلاك الطبيعي الناتج عن الاستخدام">Normal wear and tear</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            <span data-en="Unauthorized repairs or modifications" data-ar="عمليات الإصلاح أو التعديلات غير المصرح بها">Unauthorized repairs or modifications</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            <span data-en="Cosmetic damage" data-ar="الأضرار السطحية والتجميلية (الخدوش البسيطة)">Cosmetic damage</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section: Claim Stepper -->
+            <section style="margin-bottom: var(--spacing-xxl);">
+                <div class="warranty-section-header">
+                    <h2 class="warranty-section-title" data-en="Making a Warranty Claim" data-ar="خطوات تقديم مطالبة الضمان">Making a Warranty Claim</h2>
+                </div>
+
+                <div class="warranty-stepper-container">
+                    <!-- Step 1 -->
+                    <div class="warranty-step-item">
+                        <div class="warranty-step-number">1</div>
+                        <div class="warranty-step-content">
+                            <h4 class="warranty-step-title" data-en="Contact Support" data-ar="الاتصال بالدعم الفني">Contact Support</h4>
+                            <p class="warranty-step-desc" data-en="Contact us with your order number and description of the issue." data-ar="الخطوة ١: تواصل معنا عبر البريد الإلكتروني أو الهاتف مع توفير رقم الطلب ووصف تفصيلي للمشكلة.">Step 1: Contact us with your order number and description of the issue</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="warranty-step-item">
+                        <div class="warranty-step-number">2</div>
+                        <div class="warranty-step-content">
+                            <h4 class="warranty-step-title" data-en="Warranty Verification" data-ar="التحقق من الضمان">Warranty Verification</h4>
+                            <p class="warranty-step-desc" data-en="We'll verify your warranty coverage and provide instructions." data-ar="الخطوة ٢: سنقوم بمراجعة الطلب والتحقق من سريان تغطية الضمان وسنقوم بإرشادك بالخطوات التالية.">Step 2: We'll verify your warranty coverage and provide instructions</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="warranty-step-item">
+                        <div class="warranty-step-number">3</div>
+                        <div class="warranty-step-content">
+                            <h4 class="warranty-step-title" data-en="Claim Resolution" data-ar="حل وتسوية المطالبة">Claim Resolution</h4>
+                            <p class="warranty-step-desc" data-en="Follow the warranty claim process (repair, replacement, or refund)." data-ar="الخطوة ٣: اتبع الإجراءات النهائية المحددة لتسوية المطالبة (الإصلاح أو الاستبدال أو استرداد الأموال).">Step 3: Follow the warranty claim process (repair, replacement, or refund)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Extended Warranty Callout Box -->
+            <section class="warranty-extended-callout">
+                <div class="warranty-extended-icon"><i class="fa-solid fa-business-time"></i></div>
+                <div class="warranty-extended-info">
+                    <h3 data-en="Extended Warranty" data-ar="خيار الضمان الممدد">Extended Warranty</h3>
+                    <p data-en="Extended warranty options may be available for certain products at checkout. These provide additional coverage beyond the manufacturer's warranty period." data-ar="قد تتوفر خيارات الضمان الممدد لبعض المنتجات عند إتمام عملية الدفع والتسوق. وتمنحك هذه الخيارات حماية وتغطية إضافية ممتدة تتجاوز فترة الضمان الافتراضية للشركة المصنعة.">
+                        Extended warranty options may be available for certain products at checkout. These provide additional coverage beyond the manufacturer's warranty period.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Need Help CTA -->
+            <section class="warranty-cta-section">
+                <div class="warranty-cta-container">
+                    <h3 class="warranty-cta-title" data-en="Need Warranty Support?" data-ar="هل تحتاج إلى دعم بشأن الضمان؟">Need Warranty Support?</h3>
+                    <p class="warranty-cta-desc" data-en="Have a warranty claim or question? Our team is here to help." data-ar="إذا كانت لديك أي أسئلة أو ترغب في بدء مطالبة متعلقة بالضمان، فإن فريقنا المتخصص مستعد لمساعدتك في أي وقت.">
+                        Have a warranty claim or question? Our team is here to help.
+                    </p>
+                    <a href="contact.html" class="warranty-cta-btn">
+                        <i class="fa-solid fa-headset"></i>
+                        <span data-en="Contact Support" data-ar="الاتصال بالدعم الفني">Contact Support</span>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Translate placeholder text for inputs
+                document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+                    const val = lang === 'ar' ? el.getAttribute('data-ar-placeholder') : el.getAttribute('data-en-placeholder');
+                    if (val) el.placeholder = val;
+                });
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

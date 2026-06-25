@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8MOUNT - Track Order</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+            <!-- ============== HEADER ============== -->
+    <header class="header">
+        <div class="header-left">
+            <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="logo">Q8MOUNT</a>
+            <nav class="main-nav">
+                <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
+                <a href="brands.html" data-en="Brands" data-ar="العلامات التجارية">Brands</a>
+                <a href="track.html" class="active" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                <a href="oem.html" data-en="OEM Services" data-ar="خدمات التصنيع التعاقدي">OEM Services</a>
+                <a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-bar">
+                <a href="search.html" class="search-icon-link" aria-label="Search page">
+                    <i class="fa-solid fa-search text-muted"></i>
+                </a>
+                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="lang-switch" role="group" aria-label="Select language">
+                <button class="lang-btn active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="ar" type="button">AR</button>
+            </div>
+
+            <!-- Theme Toggle (Light / Dark) -->
+            <button class="theme-switch" role="switch" aria-checked="false" aria-label="Toggle dark mode" type="button">
+                <span class="theme-switch-track">
+                    <i class="fa-solid fa-sun theme-switch-ico theme-switch-ico-sun"></i>
+                    <i class="fa-solid fa-moon theme-switch-ico theme-switch-ico-moon"></i>
+                    <span class="theme-switch-thumb"></span>
+                </span>
+            </button>
+
+            <a href="login.html" class="icon-btn" aria-label="User Account">
+                <i class="fa-regular fa-user"></i>
+            </a>
+            <a href="cart.html" class="icon-btn" aria-label="Shopping Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============== MAIN LAYOUT ============== -->
+    <div class="layout-wrapper">
+        <main class="main-content">
+
+            <!-- Breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="breadcrumb">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <span class="divider">/</span>
+                <span class="active" data-en="Track Order" data-ar="تتبع الطلب">Track Order</span>
+            </nav>
+
+            <div class="track-container">
+                <h1 class="hero-title" style="font-size: 2.2rem; text-align: left; margin-bottom: var(--spacing-md);" data-en="Track Your Order" data-ar="تتبع طلبك">Track Your Order</h1>
+
+                <!-- Search Form Card -->
+                <div class="track-form-card" id="track-search-card">
+                    <p class="track-desc" data-en="Enter your order number and email address to track your order status." data-ar="أدخل رقم طلبك وعنوان بريدك الإلكتروني لتتبع حالة طلبك.">
+                        Enter your order number and email address to track your order status.
+                    </p>
+
+                    <form id="track-order-form" onsubmit="return false;">
+                        <div class="track-input-group form-group">
+                            <label class="form-label" for="order-id" data-en="Order Number *" data-ar="رقم الطلب *">Order Number *</label>
+                            <input type="text" id="order-id" class="form-input" placeholder="e.g., ORD-12345" required>
+                        </div>
+                        <div class="track-input-group form-group">
+                            <label class="form-label" for="order-email" data-en="Email Address *" data-ar="البريد الإلكتروني *">Email Address *</label>
+                            <input type="email" id="order-email" class="form-input" placeholder="your@email.com" required>
+                        </div>
+                        <button class="btn btn-primary track-submit-btn" type="submit" data-en="Track Order" data-ar="تتبع الطلب">Track Order</button>
+                    </form>
+                </div>
+
+                <!-- Interactive Results Timeline Card (Hidden by Default) -->
+                <div class="tracker-card" id="tracker-result-card" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                        <div>
+                            <span class="product-sku" id="result-order-id">ORDER: ORD-12345</span>
+                            <h3 style="font-size: 1.15rem; font-weight: 800; text-transform: uppercase;" data-en="Order Transit Status" data-ar="حالة شحن الطلب">Order Transit Status</h3>
+                        </div>
+                        <button class="btn btn-secondary" id="btn-track-reset" style="padding: 0.5rem 1rem; font-size: 0.78rem;" data-en="New Search" data-ar="بحث جديد">New Search</button>
+                    </div>
+
+                    <!-- Stepper Progress Tracker -->
+                    <div class="tracker-stepper">
+                        <div class="tracker-steps-line">
+                            <div class="tracker-steps-progress" id="stepper-progress" style="width: 50%;"></div>
+                        </div>
+
+                        <!-- Step 1: Placed -->
+                        <div class="tracker-step completed">
+                            <div class="tracker-step-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                            <span class="tracker-step-title" data-en="Placed" data-ar="تم تقديم الطلب">Placed</span>
+                            <span class="tracker-step-date">May 24</span>
+                        </div>
+
+                        <!-- Step 2: Processing -->
+                        <div class="tracker-step completed">
+                            <div class="tracker-step-icon"><i class="fa-solid fa-gears"></i></div>
+                            <span class="tracker-step-title" data-en="Processing" data-ar="قيد المعالجة">Processing</span>
+                            <span class="tracker-step-date">May 24</span>
+                        </div>
+
+                        <!-- Step 3: Shipped -->
+                        <div class="tracker-step active">
+                            <div class="tracker-step-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                            <span class="tracker-step-title" data-en="Shipped" data-ar="تم الشحن">Shipped</span>
+                            <span class="tracker-step-date">May 25</span>
+                        </div>
+
+                        <!-- Step 4: Out for Delivery -->
+                        <div class="tracker-step">
+                            <div class="tracker-step-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                            <span class="tracker-step-title" data-en="Out for Delivery" data-ar="خرج للتوصيل">Out for Delivery</span>
+                            <span class="tracker-step-date">-</span>
+                        </div>
+
+                        <!-- Step 5: Delivered -->
+                        <div class="tracker-step">
+                            <div class="tracker-step-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="tracker-step-title" data-en="Delivered" data-ar="تم التوصيل">Delivered</span>
+                            <span class="tracker-step-date">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Tracking Detail Box -->
+                    <div class="tracker-info-box">
+                        <div class="tracker-info-item">
+                            <span class="tracker-info-label" data-en="Shipping Carrier" data-ar="شركة الشحن">Shipping Carrier</span>
+                            <span class="tracker-info-value" id="tracker-carrier">DHL Express</span>
+                        </div>
+                        <div class="tracker-info-item">
+                            <span class="tracker-info-label" data-en="Tracking Code" data-ar="رقم التتبع">Tracking Code</span>
+                            <span class="tracker-info-value" id="tracker-code">DHL-998-765-XL</span>
+                        </div>
+                        <div class="tracker-info-item">
+                            <span class="tracker-info-label" data-en="Estimated Delivery" data-ar="التوصيل المتوقع">Estimated Delivery</span>
+                            <span class="tracker-info-value" id="tracker-delivery">May 27, 2026</span>
+                        </div>
+                        <div class="tracker-info-item">
+                            <span class="tracker-info-label" data-en="Shipment Destination" data-ar="وجهة الشحن">Shipment Destination</span>
+                            <span class="tracker-info-value" id="tracker-dest">Salmiya, Kuwait</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Status Guide Glossary -->
+                <div class="glossary-card">
+                    <h2 class="summary-title" style="margin-bottom: var(--spacing-md);" data-en="Order Status Guide" data-ar="دليل حالات الطلب">Order Status Guide</h2>
+                    <div class="glossary-grid">
+                        <div class="glossary-item">
+                            <div class="glossary-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                            <div class="glossary-info">
+                                <h4 data-en="Processing" data-ar="قيد المعالجة">Processing</h4>
+                                <p data-en="Your order is being prepared and packed in our fulfillment center." data-ar="يتم تجهيز طلبك وتعبئته في مركز الكفاءات لدينا.">Your order is being prepared and packed in our fulfillment center.</p>
+                            </div>
+                        </div>
+                        <div class="glossary-item">
+                            <div class="glossary-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                            <div class="glossary-info">
+                                <h4 data-en="Shipped" data-ar="تم الشحن">Shipped</h4>
+                                <p data-en="Your order has left our facility and is currently in transit with the carrier." data-ar="لقد غادر طلبك منشأتنا وهو حاليًا في الطريق مع شركة الشحن.">Your order has left our facility and is currently in transit with the carrier.</p>
+                            </div>
+                        </div>
+                        <div class="glossary-item">
+                            <div class="glossary-icon"><i class="fa-solid fa-house-chimney"></i></div>
+                            <div class="glossary-info">
+                                <h4 data-en="Out for Delivery" data-ar="خارج للتوصيل">Out for Delivery</h4>
+                                <p data-en="Your shipment has arrived at the local courier depot and will be delivered today." data-ar="وصلت شحنتك إلى مستودع البريد السريع المحلي وسيتم تسليمها اليوم.">Your shipment has arrived at the local courier depot and will be delivered today.</p>
+                            </div>
+                        </div>
+                        <div class="glossary-item">
+                            <div class="glossary-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <div class="glossary-info">
+                                <h4 data-en="Delivered" data-ar="تم التوصيل">Delivered</h4>
+                                <p data-en="Your package has been successfully delivered and signed for." data-ar="تم تسليم الطرد الخاص بك بنجاح والتوقيع على استلامه.">Your package has been successfully delivered and signed for.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: var(--spacing-lg); font-size: 0.88rem; font-weight: 700; color: var(--color-text-muted);">
+                        <span data-en="Need help? " data-ar="هل تحتاج مساعدة؟ ">Need help? </span>
+                        <a href="#" style="color: var(--color-primary); text-decoration: underline;" data-en="Contact our support team" data-ar="اتصل بفريق الدعم لدينا">Contact our support team</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+            <!-- ============== FOOTER ============== -->
+    <footer class="footer">
+        <!-- Newsletter strip -->
+        <div class="footer-newsletter">
+            <div class="newsletter-text">
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+            </div>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="your.work@email.com" required>
+                <button class="btn btn-cart" type="submit" data-en="Subscribe" data-ar="اشتراك">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">Q8MOUNT</a>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <nav class="footer-nav">
+                    <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a>
+                    <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                    <a href="faq.html" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                <nav class="footer-nav">
+                    <a href="shipping.html" data-en="Shipping Info" data-ar="معلومات الشحن">Shipping Info</a>
+                    <a href="returns.html" data-en="Returns" data-ar="سياسة الإرجاع">Returns</a>
+                    <a href="warranty.html" data-en="Warranty" data-ar="معلومات الضمان">Warranty</a>
+                    <a href="track.html" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h4 data-en="Legal" data-ar="الخصوصية والشروط">Legal</h4>
+                <nav class="footer-nav">
+                    <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                    <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+        </div>
+    </footer>
+
+    <!-- ============== SCRIPTS ============== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const htmlEl = document.documentElement;
+            const themeSwitch = document.querySelector('.theme-switch');
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const mainTitle = document.querySelector('.hero-title');
+            
+            // Tracking Form elements
+            const trackForm = document.getElementById('track-order-form');
+            const searchCard = document.getElementById('track-search-card');
+            const resultCard = document.getElementById('tracker-result-card');
+            const orderIdInput = document.getElementById('order-id');
+            const btnReset = document.getElementById('btn-track-reset');
+            const resultOrderIdLabel = document.getElementById('result-order-id');
+
+            trackForm.addEventListener('submit', () => {
+                const orderId = orderIdInput.value.toUpperCase();
+                resultOrderIdLabel.textContent = `ORDER: ${orderId}`;
+                
+                // Hide search card, reveal tracker timeline
+                searchCard.style.display = 'none';
+                resultCard.style.display = 'block';
+            });
+
+            btnReset.addEventListener('click', () => {
+                orderIdInput.value = '';
+                resultCard.style.display = 'none';
+                searchCard.style.display = 'block';
+            });
+
+            /* ---------- THEME TOGGLE ---------- */
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlEl.setAttribute('data-theme', 'dark');
+                themeSwitch.setAttribute('aria-checked', 'true');
+            } else {
+                htmlEl.removeAttribute('data-theme');
+                themeSwitch.setAttribute('aria-checked', 'false');
+            }
+
+            themeSwitch.addEventListener('click', () => {
+                const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    htmlEl.removeAttribute('data-theme');
+                    themeSwitch.setAttribute('aria-checked', 'false');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlEl.setAttribute('data-theme', 'dark');
+                    themeSwitch.setAttribute('aria-checked', 'true');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            /* ---------- LANGUAGE TRANSLATIONS ---------- */
+            function applyLanguage(lang) {
+                htmlEl.setAttribute('lang', lang);
+                htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                localStorage.setItem('lang', lang);
+
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+
+                // Update text elements with data-en/data-ar
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    const text = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+                    if (text) {
+                        const icon = el.querySelector('i');
+                        if (icon) {
+                            el.innerHTML = '';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        } else {
+                            el.textContent = text;
+                        }
+                    }
+                });
+
+                // Adjust title text alignment
+                if (mainTitle) {
+                    mainTitle.style.textAlign = lang === 'ar' ? 'right' : 'left';
+                }
+
+                // Stepper translation dates
+                const dates = document.querySelectorAll('.tracker-step-date');
+                if (dates.length >= 3) {
+                    dates[0].textContent = lang === 'ar' ? '٢٤ مايو' : 'May 24';
+                    dates[1].textContent = lang === 'ar' ? '٢٤ مايو' : 'May 24';
+                    dates[2].textContent = lang === 'ar' ? '٢٥ مايو' : 'May 25';
+                }
+            }
+
+            const savedLang = localStorage.getItem('lang') || 'en';
+            applyLanguage(savedLang);
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    applyLanguage(btn.dataset.lang);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
