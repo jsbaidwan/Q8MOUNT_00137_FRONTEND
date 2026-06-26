@@ -970,7 +970,11 @@
                                 el.appendChild(icon);
                                 el.appendChild(document.createTextNode(' ' + text));
                             } else {
+                                if (text.includes('<') && text.includes('>')) {
+                                el.innerHTML = text;
+                            } else {
                                 el.textContent = text;
+                            }
                             }
                         }
                     }
