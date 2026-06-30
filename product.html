@@ -8,7 +8,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -156,7 +158,7 @@
             animation: fadeIn 0.3s ease;
             text-align: left;
         }
-        
+
         [dir="rtl"] .review-item {
             text-align: right;
         }
@@ -217,12 +219,172 @@
         #rating-input-stars i.filled {
             color: #ffb400 !important;
         }
+
+        /* Fix tab scrollbar issue and prevent active border clipping */
+        .tabs-navigation-bar {
+            overflow-y: hidden !important; /* Hide vertical scrollbar completely */
+            overflow-x: auto !important;   /* Keep horizontal scrolling on mobile */
+            -ms-overflow-style: none !important;      /* IE and Edge */
+            scrollbar-width: none !important;         /* Firefox */
+            padding-bottom: 3px !important;            /* Extra padding to prevent clipping of underlines */
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .tabs-navigation-bar::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        /* Pull tab buttons down to sit exactly on the container's baseline */
+        .tab-nav-btn {
+            margin-bottom: -3px !important;
+            border-bottom: 3px solid transparent !important;
+            transition: all 0.2s ease !important;
+        }
+
+        /* Ensure active tab has a solid premium border bottom and is not clipped */
+        .tab-nav-btn.active {
+            border-bottom: 3px solid var(--color-primary, #ff5722) !important;
+            color: var(--color-primary, #ff5722) !important;
+        }
+
+        /* Fitment Table Premium Styles */
+        .fitment-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: var(--spacing-md);
+            background: var(--color-bg-sidebar, #121212);
+            border: 1px solid var(--color-border, #222);
+            border-radius: var(--radius-lg, 8px);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .fitment-table th {
+            background: var(--color-bg-header, #1e1e1e);
+            color: var(--color-text-main, #ffffff);
+            padding: 1.1rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--color-border, #222);
+            text-align: left;
+        }
+        
+        [dir="rtl"] .fitment-table th {
+            text-align: right;
+        }
+
+        .fitment-table td {
+            padding: 1.1rem 1rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--color-border, #222);
+            color: var(--color-text-muted, #aaaaaa);
+            vertical-align: middle;
+        }
+
+        .fitment-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fitment-table tr.fitment-row {
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .fitment-table tr.fitment-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--color-text-main, #ffffff);
+        }
+
+        /* Year Badge Style */
+        .fitment-year-badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-text-main, #ffffff);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Make Style with icon/logo support */
+        .fitment-make-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 700;
+            color: var(--color-text-main, #ffffff);
+        }
+
+        .fitment-make-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-primary, #ff5722);
+            font-size: 0.8rem;
+        }
+
+        .fitment-model-cell {
+            font-weight: 600;
+            color: var(--color-text-main, #ffffff);
+        }
+
+        .fitment-engine-cell {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--color-text-muted, #aaaaaa);
+        }
+
+        /* Fitment Search Box premium overrides */
+        .fitments-search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            max-width: 400px;
+            background: var(--color-input-bg, #1a1a1a);
+            border: 1px solid var(--color-border, #222);
+            border-radius: var(--radius, 4px);
+            padding: 0 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .fitments-search-box:focus-within {
+            border-color: var(--color-primary, #ff5722);
+            box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
+        }
+
+        .fitments-search-box i {
+            color: var(--color-text-muted, #aaaaaa);
+            margin-right: 0.75rem;
+        }
+        
+        [dir="rtl"] .fitments-search-box i {
+            margin-right: 0;
+            margin-left: 0.75rem;
+        }
+
+        .fitments-search-box input {
+            border: none !important;
+            background: transparent !important;
+            color: var(--color-text-main, #ffffff) !important;
+            padding: 0.8rem 0 !important;
+            width: 100% !important;
+            outline: none !important;
+            font-size: 0.95rem !important;
+            font-weight: 600 !important;
+        }
     </style>
 </head>
 
 <body>
 
-            <!-- ============== HEADER ============== -->
+    <!-- ============== HEADER ============== -->
     <header class="header">
         <div class="header-left">
             <button class="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
@@ -240,7 +402,9 @@
                 <a href="search.html" class="search-icon-link" aria-label="Search page">
                     <i class="fa-solid fa-search text-muted"></i>
                 </a>
-                <input type="text" placeholder="Search Technical Database..." data-en-placeholder="Search Technical Database..." data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
+                <input type="text" placeholder="Search Technical Database..."
+                    data-en-placeholder="Search Technical Database..."
+                    data-ar-placeholder="البحث في قاعدة البيانات الفنية...">
             </div>
 
             <!-- Language Switcher -->
@@ -277,7 +441,8 @@
                 <span class="divider">/</span>
                 <a href="products.html" data-en="Products" data-ar="المنتجات">Products</a>
                 <span class="divider">/</span>
-                <span class="active" data-en="Weld Racing Wheel Caps" data-ar="أغطية عجلات ويلد ريسينغ">Weld Racing Wheel Caps</span>
+                <span class="active" data-en="Weld Racing Wheel Caps" data-ar="أغطية عجلات ويلد ريسينغ">Weld Racing
+                    Wheel Caps</span>
             </nav>
 
             <!-- Product Details Grid -->
@@ -287,16 +452,20 @@
                 <div class="product-gallery">
                     <div class="gallery-main-container">
                         <span class="image-stock-badge" data-en="In Stock" data-ar="متوفر">In Stock</span>
-                        <img src="images/weld_caps.png" alt="Weld Racing Wheel Center Cap" class="gallery-main-image" id="main-product-image">
+                        <img src="images/weld_caps.png" alt="Weld Racing Wheel Center Cap" class="gallery-main-image"
+                            id="main-product-image">
                     </div>
                     <div class="gallery-thumbnails">
-                        <button class="gallery-thumb-btn active" data-image="images/weld_caps.png" aria-label="Main cap image">
+                        <button class="gallery-thumb-btn active" data-image="images/weld_caps.png"
+                            aria-label="Main cap image">
                             <img src="images/weld_caps.png" alt="Weld Racing Cap View 1">
                         </button>
-                        <button class="gallery-thumb-btn" data-image="images/bolts.png" aria-label="Cap accessory hardware">
+                        <button class="gallery-thumb-btn" data-image="images/bolts.png"
+                            aria-label="Cap accessory hardware">
                             <img src="images/bolts.png" alt="Hardware Details">
                         </button>
-                        <button class="gallery-thumb-btn" data-image="images/chassis_systems.png" aria-label="Chassis mount view">
+                        <button class="gallery-thumb-btn" data-image="images/chassis_systems.png"
+                            aria-label="Chassis mount view">
                             <img src="images/chassis_systems.png" alt="Installation Bracket">
                         </button>
                     </div>
@@ -307,31 +476,41 @@
 
                     <div class="product-meta-header">
                         <div class="product-brand-line">
-                            <span data-en="Brand:" data-ar="العلامة التجارية:">Brand:</span> 
+                            <span data-en="Brand:" data-ar="العلامة التجارية:">Brand:</span>
                             <a href="brands.html" data-en="Weld Racing" data-ar="ويلد ريسينغ">Weld Racing</a>
                             <span style="margin: 0 0.5rem; opacity: 0.3;">|</span>
                             <span data-en="Category:" data-ar="الفئة:">Category:</span>
-                            <a href="products.html" data-en="Mounting Hardware" data-ar="أدوات التثبيت">Mounting Hardware</a>
+                            <a href="products.html" data-en="Mounting Hardware" data-ar="أدوات التثبيت">Mounting
+                                Hardware</a>
                         </div>
-                        
-                        <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">
+
+                        <div
+                            style="font-size: 0.8rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">
                             SKU: SKU-WELDRACING-026-79876
                         </div>
-                        
-                        <h1 class="product-meta-title" data-en="Weld Racing Wheel Center Caps & Hub Covers | P605-5083" data-ar="أغطية مركز ومحاور عجلات ويلد ريسينغ | P605-5083">Weld Racing Wheel Center Caps & Hub Covers | P605-5083</h1>
-                        
+
+                        <h1 class="product-meta-title" data-en="Weld Racing Wheel Center Caps & Hub Covers | P605-5083"
+                            data-ar="أغطية مركز ومحاور عجلات ويلد ريسينغ | P605-5083">Weld Racing Wheel Center Caps &
+                            Hub Covers | P605-5083</h1>
+
                         <div class="product-identifier-row" style="margin-top: 0.5rem;">
                             <span class="product-part-number">
-                                <span data-en="Part Number:" data-ar="رقم القطعة:">Part Number:</span> 
-                                <span id="part-number-value" style="font-weight: 800; color: var(--color-text-main);">P605-5083</span> 
-                                <button class="copy-badge" id="btn-copy-part" data-en="Copy" data-ar="نسخ" aria-label="Copy part number" style="margin-left: 0.5rem;">
+                                <span data-en="Part Number:" data-ar="رقم القطعة:">Part Number:</span>
+                                <span id="part-number-value"
+                                    style="font-weight: 800; color: var(--color-text-main);">P605-5083</span>
+                                <button class="copy-badge" id="btn-copy-part" data-en="Copy" data-ar="نسخ"
+                                    aria-label="Copy part number" style="margin-left: 0.5rem;">
                                     <i class="fa-regular fa-copy"></i> Copy
                                 </button>
                             </span>
                         </div>
-                        
-                        <div style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 0.75rem; line-height: 1.5;" data-en="Precision-engineered replacement caps by Weld Racing. Designed for high drag resistance and custom wheel centers protection. Restores clean, premium finish look to performance assemblies." data-ar="أغطية بديلة مصممة بدقة من ويلد ريسينغ. مصممة لمقاومة السحب العالية وحماية مراكز العجلات المخصصة. تستعيد المظهر النهائي النظيف والممتاز للتجهيزات الرياضية.">
-                            Precision-engineered replacement caps by Weld Racing. Designed for high drag resistance and custom wheel centers protection. Restores clean, premium finish look to performance assemblies.
+
+                        <div style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 0.75rem; line-height: 1.5;"
+                            data-en="Precision-engineered replacement caps by Weld Racing. Designed for high drag resistance and custom wheel centers protection. Restores clean, premium finish look to performance assemblies."
+                            data-ar="أغطية بديلة مصممة بدقة من ويلد ريسينغ. مصممة لمقاومة السحب العالية وحماية مراكز العجلات المخصصة. تستعيد المظهر النهائي النظيف والممتاز للتجهيزات الرياضية.">
+                            Precision-engineered replacement caps by Weld Racing. Designed for high drag resistance and
+                            custom wheel centers protection. Restores clean, premium finish look to performance
+                            assemblies.
                         </div>
                     </div>
 
@@ -340,21 +519,26 @@
                         <div class="price-row" style="margin-bottom: 0.75rem;">
                             <div>
                                 <span class="price-display">KD 12.000</span>
-                                <span style="font-size: 0.9rem; font-weight: 800; color: var(--color-text-muted); margin-left: 0.25rem;">KWD</span>
+                                <span
+                                    style="font-size: 0.9rem; font-weight: 800; color: var(--color-text-muted); margin-left: 0.25rem;">KWD</span>
                             </div>
-                            <span style="font-size: 0.7rem; font-weight: 900; color: var(--color-cart); border: 1px solid var(--color-cart); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); letter-spacing: 0.5px; text-transform: uppercase;" data-en="Limited Availability" data-ar="كمية محدودة">Limited Availability</span>
+                            <span
+                                style="font-size: 0.7rem; font-weight: 900; color: var(--color-cart); border: 1px solid var(--color-cart); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); letter-spacing: 0.5px; text-transform: uppercase;"
+                                data-en="Limited Availability" data-ar="كمية محدودة">Limited Availability</span>
                         </div>
 
                         <!-- Quantity and Actions -->
                         <div class="product-actions-row">
                             <div class="qty-stepper">
-                                <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity"><i class="fa-solid fa-minus"></i></button>
+                                <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity"><i
+                                        class="fa-solid fa-minus"></i></button>
                                 <input type="text" class="qty-input" id="qty-count" value="1" readonly>
-                                <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity"><i class="fa-solid fa-plus"></i></button>
+                                <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity"><i
+                                        class="fa-solid fa-plus"></i></button>
                             </div>
-                            
+
                             <button class="btn btn-primary btn-add-to-cart" id="btn-add-cart">
-                                <i class="fa-solid fa-cart-shopping"></i> 
+                                <i class="fa-solid fa-cart-shopping"></i>
                                 <span data-en="Add to Cart" data-ar="إضافة إلى السلة">Add to Cart</span>
                             </button>
 
@@ -363,7 +547,8 @@
                             </button>
                         </div>
 
-                        <button class="btn-bulk-quote" id="btn-quote" data-en="Request Bulk Quote" data-ar="طلب تسعيرة كميات">
+                        <button class="btn-bulk-quote" id="btn-quote" data-en="Request Bulk Quote"
+                            data-ar="طلب تسعيرة كميات">
                             Request Bulk Quote
                         </button>
                     </div>
@@ -371,24 +556,32 @@
                     <!-- Technical Specifications List directly in right column -->
                     <div class="specs-column-list">
                         <div class="specs-column-row">
-                            <span class="specs-column-label" data-en="Cradle Range" data-ar="نطاق التثبيت">Cradle Range</span>
-                            <span class="specs-column-value" data-en="3.18 Inches Diameter" data-ar="٣.١٨ بوصة قطر">3.18 Inches Diameter</span>
+                            <span class="specs-column-label" data-en="Cradle Range" data-ar="نطاق التثبيت">Cradle
+                                Range</span>
+                            <span class="specs-column-value" data-en="3.18 Inches Diameter" data-ar="٣.١٨ بوصة قطر">3.18
+                                Inches Diameter</span>
                         </div>
                         <div class="specs-column-row">
-                            <span class="specs-column-label" data-en="Clamping Range" data-ar="نطاق التثبيت">Clamping Range</span>
-                            <span class="specs-column-value" data-en="Push-Through Fitting" data-ar="تثبيت بالدفع والكبس">Push-Through Fitting</span>
+                            <span class="specs-column-label" data-en="Clamping Range" data-ar="نطاق التثبيت">Clamping
+                                Range</span>
+                            <span class="specs-column-value" data-en="Push-Through Fitting"
+                                data-ar="تثبيت بالدفع والكبس">Push-Through Fitting</span>
                         </div>
                         <div class="specs-column-row">
                             <span class="specs-column-label" data-en="Materials" data-ar="المواد">Materials</span>
-                            <span class="specs-column-value" data-en="Billet Aluminum & Steel" data-ar="ألومنيوم صلب وفولاذ">Billet Aluminum & Steel</span>
+                            <span class="specs-column-value" data-en="Billet Aluminum & Steel"
+                                data-ar="ألومنيوم صلب وفولاذ">Billet Aluminum & Steel</span>
                         </div>
                         <div class="specs-column-row">
-                            <span class="specs-column-label" data-en="Weight Capacity" data-ar="سعة الوزن">Weight Capacity</span>
-                            <span class="specs-column-value" data-en="High-Strength Performance" data-ar="أداء عالي التحمل">High-Strength Performance</span>
+                            <span class="specs-column-label" data-en="Weight Capacity" data-ar="سعة الوزن">Weight
+                                Capacity</span>
+                            <span class="specs-column-value" data-en="High-Strength Performance"
+                                data-ar="أداء عالي التحمل">High-Strength Performance</span>
                         </div>
                         <div class="specs-column-row">
                             <span class="specs-column-label" data-en="Ball Size" data-ar="مقاس الكرة">Ball Size</span>
-                            <span class="specs-column-value" data-en="Standard Hub Bore Fit" data-ar="مطابق لتجويف المحور">Standard Hub Bore Fit</span>
+                            <span class="specs-column-value" data-en="Standard Hub Bore Fit"
+                                data-ar="مطابق لتجويف المحور">Standard Hub Bore Fit</span>
                         </div>
                     </div>
 
@@ -400,35 +593,56 @@
             <div id="reviews-anchor"></div>
             <div class="product-tabs-container">
                 <div class="tabs-navigation-bar" role="tablist">
-                    <button class="tab-nav-btn active" data-tab="tab-description" role="tab" aria-selected="true" data-en="Description" data-ar="الوصف">Description</button>
-                    <button class="tab-nav-btn" data-tab="tab-attributes" role="tab" aria-selected="false" data-en="Attributes" data-ar="المواصفات الأساسية">Attributes</button>
-                    <button class="tab-nav-btn" data-tab="tab-specifications" role="tab" aria-selected="false" data-en="Specifications" data-ar="المواصفات الفنية">Specifications</button>
-                    <button class="tab-nav-btn" data-tab="tab-fitments" role="tab" aria-selected="false" data-en="Vehicle Fitments" data-ar="التوافق مع السيارات">Vehicle Fitments</button>
-                    <button class="tab-nav-btn" data-tab="tab-reviews" role="tab" aria-selected="false" data-en="Reviews (0)" data-ar="التقييمات (٠)">Reviews (0)</button>
+                    <button class="tab-nav-btn active" data-tab="tab-description" role="tab" aria-selected="true"
+                        data-en="Description" data-ar="الوصف">Description</button>
+                    <button class="tab-nav-btn" data-tab="tab-attributes" role="tab" aria-selected="false"
+                        data-en="Attributes" data-ar="المواصفات الأساسية">Attributes</button>
+                    <button class="tab-nav-btn" data-tab="tab-specifications" role="tab" aria-selected="false"
+                        data-en="Specifications" data-ar="المواصفات الفنية">Specifications</button>
+                    <button class="tab-nav-btn" data-tab="tab-fitments" role="tab" aria-selected="false"
+                        data-en="Vehicle Fitments" data-ar="التوافق مع السيارات">Vehicle Fitments</button>
+                    <button class="tab-nav-btn" data-tab="tab-reviews" role="tab" aria-selected="false"
+                        data-en="Reviews (0)" data-ar="التقييمات (٠)">Reviews (0)</button>
                 </div>
 
                 <!-- Panel 1: Description -->
                 <div class="tab-content-panel active" id="tab-description" role="tabpanel">
                     <div class="overview-tab-grid">
                         <div>
-                            <h2 style="font-size: 1.6rem; font-weight: 900; text-transform: uppercase; color: var(--color-text-main);" data-en="Unrivaled Holding Power" data-ar="قوة تثبيت لا مثيل لها">Unrivaled Holding Power</h2>
-                            
-                            <p style="margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);" data-en="The P605-5083 Weld Racing Cap series is engineered specifically for performance drag and highway wheels. This mount provides an exceptionally secure fit that keeps dust and debris out of the wheel hub bearing, assuring long life under extreme conditions. The push-through layout delivers tool-less, fast installation directly from the rear of the wheel center bore." data-ar="تم تصميم سلسلة أغطية ويلد ريسينغ P605-5083 خصيصاً لعجلات السحب والأداء السريع. يوفر هذا الغطاء تثبيتاً آمناً للغاية يمنع الغبار والأوساخ من الدخول إلى محمل محور العجلة، مما يضمن عمراً طويلاً تحت أقسى الظروف. يتيح تصميم التثبيت بالدفع إمكانية التركيب السريع بدون أدوات مباشرة من الجزء الخلفي لمركز العجلة.">
-                                The P605-5083 Weld Racing Cap series is engineered specifically for performance drag and highway wheels. This mount provides an exceptionally secure fit that keeps dust and debris out of the wheel hub bearing, assuring long life under extreme conditions. The push-through layout delivers tool-less, fast installation directly from the rear of the wheel center bore.
+                            <h2 style="font-size: 1.6rem; font-weight: 900; text-transform: uppercase; color: var(--color-text-main);"
+                                data-en="Unrivaled Holding Power" data-ar="قوة تثبيت لا مثيل لها">Unrivaled Holding
+                                Power</h2>
+
+                            <p style="margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-main);"
+                                data-en="The P605-5083 Weld Racing Cap series is engineered specifically for performance drag and highway wheels. This mount provides an exceptionally secure fit that keeps dust and debris out of the wheel hub bearing, assuring long life under extreme conditions. The push-through layout delivers tool-less, fast installation directly from the rear of the wheel center bore."
+                                data-ar="تم تصميم سلسلة أغطية ويلد ريسينغ P605-5083 خصيصاً لعجلات السحب والأداء السريع. يوفر هذا الغطاء تثبيتاً آمناً للغاية يمنع الغبار والأوساخ من الدخول إلى محمل محور العجلة، مما يضمن عمراً طويلاً تحت أقسى الظروف. يتيح تصميم التثبيت بالدفع إمكانية التركيب السريع بدون أدوات مباشرة من الجزء الخلفي لمركز العجلة.">
+                                The P605-5083 Weld Racing Cap series is engineered specifically for performance drag and
+                                highway wheels. This mount provides an exceptionally secure fit that keeps dust and
+                                debris out of the wheel hub bearing, assuring long life under extreme conditions. The
+                                push-through layout delivers tool-less, fast installation directly from the rear of the
+                                wheel center bore.
                             </p>
 
                             <div class="overview-checklist">
                                 <div class="overview-check-item">
                                     <span class="overview-check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span data-en="Rust-proof, high strength composite and stainless steel construction." data-ar="مقاوم للصدأ، هيكل من الكروم والصلب المقاوم للصدأ.">Rust-proof, high strength composite and stainless steel construction.</span>
+                                    <span
+                                        data-en="Rust-proof, high strength composite and stainless steel construction."
+                                        data-ar="مقاوم للصدأ، هيكل من الكروم والصلب المقاوم للصدأ.">Rust-proof, high
+                                        strength composite and stainless steel construction.</span>
                                 </div>
                                 <div class="overview-check-item">
                                     <span class="overview-check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span data-en="Spring-loaded 'X' design with rubber caps sports great holding power." data-ar="تصميم محكم مع أغطية مطاطية توفر قوة تثبيت فائقة.">Spring-loaded 'X' design with rubber caps sports great holding power.</span>
+                                    <span
+                                        data-en="Spring-loaded 'X' design with rubber caps sports great holding power."
+                                        data-ar="تصميم محكم مع أغطية مطاطية توفر قوة تثبيت فائقة.">Spring-loaded 'X'
+                                        design with rubber caps sports great holding power.</span>
                                 </div>
                                 <div class="overview-check-item">
                                     <span class="overview-check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span data-en="Lifetime warranty on all RAM® mounting hardware." data-ar="ضمان مدى الحياة على جميع أجهزة تثبيت كيو ٨ ماونت.">Lifetime warranty on all RAM® mounting hardware.</span>
+                                    <span data-en="Lifetime warranty on all RAM® mounting hardware."
+                                        data-ar="ضمان مدى الحياة على جميع أجهزة تثبيت كيو ٨ ماونت.">Lifetime warranty on
+                                        all RAM® mounting hardware.</span>
                                 </div>
                             </div>
                         </div>
@@ -439,35 +653,45 @@
                                 <img src="images/engine.png" alt="Weld Racing Cap Video Preview">
                                 <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
                             </div>
-                            <a href="#" class="video-caption-link" data-en="Watch Installation Video / Brochure" data-ar="شاهد فيديو التركيب / الكتيب">Watch Installation Video / Brochure</a>
+                            <a href="#" class="video-caption-link" data-en="Watch Installation Video / Brochure"
+                                data-ar="شاهد فيديو التركيب / الكتيب">Watch Installation Video / Brochure</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Panel 2: Attributes -->
                 <div class="tab-content-panel" id="tab-attributes" role="tabpanel">
-                    <div style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: flex; flex-direction: column; gap: var(--spacing-sm);">
-                        <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Key Product Attributes:" data-ar="المواصفات والخصائص الأساسية:">Key Product Attributes:</h4>
+                    <div
+                        style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Key Product Attributes:"
+                            data-ar="المواصفات والخصائص الأساسية:">Key Product Attributes:</h4>
                         <div class="specs-column-list" style="margin-top: 0.5rem; max-width: 600px;">
                             <div class="specs-column-row">
                                 <span class="specs-column-label" data-en="Brand" data-ar="العلامة التجارية">Brand</span>
-                                <span class="specs-column-value" data-en="Weld Racing" data-ar="ويلد ريسينغ">Weld Racing</span>
+                                <span class="specs-column-value" data-en="Weld Racing" data-ar="ويلد ريسينغ">Weld
+                                    Racing</span>
                             </div>
                             <div class="specs-column-row">
-                                <span class="specs-column-label" data-en="Part Number" data-ar="رقم القطعة">Part Number</span>
+                                <span class="specs-column-label" data-en="Part Number" data-ar="رقم القطعة">Part
+                                    Number</span>
                                 <span class="specs-column-value">P605-5083</span>
                             </div>
                             <div class="specs-column-row">
-                                <span class="specs-column-label" data-en="Product SKU" data-ar="رمز التخزين SKU">Product SKU</span>
+                                <span class="specs-column-label" data-en="Product SKU" data-ar="رمز التخزين SKU">Product
+                                    SKU</span>
                                 <span class="specs-column-value">SKU-WELDRACING-026-79876</span>
                             </div>
                             <div class="specs-column-row">
-                                <span class="specs-column-label" data-en="Finish / Color" data-ar="الطلاء / اللون">Finish / Color</span>
-                                <span class="specs-column-value" data-en="Polished Aluminum / Chrome" data-ar="ألومنيوم مصقول / كروم">Polished Aluminum / Chrome</span>
+                                <span class="specs-column-label" data-en="Finish / Color"
+                                    data-ar="الطلاء / اللون">Finish / Color</span>
+                                <span class="specs-column-value" data-en="Polished Aluminum / Chrome"
+                                    data-ar="ألومنيوم مصقول / كروم">Polished Aluminum / Chrome</span>
                             </div>
                             <div class="specs-column-row">
-                                <span class="specs-column-label" data-en="Country of Manufacture" data-ar="بلد التصنيع">Country of Manufacture</span>
-                                <span class="specs-column-value" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                                <span class="specs-column-label" data-en="Country of Manufacture"
+                                    data-ar="بلد التصنيع">Country of Manufacture</span>
+                                <span class="specs-column-value" data-en="United States"
+                                    data-ar="الولايات المتحدة">United States</span>
                             </div>
                         </div>
                     </div>
@@ -475,38 +699,57 @@
 
                 <!-- Panel 3: Specifications -->
                 <div class="tab-content-panel" id="tab-specifications" role="tabpanel">
-                    <div style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
+                    <div
+                        style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
                         <div>
-                            <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Technical Specifications:" data-ar="المواصفات الفنية:">Technical Specifications:</h4>
+                            <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Technical Specifications:"
+                                data-ar="المواصفات الفنية:">Technical Specifications:</h4>
                             <div class="specs-column-list" style="margin-top: 0.5rem;">
                                 <div class="specs-column-row">
-                                    <span class="specs-column-label" data-en="Cradle Range" data-ar="نطاق التثبيت">Cradle Range</span>
-                                    <span class="specs-column-value" data-en="3.18 Inches Diameter" data-ar="٣.١٨ بوصة قطر">3.18 Inches Diameter</span>
+                                    <span class="specs-column-label" data-en="Cradle Range"
+                                        data-ar="نطاق التثبيت">Cradle Range</span>
+                                    <span class="specs-column-value" data-en="3.18 Inches Diameter"
+                                        data-ar="٣.١٨ بوصة قطر">3.18 Inches Diameter</span>
                                 </div>
                                 <div class="specs-column-row">
-                                    <span class="specs-column-label" data-en="Clamping Range" data-ar="نطاق التثبيت">Clamping Range</span>
-                                    <span class="specs-column-value" data-en="Push-Through Fitting" data-ar="تثبيت بالدفع والكبس">Push-Through Fitting</span>
+                                    <span class="specs-column-label" data-en="Clamping Range"
+                                        data-ar="نطاق التثبيت">Clamping Range</span>
+                                    <span class="specs-column-value" data-en="Push-Through Fitting"
+                                        data-ar="تثبيت بالدفع والكبس">Push-Through Fitting</span>
                                 </div>
                                 <div class="specs-column-row">
-                                    <span class="specs-column-label" data-en="Materials" data-ar="المواد">Materials</span>
-                                    <span class="specs-column-value" data-en="Billet Aluminum & Steel" data-ar="ألومنيوم صلب وفولاذ">Billet Aluminum & Steel</span>
+                                    <span class="specs-column-label" data-en="Materials"
+                                        data-ar="المواد">Materials</span>
+                                    <span class="specs-column-value" data-en="Billet Aluminum & Steel"
+                                        data-ar="ألومنيوم صلب وفولاذ">Billet Aluminum & Steel</span>
                                 </div>
                                 <div class="specs-column-row">
-                                    <span class="specs-column-label" data-en="Weight Capacity" data-ar="سعة الوزن">Weight Capacity</span>
-                                    <span class="specs-column-value" data-en="High-Strength Performance" data-ar="أداء عالي التحمل">High-Strength Performance</span>
+                                    <span class="specs-column-label" data-en="Weight Capacity"
+                                        data-ar="سعة الوزن">Weight Capacity</span>
+                                    <span class="specs-column-value" data-en="High-Strength Performance"
+                                        data-ar="أداء عالي التحمل">High-Strength Performance</span>
                                 </div>
                                 <div class="specs-column-row">
-                                    <span class="specs-column-label" data-en="Ball Size" data-ar="مقاس الكرة">Ball Size</span>
-                                    <span class="specs-column-value" data-en="Standard Hub Bore Fit" data-ar="مطابق لتجويف المحور">Standard Hub Bore Fit</span>
+                                    <span class="specs-column-label" data-en="Ball Size" data-ar="مقاس الكرة">Ball
+                                        Size</span>
+                                    <span class="specs-column-value" data-en="Standard Hub Bore Fit"
+                                        data-ar="مطابق لتجويف المحور">Standard Hub Bore Fit</span>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Quality & Standards:" data-ar="الجودة والمعايير:">Quality & Standards:</h4>
-                            <ul style="padding-left: var(--spacing-md); display: flex; flex-direction: column; gap: var(--spacing-xs); margin-top: 0.5rem;">
+                            <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Quality & Standards:"
+                                data-ar="الجودة والمعايير:">Quality & Standards:</h4>
+                            <ul
+                                style="padding-left: var(--spacing-md); display: flex; flex-direction: column; gap: var(--spacing-xs); margin-top: 0.5rem;">
                                 <li><strong>ISO 9001:2015</strong> - Certified Quality Management System.</li>
-                                <li data-en="MIL-STD-810H Compliant - High vibration and extreme temperature shock durability tested." data-ar="متوافق مع مواصفات MIL-STD-810H - تم اختبار مقاومة الاهتزاز العالي والصدمات الحرارية القصوى.">MIL-STD-810H Compliant - High vibration and extreme temperature shock durability tested.</li>
-                                <li data-en="Salt Spray Tested - ASTM B117 standards verified for corrosion resistance." data-ar="اختبار رذاذ الملح - التحقق من معايير ASTM B117 لمقاومة التآكل.">Salt Spray Tested - ASTM B117 standards verified for corrosion resistance.</li>
+                                <li data-en="MIL-STD-810H Compliant - High vibration and extreme temperature shock durability tested."
+                                    data-ar="متوافق مع مواصفات MIL-STD-810H - تم اختبار مقاومة الاهتزاز العالي والصدمات الحرارية القصوى.">
+                                    MIL-STD-810H Compliant - High vibration and extreme temperature shock durability
+                                    tested.</li>
+                                <li data-en="Salt Spray Tested - ASTM B117 standards verified for corrosion resistance."
+                                    data-ar="اختبار رذاذ الملح - التحقق من معايير ASTM B117 لمقاومة التآكل.">Salt Spray
+                                    Tested - ASTM B117 standards verified for corrosion resistance.</li>
                             </ul>
                         </div>
                     </div>
@@ -516,9 +759,11 @@
                 <div class="tab-content-panel" id="tab-fitments" role="tabpanel">
                     <div class="fitments-search-box" style="margin-bottom: var(--spacing-md);">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="fitment-search-input" placeholder="Search by make or model..." data-en-placeholder="Search by make or model..." data-ar-placeholder="البحث عن الماركة أو الموديل...">
+                        <input type="text" id="fitment-search-input" placeholder="Search by make or model..."
+                            data-en-placeholder="Search by make or model..."
+                            data-ar-placeholder="البحث عن الماركة أو الموديل...">
                     </div>
-                    
+
                     <div style="overflow-x: auto;">
                         <table class="fitment-table">
                             <thead>
@@ -531,40 +776,70 @@
                             </thead>
                             <tbody id="fitment-table-body">
                                 <tr class="fitment-row" data-car="Ford F-150 Raptor">
-                                    <td>2015 - 2024</td>
-                                    <td>Ford</td>
-                                    <td>F-150 Raptor</td>
-                                    <td>3.5L V6 EcoBoost / 5.2L V8</td>
+                                    <td><span class="fitment-year-badge">2015 - 2024</span></td>
+                                    <td>
+                                        <div class="fitment-make-cell">
+                                            <span class="fitment-make-icon"><i class="fa-solid fa-truck-pickup"></i></span>
+                                            <span>Ford</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="fitment-model-cell">F-150 Raptor</span></td>
+                                    <td><span class="fitment-engine-cell">3.5L V6 EcoBoost / 5.2L V8</span></td>
                                 </tr>
                                 <tr class="fitment-row" data-car="Chevrolet Silverado 1500">
-                                    <td>2010 - 2023</td>
-                                    <td>Chevrolet</td>
-                                    <td>Silverado 1500</td>
-                                    <td>5.3L V8 / 6.2L V8</td>
+                                    <td><span class="fitment-year-badge">2010 - 2023</span></td>
+                                    <td>
+                                        <div class="fitment-make-cell">
+                                            <span class="fitment-make-icon"><i class="fa-solid fa-truck-pickup"></i></span>
+                                            <span>Chevrolet</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="fitment-model-cell">Silverado 1500</span></td>
+                                    <td><span class="fitment-engine-cell">5.3L V8 / 6.2L V8</span></td>
                                 </tr>
                                 <tr class="fitment-row" data-car="Jeep Wrangler JK / JL">
-                                    <td>2007 - 2024</td>
-                                    <td>Jeep</td>
-                                    <td>Wrangler JK / JL</td>
-                                    <td>2.0L I4 / 3.6L V6</td>
+                                    <td><span class="fitment-year-badge">2007 - 2024</span></td>
+                                    <td>
+                                        <div class="fitment-make-cell">
+                                            <span class="fitment-make-icon"><i class="fa-solid fa-car-side"></i></span>
+                                            <span>Jeep</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="fitment-model-cell">Wrangler JK / JL</span></td>
+                                    <td><span class="fitment-engine-cell">2.0L I4 / 3.6L V6</span></td>
                                 </tr>
                                 <tr class="fitment-row" data-car="GMC Sierra 1500">
-                                    <td>2012 - 2024</td>
-                                    <td>GMC</td>
-                                    <td>Sierra 1500</td>
-                                    <td>5.3L V8 / 6.2L V8</td>
+                                    <td><span class="fitment-year-badge">2012 - 2024</span></td>
+                                    <td>
+                                        <div class="fitment-make-cell">
+                                            <span class="fitment-make-icon"><i class="fa-solid fa-truck-pickup"></i></span>
+                                            <span>GMC</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="fitment-model-cell">Sierra 1500</span></td>
+                                    <td><span class="fitment-engine-cell">5.3L V8 / 6.2L V8</span></td>
                                 </tr>
                                 <tr class="fitment-row" data-car="Toyota Tundra TRD Pro">
-                                    <td>2014 - 2022</td>
-                                    <td>Toyota</td>
-                                    <td>Tundra TRD Pro</td>
-                                    <td>5.7L V8 / 3.5L Twin-Turbo V6</td>
+                                    <td><span class="fitment-year-badge">2014 - 2022</span></td>
+                                    <td>
+                                        <div class="fitment-make-cell">
+                                            <span class="fitment-make-icon"><i class="fa-solid fa-truck-pickup"></i></span>
+                                            <span>Toyota</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="fitment-model-cell">Tundra TRD Pro</span></td>
+                                    <td><span class="fitment-engine-cell">5.7L V8 / 3.5L Twin-Turbo V6</span></td>
                                 </tr>
                                 <tr class="fitment-row" data-car="Dodge Ram 1500 TRX">
-                                    <td>2009 - 2024</td>
-                                    <td>Dodge</td>
-                                    <td>Ram 1500 TRX</td>
-                                    <td>6.2L Supercharged V8</td>
+                                    <td><span class="fitment-year-badge">2009 - 2024</span></td>
+                                    <td>
+                                        <div class="fitment-make-cell">
+                                            <span class="fitment-make-icon"><i class="fa-solid fa-truck-pickup"></i></span>
+                                            <span>Dodge</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="fitment-model-cell">Ram 1500 TRX</span></td>
+                                    <td><span class="fitment-engine-cell">6.2L Supercharged V8</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -586,7 +861,7 @@
                             </div>
                             <span data-en="Based on 0 reviews" data-ar="بناءً على ٠ تقييم">Based on 0 reviews</span>
                         </div>
-                        
+
                         <!-- Star progress bars -->
                         <div class="review-progress-bars">
                             <div class="review-progress-row">
@@ -626,34 +901,48 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Empty reviews placeholder and user reviews list -->
                     <div id="user-reviews-list-container">
                         <div id="no-reviews-placeholder">
-                            <i class="fa-regular fa-comments" style="font-size: 3rem; color: var(--color-border); margin-bottom: var(--spacing-sm); display: block;"></i>
-                            <span style="font-weight: 700; font-size: 1.1rem; color: var(--color-text-main); display: block;" data-en="No reviews yet" data-ar="لا توجد تقييمات بعد">No reviews yet</span>
-                            <span style="font-size: 0.9rem; color: var(--color-text-muted);" data-en="Be the first to review this product." data-ar="كن أول من يقيم هذا المنتج.">Be the first to review this product.</span>
+                            <i class="fa-regular fa-comments"
+                                style="font-size: 3rem; color: var(--color-border); margin-bottom: var(--spacing-sm); display: block;"></i>
+                            <span
+                                style="font-weight: 700; font-size: 1.1rem; color: var(--color-text-main); display: block;"
+                                data-en="No reviews yet" data-ar="لا توجد تقييمات بعد">No reviews yet</span>
+                            <span style="font-size: 0.9rem; color: var(--color-text-muted);"
+                                data-en="Be the first to review this product." data-ar="كن أول من يقيم هذا المنتج.">Be
+                                the first to review this product.</span>
                         </div>
                     </div>
-                    
+
                     <!-- Write a Review Form -->
-                    <div style="background: var(--color-bg-sidebar); border: 1px solid var(--color-border); padding: var(--spacing-xl); border-radius: var(--radius-lg); margin-top: var(--spacing-xl);">
-                        <h4 style="font-weight: 800; text-transform: uppercase; margin-bottom: var(--spacing-md);" data-en="Write a Review" data-ar="كتابة تقييم">Write a Review</h4>
-                        <form id="write-review-form" onsubmit="return false;" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <div
+                        style="background: var(--color-bg-sidebar); border: 1px solid var(--color-border); padding: var(--spacing-xl); border-radius: var(--radius-lg); margin-top: var(--spacing-xl);">
+                        <h4 style="font-weight: 800; text-transform: uppercase; margin-bottom: var(--spacing-md);"
+                            data-en="Write a Review" data-ar="كتابة تقييم">Write a Review</h4>
+                        <form id="write-review-form" onsubmit="return false;"
+                            style="display: flex; flex-direction: column; gap: var(--spacing-md);">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
                                 <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-                                    <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Your Name" data-ar="الاسم">Your Name</label>
-                                    <input type="text" id="review-name" placeholder="Enter your name" data-en-placeholder="Enter your name" data-ar-placeholder="أدخل اسمك" required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
+                                    <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);"
+                                        data-en="Your Name" data-ar="الاسم">Your Name</label>
+                                    <input type="text" id="review-name" placeholder="Enter your name"
+                                        data-en-placeholder="Enter your name" data-ar-placeholder="أدخل اسمك" required
+                                        style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
                                 </div>
                                 <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-                                    <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
-                                    <input type="email" id="review-email" value="admin@q8mount.com" required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
+                                    <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);"
+                                        data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+                                    <input type="email" id="review-email" value="admin@q8mount.com" required
+                                        style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
                                 </div>
                             </div>
-                            
+
                             <!-- Star Rating Input -->
                             <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Your Rating" data-ar="تقييمك">Your Rating</label>
+                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);"
+                                    data-en="Your Rating" data-ar="تقييمك">Your Rating</label>
                                 <div class="rating-input-row" id="rating-input-stars">
                                     <i class="fa-regular fa-star" data-rating="1"></i>
                                     <i class="fa-regular fa-star" data-rating="2"></i>
@@ -662,19 +951,30 @@
                                     <i class="fa-regular fa-star" data-rating="5"></i>
                                 </div>
                             </div>
-                            
+
                             <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Review Title" data-ar="عنوان التقييم">Review Title</label>
-                                <input type="text" id="review-title" placeholder="Summarise your experience" data-en-placeholder="Summarise your experience" data-ar-placeholder="لخص تجربتك مع المنتج" required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
+                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);"
+                                    data-en="Review Title" data-ar="عنوان التقييم">Review Title</label>
+                                <input type="text" id="review-title" placeholder="Summarise your experience"
+                                    data-en-placeholder="Summarise your experience"
+                                    data-ar-placeholder="لخص تجربتك مع المنتج" required
+                                    style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
                             </div>
-                            
+
                             <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
-                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Your Review" data-ar="مراجعتك">Your Review</label>
-                                <textarea id="review-body" rows="4" placeholder="Tell us about your experience with this product..." data-en-placeholder="Tell us about your experience with this product..." data-ar-placeholder="أخبرنا عن تجربتك مع هذا المنتج..." required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600; font-family: inherit; resize: vertical;"></textarea>
+                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);"
+                                    data-en="Your Review" data-ar="مراجعتك">Your Review</label>
+                                <textarea id="review-body" rows="4"
+                                    placeholder="Tell us about your experience with this product..."
+                                    data-en-placeholder="Tell us about your experience with this product..."
+                                    data-ar-placeholder="أخبرنا عن تجربتك مع هذا المنتج..." required
+                                    style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600; font-family: inherit; resize: vertical;"></textarea>
                             </div>
-                            
+
                             <div style="text-align: right;">
-                                <button type="submit" id="btn-submit-review" class="btn btn-primary" style="padding: 0.75rem 2rem; border-radius: var(--radius); border: none; font-weight: 700; cursor: pointer; text-transform: uppercase;" data-en="Submit Review" data-ar="إرسال التقييم">Submit Review</button>
+                                <button type="submit" id="btn-submit-review" class="btn btn-primary"
+                                    style="padding: 0.75rem 2rem; border-radius: var(--radius); border: none; font-weight: 700; cursor: pointer; text-transform: uppercase;"
+                                    data-en="Submit Review" data-ar="إرسال التقييم">Submit Review</button>
                             </div>
                         </form>
                     </div>
@@ -684,7 +984,8 @@
             <!-- Compatible Accessories section (Restructured to match the standard grid) -->
             <section class="accessory-section">
                 <div class="accessory-section-header">
-                    <h3 class="accessory-section-title" data-en="Compatible Accessories" data-ar="الملحقات المتوافقة">Compatible Accessories</h3>
+                    <h3 class="accessory-section-title" data-en="Compatible Accessories" data-ar="الملحقات المتوافقة">
+                        Compatible Accessories</h3>
                     <a href="products.html" class="accessory-view-all">
                         <span data-en="View Entire Catalog" data-ar="عرض الكتالوج بالكامل">View Entire Catalog</span>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -692,17 +993,23 @@
                 </div>
 
                 <div class="product-grid">
-                    
+
                     <!-- Card 1 -->
-                    <article class="product-card" data-category="accessories" data-brand="ram-mounts" data-stock="in-stock" data-price="2.500" data-rating="4.9">
+                    <article class="product-card" data-category="accessories" data-brand="ram-mounts"
+                        data-stock="in-stock" data-price="2.500" data-rating="4.9">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/bolts.png" alt="Safety Tether">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| RAM Mounts</span>
-                            <h3 class="product-title" data-en="RAM® X-Grip® Safety Tether" data-ar="حزام الأمان لـ RAM® X-Grip®">RAM® X-Grip® Safety Tether</h3>
-                            <p class="product-description" data-en="High-strength elastic tether secures devices under high-vibration environments." data-ar="حزام مرن عالي القوة يؤمن الأجهزة تحت ظروف الاهتزازات العالية.">High-strength elastic tether secures devices under high-vibration environments.</p>
+                            <h3 class="product-title" data-en="RAM® X-Grip® Safety Tether"
+                                data-ar="حزام الأمان لـ RAM® X-Grip®">RAM® X-Grip® Safety Tether</h3>
+                            <p class="product-description"
+                                data-en="High-strength elastic tether secures devices under high-vibration environments."
+                                data-ar="حزام مرن عالي القوة يؤمن الأجهزة تحت ظروف الاهتزازات العالية.">High-strength
+                                elastic tether secures devices under high-vibration environments.</p>
                             <span class="product-sku">SKU: SKU-RAM-TETHER-1</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -714,25 +1021,34 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 2.500</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (20)" data-ar="متوفر (٢٠)">In Stock (20)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (20)" data-ar="متوفر (٢٠)">In Stock (20)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Card 2 -->
-                    <article class="product-card" data-category="accessories" data-brand="ram-mounts" data-stock="in-stock" data-price="8.750" data-rating="4.8">
+                    <article class="product-card" data-category="accessories" data-brand="ram-mounts"
+                        data-stock="in-stock" data-price="8.750" data-rating="4.8">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/clamp.png" alt="Double Socket Arm">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| RAM Mounts</span>
-                            <h3 class="product-title" data-en="Double Socket Arm (Medium)" data-ar="ذراع تثبيت مزدوج (متوسط)">Double Socket Arm (Medium)</h3>
-                            <p class="product-description" data-en="Modular double socket arm providing adjustable mounting for B-size balls." data-ar="ذراع تثبيت مزدوج متوسط الطول يوفر قابلية ضبط مرنة لمكونات مقاس B.">Modular double socket arm providing adjustable mounting for B-size balls.</p>
+                            <h3 class="product-title" data-en="Double Socket Arm (Medium)"
+                                data-ar="ذراع تثبيت مزدوج (متوسط)">Double Socket Arm (Medium)</h3>
+                            <p class="product-description"
+                                data-en="Modular double socket arm providing adjustable mounting for B-size balls."
+                                data-ar="ذراع تثبيت مزدوج متوسط الطول يوفر قابلية ضبط مرنة لمكونات مقاس B.">Modular
+                                double socket arm providing adjustable mounting for B-size balls.</p>
                             <span class="product-sku">SKU: SKU-RAM-ARM-1</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -744,25 +1060,34 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 8.750</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (12)" data-ar="متوفر (١٢)">In Stock (12)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (12)" data-ar="متوفر (١٢)">In Stock (12)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Card 3 -->
-                    <article class="product-card" data-category="accessories" data-brand="ram-mounts" data-stock="in-stock" data-price="4.200" data-rating="4.7">
+                    <article class="product-card" data-category="accessories" data-brand="ram-mounts"
+                        data-stock="in-stock" data-price="4.200" data-rating="4.7">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/chassis_systems.png" alt="Flex Adhesive Base">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| RAM Mounts</span>
-                            <h3 class="product-title" data-en="Flex Adhesive Base (B Size)" data-ar="قاعدة لاصقة مرنة (مقاس B)">Flex Adhesive Base (B Size)</h3>
-                            <p class="product-description" data-en="Sticky flex base conforming to curved surfaces for dashboard mounting." data-ar="قاعدة لاصقة مرنة تلتصق بالأسطح المنحنية لتثبيت لوحات القيادة.">Sticky flex base conforming to curved surfaces for dashboard mounting.</p>
+                            <h3 class="product-title" data-en="Flex Adhesive Base (B Size)"
+                                data-ar="قاعدة لاصقة مرنة (مقاس B)">Flex Adhesive Base (B Size)</h3>
+                            <p class="product-description"
+                                data-en="Sticky flex base conforming to curved surfaces for dashboard mounting."
+                                data-ar="قاعدة لاصقة مرنة تلتصق بالأسطح المنحنية لتثبيت لوحات القيادة.">Sticky flex base
+                                conforming to curved surfaces for dashboard mounting.</p>
                             <span class="product-sku">SKU: SKU-RAM-BASE-1</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -774,25 +1099,34 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 4.200</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (10)" data-ar="متوفر (١٠)">In Stock (10)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (10)" data-ar="متوفر (١٠)">In Stock (10)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Card 4 -->
-                    <article class="product-card" data-category="accessories" data-brand="ram-mounts" data-stock="in-stock" data-price="8.000" data-rating="4.6">
+                    <article class="product-card" data-category="accessories" data-brand="ram-mounts"
+                        data-stock="in-stock" data-price="8.000" data-rating="4.6">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/radiator.png" alt="Security Knob">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| RAM Mounts</span>
-                            <h3 class="product-title" data-en="RAM® Pin-Lock™ Security Knob" data-ar="مقبض أمان RAM® Pin-Lock™">RAM® Pin-Lock™ Security Knob</h3>
-                            <p class="product-description" data-en="Modular security knob replaces standard knobs to prevent device theft." data-ar="مقبض أمان بديل يمنع سرقة الأجهزة والأذرع المركبة.">Modular security knob replaces standard knobs to prevent device theft.</p>
+                            <h3 class="product-title" data-en="RAM® Pin-Lock™ Security Knob"
+                                data-ar="مقبض أمان RAM® Pin-Lock™">RAM® Pin-Lock™ Security Knob</h3>
+                            <p class="product-description"
+                                data-en="Modular security knob replaces standard knobs to prevent device theft."
+                                data-ar="مقبض أمان بديل يمنع سرقة الأجهزة والأذرع المركبة.">Modular security knob
+                                replaces standard knobs to prevent device theft.</p>
                             <span class="product-sku">SKU: SKU-RAM-LOCK-1</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -804,11 +1138,14 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 8.000</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
@@ -820,9 +1157,15 @@
             <section class="accessory-section" style="margin-top: var(--spacing-xxl);">
                 <div class="accessory-section-header">
                     <div>
-                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 1px;" data-en="Also Consider" data-ar="خيارات بديلة">Also Consider</span>
-                        <h3 class="accessory-section-title" style="margin-top: 2px;" data-en="Replacement Products" data-ar="المنتجات البديلة">Replacement Products</h3>
-                        <p style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; margin-top: 2px;" data-en="Alternative options that fit the same application" data-ar="خيارات بديلة متوافقة مع نفس الاستخدام">Alternative options that fit the same application</p>
+                        <span
+                            style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 1px;"
+                            data-en="Also Consider" data-ar="خيارات بديلة">Also Consider</span>
+                        <h3 class="accessory-section-title" style="margin-top: 2px;" data-en="Replacement Products"
+                            data-ar="المنتجات البديلة">Replacement Products</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; margin-top: 2px;"
+                            data-en="Alternative options that fit the same application"
+                            data-ar="خيارات بديلة متوافقة مع نفس الاستخدام">Alternative options that fit the same
+                            application</p>
                     </div>
                     <a href="products.html" class="accessory-view-all">
                         <span data-en="View All Alternatives" data-ar="عرض جميع البدائل">View All Alternatives</span>
@@ -832,15 +1175,22 @@
 
                 <div class="product-grid">
                     <!-- Card 1: Billet Hub Cover Black -->
-                    <article class="product-card" data-category="mounting" data-brand="weld-racing" data-stock="in-stock" data-price="14.500" data-rating="4.8">
+                    <article class="product-card" data-category="mounting" data-brand="weld-racing"
+                        data-stock="in-stock" data-price="14.500" data-rating="4.8">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/bolts.png" alt="Weld Racing Black Cap">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| Weld Racing</span>
-                            <h3 class="product-title" data-en="Weld Racing Billet Hub Cover Matte Black | WEL-P605-BLK" data-ar="غطاء عجلات ويلد ريسينغ أسود مطفأ | WEL-P605-BLK">Weld Racing Billet Hub Cover Matte Black | WEL-P605-BLK</h3>
-                            <p class="product-description" data-en="Replacement push-through hub cover with sleek matte black finish." data-ar="غطاء بديل للمحور بتصميم الدفع مع لمسة نهائية سوداء غير لامعة.">Replacement push-through hub cover with sleek matte black finish.</p>
+                            <h3 class="product-title" data-en="Weld Racing Billet Hub Cover Matte Black | WEL-P605-BLK"
+                                data-ar="غطاء عجلات ويلد ريسينغ أسود مطفأ | WEL-P605-BLK">Weld Racing Billet Hub Cover
+                                Matte Black | WEL-P605-BLK</h3>
+                            <p class="product-description"
+                                data-en="Replacement push-through hub cover with sleek matte black finish."
+                                data-ar="غطاء بديل للمحور بتصميم الدفع مع لمسة نهائية سوداء غير لامعة.">Replacement
+                                push-through hub cover with sleek matte black finish.</p>
                             <span class="product-sku">SKU: SKU-WELDRACING-026-BLK77</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -852,25 +1202,36 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 14.500</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (5)" data-ar="متوفر (٥)">In Stock (5)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (5)" data-ar="متوفر (٥)">In Stock (5)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Card 2: 1991-93 Ford Mustang Pony Cap -->
-                    <article class="product-card" data-category="mounting" data-brand="50-resto" data-stock="out-of-stock" data-price="26.000" data-rating="4.5">
+                    <article class="product-card" data-category="mounting" data-brand="50-resto"
+                        data-stock="out-of-stock" data-price="26.000" data-rating="4.5">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/bolts.png" alt="50 Resto Cap">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| 50 Resto</span>
-                            <h3 class="product-title" data-en="1991-93 Ford Mustang Pony Wheel Center Cap Chrome | LRS..." data-ar="غطاء عجلات فورد موستنج كروم ١٩٩١-١٩٩٣ | LRS...">1991-93 Ford Mustang Pony Wheel Center Cap Chrome | LRS...</h3>
-                            <p class="product-description" data-en="Chrome Pony Wheel Center Cap for 1991-1993 Ford Mustang." data-ar="غطاء مركز عجلات بوني كروم لسيارات فورد موستنج ١٩٩١-١٩٩٣.">Chrome Pony Wheel Center Cap for 1991-1993 Ford Mustang.</p>
+                            <h3 class="product-title"
+                                data-en="1991-93 Ford Mustang Pony Wheel Center Cap Chrome | LRS..."
+                                data-ar="غطاء عجلات فورد موستنج كروم ١٩٩١-١٩٩٣ | LRS...">1991-93 Ford Mustang Pony Wheel
+                                Center Cap Chrome | LRS...</h3>
+                            <p class="product-description"
+                                data-en="Chrome Pony Wheel Center Cap for 1991-1993 Ford Mustang."
+                                data-ar="غطاء مركز عجلات بوني كروم لسيارات فورد موستنج ١٩٩١-١٩٩٣.">Chrome Pony Wheel
+                                Center Cap for 1991-1993 Ford Mustang.</p>
                             <span class="product-sku">SKU: SKU-50RESTO-026-83839</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -882,25 +1243,34 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 26.000</span>
-                                <span class="badge" style="background-color: #c62828; color: #ffffff;" data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
+                                <span class="badge" style="background-color: #c62828; color: #ffffff;"
+                                    data-en="Out of stock (0)" data-ar="غير متوفر (٠)">Out of stock (0)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة" disabled><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة" disabled><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Card 3: American Racing Center Cap -->
-                    <article class="product-card" data-category="mounting" data-brand="american-racing" data-stock="in-stock" data-price="6.000" data-rating="4.7">
+                    <article class="product-card" data-category="mounting" data-brand="american-racing"
+                        data-stock="in-stock" data-price="6.000" data-rating="4.7">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/radiator.png" alt="American Racing Cap">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| American Racing</span>
-                            <h3 class="product-title" data-en="American Racing Center Cap Logo Emblem" data-ar="شعار أغطية عجلات أمريكان ريسينغ">American Racing Center Cap Logo Emblem</h3>
-                            <p class="product-description" data-en="Chrome replacement wheel center cap badge with American Racing logo." data-ar="شعار أغطية عجلات كروم بديل مع شعار أمريكان ريسينغ.">Chrome replacement wheel center cap badge with American Racing logo.</p>
+                            <h3 class="product-title" data-en="American Racing Center Cap Logo Emblem"
+                                data-ar="شعار أغطية عجلات أمريكان ريسينغ">American Racing Center Cap Logo Emblem</h3>
+                            <p class="product-description"
+                                data-en="Chrome replacement wheel center cap badge with American Racing logo."
+                                data-ar="شعار أغطية عجلات كروم بديل مع شعار أمريكان ريسينغ.">Chrome replacement wheel
+                                center cap badge with American Racing logo.</p>
                             <span class="product-sku">SKU: SKU-AMERRACING-088-348</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -912,11 +1282,14 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 6.000</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
@@ -927,9 +1300,15 @@
             <section class="accessory-section" style="margin-top: var(--spacing-xxl);">
                 <div class="accessory-section-header">
                     <div>
-                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 1px;" data-en="You May Also Like" data-ar="قد يعجبك أيضاً">You May Also Like</span>
-                        <h3 class="accessory-section-title" style="margin-top: 2px;" data-en="Recommended Products" data-ar="منتجات موصى بها">Recommended Products</h3>
-                        <p style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; margin-top: 2px;" data-en="Handpicked products that pair well with this item" data-ar="منتجات مختارة بعناية تتناسب مع هذا المنتج">Handpicked products that pair well with this item</p>
+                        <span
+                            style="font-size: 0.75rem; font-weight: 800; color: var(--color-primary); text-transform: uppercase; letter-spacing: 1px;"
+                            data-en="You May Also Like" data-ar="قد يعجبك أيضاً">You May Also Like</span>
+                        <h3 class="accessory-section-title" style="margin-top: 2px;" data-en="Recommended Products"
+                            data-ar="منتجات موصى بها">Recommended Products</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600; margin-top: 2px;"
+                            data-en="Handpicked products that pair well with this item"
+                            data-ar="منتجات مختارة بعناية تتناسب مع هذا المنتج">Handpicked products that pair well with
+                            this item</p>
                     </div>
                     <a href="products.html" class="accessory-view-all">
                         <span data-en="Browse All Products" data-ar="تصفح جميع المنتجات">Browse All Products</span>
@@ -939,15 +1318,22 @@
 
                 <div class="product-grid">
                     <!-- Card 1: RAM Safety Tether -->
-                    <article class="product-card" data-category="accessories" data-brand="ram-mounts" data-stock="in-stock" data-price="2.500" data-rating="4.9">
+                    <article class="product-card" data-category="accessories" data-brand="ram-mounts"
+                        data-stock="in-stock" data-price="2.500" data-rating="4.9">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/bolts.png" alt="RAM Safety Tether">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| RAM Mounts</span>
-                            <h3 class="product-title" data-en="RAM® X-Grip® Safety Tether" data-ar="حزام الأمان لـ RAM® X-Grip®">RAM® X-Grip® Safety Tether</h3>
-                            <p class="product-description" data-en="High-strength elastic tether secures devices under high-vibration off-road environments." data-ar="حزام مرن عالي القوة يؤمن الأجهزة تحت ظروف الاهتزازات العالية على الطرق الوعرة.">High-strength elastic tether secures devices under high-vibration off-road environments.</p>
+                            <h3 class="product-title" data-en="RAM® X-Grip® Safety Tether"
+                                data-ar="حزام الأمان لـ RAM® X-Grip®">RAM® X-Grip® Safety Tether</h3>
+                            <p class="product-description"
+                                data-en="High-strength elastic tether secures devices under high-vibration off-road environments."
+                                data-ar="حزام مرن عالي القوة يؤمن الأجهزة تحت ظروف الاهتزازات العالية على الطرق الوعرة.">
+                                High-strength elastic tether secures devices under high-vibration off-road environments.
+                            </p>
                             <span class="product-sku">SKU: SKU-RAM-TETHER-1</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -959,25 +1345,35 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 2.500</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (20)" data-ar="متوفر (٢٠)">In Stock (20)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (20)" data-ar="متوفر (٢٠)">In Stock (20)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Card 2: Double Socket Arm -->
-                    <article class="product-card" data-category="accessories" data-brand="ram-mounts" data-stock="in-stock" data-price="8.750" data-rating="4.8">
+                    <article class="product-card" data-category="accessories" data-brand="ram-mounts"
+                        data-stock="in-stock" data-price="8.750" data-rating="4.8">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/clamp.png" alt="Double Socket Arm">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| RAM Mounts</span>
-                            <h3 class="product-title" data-en="Double Socket Arm (Medium)" data-ar="ذراع تثبيت مزدوج (متوسط)">Double Socket Arm (Medium)</h3>
-                            <p class="product-description" data-en="Standard length double socket arm provides modular adjustability for all B-size components." data-ar="ذراع تثبيت مزدوج متوسط الطول يوفر قابلية ضبط مرنة لجميع مكونات مقاس B.">Standard length double socket arm provides modular adjustability for all B-size components.</p>
+                            <h3 class="product-title" data-en="Double Socket Arm (Medium)"
+                                data-ar="ذراع تثبيت مزدوج (متوسط)">Double Socket Arm (Medium)</h3>
+                            <p class="product-description"
+                                data-en="Standard length double socket arm provides modular adjustability for all B-size components."
+                                data-ar="ذراع تثبيت مزدوج متوسط الطول يوفر قابلية ضبط مرنة لجميع مكونات مقاس B.">
+                                Standard length double socket arm provides modular adjustability for all B-size
+                                components.</p>
                             <span class="product-sku">SKU: SKU-RAM-ARM-1</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -989,25 +1385,35 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 8.750</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (12)" data-ar="متوفر (١٢)">In Stock (12)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (12)" data-ar="متوفر (١٢)">In Stock (12)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
 
                     <!-- Card 3: RAM Pin-Lock Security Knob -->
-                    <article class="product-card" data-category="accessories" data-brand="ram-mounts" data-stock="in-stock" data-price="8.000" data-rating="4.6">
+                    <article class="product-card" data-category="accessories" data-brand="ram-mounts"
+                        data-stock="in-stock" data-price="8.000" data-rating="4.6">
                         <div class="product-image-container">
-                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button class="product-card-wishlist-btn" aria-label="Add to wishlist"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <img src="images/radiator.png" alt="RAM Security Knob">
                         </div>
                         <div class="product-info">
                             <span class="product-brand-label">| RAM Mounts</span>
-                            <h3 class="product-title" data-en="RAM® Pin-Lock™ Security Knob" data-ar="مقبض أمان RAM® Pin-Lock™">RAM® Pin-Lock™ Security Knob</h3>
-                            <p class="product-description" data-en="Provides theft deterrence for sockets and arms by replacing standard knobs with lock keys." data-ar="يوفر حماية إضافية ضد السرقة للأذرع عبر استبدال المقابض القياسية بمفتاح قفل.">Provides theft deterrence for sockets and arms by replacing standard knobs with lock keys.</p>
+                            <h3 class="product-title" data-en="RAM® Pin-Lock™ Security Knob"
+                                data-ar="مقبض أمان RAM® Pin-Lock™">RAM® Pin-Lock™ Security Knob</h3>
+                            <p class="product-description"
+                                data-en="Provides theft deterrence for sockets and arms by replacing standard knobs with lock keys."
+                                data-ar="يوفر حماية إضافية ضد السرقة للأذرع عبر استبدال المقابض القياسية بمفتاح قفل.">
+                                Provides theft deterrence for sockets and arms by replacing standard knobs with lock
+                                keys.</p>
                             <span class="product-sku">SKU: SKU-RAM-LOCK-1</span>
                             <div class="product-rating">
                                 <i class="fa-solid fa-star"></i>
@@ -1019,11 +1425,14 @@
                             </div>
                             <div class="product-footer">
                                 <span class="product-price">KD 8.000</span>
-                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;" data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
+                                <span class="badge" style="background-color: #2e7d32; color: #ffffff;"
+                                    data-en="In Stock (15)" data-ar="متوفر (١٥)">In Stock (15)</span>
                             </div>
                             <div class="product-card-actions">
-                                <a href="product.html" class="btn btn-secondary" data-en="Details" data-ar="التفاصيل">Details</a>
-                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                                <a href="product.html" class="btn btn-secondary" data-en="Details"
+                                    data-ar="التفاصيل">Details</a>
+                                <button class="btn btn-cart" data-en="Add" data-ar="إضافة"><i
+                                        class="fa-solid fa-cart-shopping"></i> Add</button>
                             </div>
                         </div>
                     </article>
@@ -1033,13 +1442,17 @@
         </main>
     </div>
 
-            <!-- ============== FOOTER ============== -->
+    <!-- ============== FOOTER ============== -->
     <footer class="footer">
         <!-- Newsletter strip -->
         <div class="footer-newsletter">
             <div class="newsletter-text">
-                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">Engineer-Grade Updates. No Noise.</h3>
-                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox." data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.</p>
+                <h3 data-en="Engineer-Grade Updates. No Noise." data-ar="تحديثات من درجة المهندسين. بدون إزعاج.">
+                    Engineer-Grade Updates. No Noise.</h3>
+                <p data-en="New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox."
+                    data-ar="إصدارات SKU الجديدة، والنشرات الفنية، وأدلة التثبيت، والأسعار الخاصة بالشركات - مباشرة إلى صندوق الوارد الخاص بك.">
+                    New SKU drops, technical bulletins, fitment guides and trade-only pricing — straight to your inbox.
+                </p>
             </div>
             <form class="newsletter-form" onsubmit="return false;">
                 <input type="email" placeholder="your.work@email.com" required>
@@ -1050,7 +1463,10 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo footer-logo">Q8MOUNT</a>
-                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994." data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994.</p>
+                <p data-en="High-performance mounting solutions engineered for industrial and automotive applications. Delivering technical excellence through precision manufacturing since 1994."
+                    data-ar="حلول تركيب عالية الأداء مصممة للتطبيقات الصناعية وتطبيقات السيارات. تقديم التميز الفني من خلال التصنيع الدقيق منذ عام 1994.">
+                    High-performance mounting solutions engineered for industrial and automotive applications.
+                    Delivering technical excellence through precision manufacturing since 1994.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -1086,8 +1502,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE." data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE.</span>
-            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN KUWAIT</span>
+            <span data-en="&copy; 2024 Q8MOUNT INDUSTRIAL. PROFESSIONAL GRADE HARDWARE."
+                data-ar="&copy; ٢٠٢٤ كيو ٨ ماونت الصناعية. قطع غيار وعتاد احترافي.">&copy; 2024 Q8MOUNT INDUSTRIAL.
+                PROFESSIONAL GRADE HARDWARE.</span>
+            <span class="footer-bottom-meta">ISO 9001:2015 &nbsp;|&nbsp; MIL-STD COMPLIANT &nbsp;|&nbsp; MADE IN
+                KUWAIT</span>
         </div>
     </footer>
 
@@ -1276,7 +1695,7 @@
                     const rating = parseInt(star.getAttribute('data-rating'));
                     highlightStars(rating);
                 });
-                
+
                 star.addEventListener('mouseout', () => {
                     highlightStars(selectedRating);
                 });
@@ -1302,13 +1721,13 @@
             const reviewsContainer = document.getElementById('user-reviews-list-container');
             const noReviewsPlaceholder = document.getElementById('no-reviews-placeholder');
             const toastWrapper = document.getElementById('toast-wrapper');
-            
+
             // In-memory reviews array to track submitted reviews
             const reviewsList = [];
 
             writeReviewForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
                 const name = document.getElementById('review-name').value.trim();
                 const email = document.getElementById('review-email').value.trim();
                 const title = document.getElementById('review-title').value.trim();
@@ -1338,10 +1757,10 @@
 
                 // Show success toast
                 const currentLang = htmlEl.getAttribute('lang') || 'en';
-                const successMsg = currentLang === 'ar' 
-                    ? 'شكراً لك! تم إرسال تقييمك بنجاح.' 
+                const successMsg = currentLang === 'ar'
+                    ? 'شكراً لك! تم إرسال تقييمك بنجاح.'
                     : 'Thank you! Your review has been submitted successfully.';
-                
+
                 toastWrapper.innerHTML = '';
                 const toast = document.createElement('div');
                 toast.className = 'toast-notification';
@@ -1362,7 +1781,7 @@
                 }
 
                 noReviewsPlaceholder.style.display = 'none';
-                
+
                 // Clear dynamic reviews
                 const existingItems = reviewsContainer.querySelectorAll('.review-item');
                 existingItems.forEach(item => item.remove());
@@ -1370,7 +1789,7 @@
                 // Calculate summary stats
                 let totalRating = 0;
                 const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-                
+
                 // Add reviews to list
                 reviewsList.forEach(rev => {
                     totalRating += rev.rating;
@@ -1378,11 +1797,11 @@
 
                     const item = document.createElement('div');
                     item.className = 'review-item';
-                    
+
                     let starsHtml = '';
                     for (let i = 1; i <= 5; i++) {
-                        starsHtml += i <= rev.rating 
-                            ? '<i class="fa-solid fa-star"></i>' 
+                        starsHtml += i <= rev.rating
+                            ? '<i class="fa-solid fa-star"></i>'
                             : '<i class="fa-regular fa-star"></i>';
                     }
 
@@ -1399,14 +1818,14 @@
                         <h5 class="review-item-title">${rev.title}</h5>
                         <p class="review-item-body">${rev.body}</p>
                     `;
-                    
+
                     reviewsContainer.appendChild(item);
                 });
 
                 // Update summary numbers
                 const avgRating = (totalRating / reviewsList.length).toFixed(1);
                 document.getElementById('overall-review-score').textContent = avgRating;
-                
+
                 // Update header tab counter
                 const lang = htmlEl.getAttribute('lang') || 'en';
                 const reviewsTabBtn = document.querySelector('[data-tab="tab-reviews"]');
@@ -1466,14 +1885,13 @@
 
             /* ---------- TOAST NOTIFICATION ---------- */
             const addCartBtn = document.getElementById('btn-add-cart');
-            const toastWrapper = document.getElementById('toast-wrapper');
 
             addCartBtn.addEventListener('click', () => {
                 const currentLang = htmlEl.getAttribute('lang') || 'en';
-                const successMsg = currentLang === 'ar' 
-                    ? 'تمت إضافة المنتج إلى عربة التسوق بنجاح!' 
+                const successMsg = currentLang === 'ar'
+                    ? 'تمت إضافة المنتج إلى عربة التسوق بنجاح!'
                     : 'Product successfully added to your shopping cart!';
-                
+
                 // Remove any existing toasts
                 toastWrapper.innerHTML = '';
 
@@ -1495,7 +1913,7 @@
                 const quoteMsg = currentLang === 'ar'
                     ? 'تم إرسال طلب تسعيرة الكمية بنجاح! سيتصل بك مهندسونا قريباً.'
                     : 'Bulk quote request submitted! Our engineering team will contact you shortly.';
-                
+
                 toastWrapper.innerHTML = '';
                 const toast = document.createElement('div');
                 toast.className = 'toast-notification';
@@ -1515,11 +1933,11 @@
                     const card = e.target.closest('.accessory-card');
                     const titleEl = card.querySelector('.accessory-card-title');
                     const currentLang = htmlEl.getAttribute('lang') || 'en';
-                    
-                    const accName = currentLang === 'ar' 
-                        ? titleEl.getAttribute('data-ar') 
+
+                    const accName = currentLang === 'ar'
+                        ? titleEl.getAttribute('data-ar')
                         : titleEl.getAttribute('data-en');
-                        
+
                     const successMsg = currentLang === 'ar'
                         ? `تمت إضافة "${accName}" إلى السلة!`
                         : `"${accName}" added to cart!`;
@@ -1543,7 +1961,7 @@
                 const videoMsg = currentLang === 'ar'
                     ? 'جري تشغيل الفيديو التعليمي للتركيب...'
                     : 'Loading installation walkthrough video...';
-                
+
                 toastWrapper.innerHTML = '';
                 const toast = document.createElement('div');
                 toast.className = 'toast-notification';
