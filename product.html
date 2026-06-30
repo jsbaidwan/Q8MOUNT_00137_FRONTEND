@@ -13,6 +13,211 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Fitment Table Styles */
+        .fitment-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: var(--spacing-md);
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .fitment-table th {
+            background: var(--color-bg-header);
+            color: var(--color-text-main);
+            padding: 1rem;
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .fitment-table td {
+            padding: 1rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-main);
+        }
+
+        .fitment-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fitment-table tr.fitment-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Reviews Tab Styles */
+        .reviews-tab-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-tab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .review-score-card {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow-card);
+        }
+
+        .review-score-big {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--color-text-main);
+            line-height: 1;
+        }
+
+        .review-stars-row {
+            color: var(--color-border);
+            margin: var(--spacing-sm) 0;
+            font-size: 1.25rem;
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .review-stars-row .filled {
+            color: #ffb400 !important;
+        }
+
+        .review-progress-bars {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            justify-content: center;
+            box-shadow: var(--shadow-card);
+        }
+
+        .review-progress-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .review-progress-bar-container {
+            flex-grow: 1;
+            height: 8px;
+            background: var(--color-input-bg);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .review-progress-bar-fill {
+            width: 0%;
+            height: 100%;
+            background: var(--color-primary);
+            transition: width 0.4s ease;
+            border-radius: 4px;
+        }
+
+        .review-progress-count {
+            width: 25px;
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            text-align: left;
+        }
+
+        [dir="rtl"] .review-progress-count {
+            text-align: right;
+        }
+
+        /* Review Item List */
+        .review-item {
+            background: var(--color-bg-sidebar);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            animation: fadeIn 0.3s ease;
+            text-align: left;
+        }
+        
+        [dir="rtl"] .review-item {
+            text-align: right;
+        }
+
+        .review-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .review-item-author-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .review-item-name {
+            font-weight: 800;
+            color: var(--color-text-main);
+            font-size: 0.95rem;
+        }
+
+        .review-item-date {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        .review-item-stars {
+            color: #ffb400;
+            font-size: 0.9rem;
+            display: flex;
+            gap: 0.1rem;
+        }
+
+        .review-item-title {
+            font-weight: 800;
+            color: var(--color-text-main);
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+
+        .review-item-body {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Star Rating Input */
+        #rating-input-stars i {
+            transition: color 0.15s ease, transform 0.15s ease;
+        }
+
+        #rating-input-stars i:hover {
+            transform: scale(1.15);
+        }
+
+        #rating-input-stars i.filled {
+            color: #ffb400 !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -195,14 +400,15 @@
             <div id="reviews-anchor"></div>
             <div class="product-tabs-container">
                 <div class="tabs-navigation-bar" role="tablist">
-                    <button class="tab-nav-btn active" data-tab="tab-overview" role="tab" aria-selected="true" data-en="Overview" data-ar="نظرة عامة">Overview</button>
-                    <button class="tab-nav-btn" data-tab="tab-compatibility" role="tab" aria-selected="false" data-en="Compatibility" data-ar="التوافق">Compatibility</button>
-                    <button class="tab-nav-btn" data-tab="tab-installation" role="tab" aria-selected="false" data-en="Installation Guide" data-ar="دليل التركيب">Installation Guide</button>
-                    <button class="tab-nav-btn" data-tab="tab-certifications" role="tab" aria-selected="false" data-en="Certifications" data-ar="الشهادات">Certifications</button>
+                    <button class="tab-nav-btn active" data-tab="tab-description" role="tab" aria-selected="true" data-en="Description" data-ar="الوصف">Description</button>
+                    <button class="tab-nav-btn" data-tab="tab-attributes" role="tab" aria-selected="false" data-en="Attributes" data-ar="المواصفات الأساسية">Attributes</button>
+                    <button class="tab-nav-btn" data-tab="tab-specifications" role="tab" aria-selected="false" data-en="Specifications" data-ar="المواصفات الفنية">Specifications</button>
+                    <button class="tab-nav-btn" data-tab="tab-fitments" role="tab" aria-selected="false" data-en="Vehicle Fitments" data-ar="التوافق مع السيارات">Vehicle Fitments</button>
+                    <button class="tab-nav-btn" data-tab="tab-reviews" role="tab" aria-selected="false" data-en="Reviews (0)" data-ar="التقييمات (٠)">Reviews (0)</button>
                 </div>
 
-                <!-- Panel 1: Overview (Creative layout with circular checkmarks & Video card) -->
-                <div class="tab-content-panel active" id="tab-overview" role="tabpanel">
+                <!-- Panel 1: Description -->
+                <div class="tab-content-panel active" id="tab-description" role="tabpanel">
                     <div class="overview-tab-grid">
                         <div>
                             <h2 style="font-size: 1.6rem; font-weight: 900; text-transform: uppercase; color: var(--color-text-main);" data-en="Unrivaled Holding Power" data-ar="قوة تثبيت لا مثيل لها">Unrivaled Holding Power</h2>
@@ -238,86 +444,241 @@
                     </div>
                 </div>
 
-                <!-- Panel 2: Compatibility (Cars search) -->
-                <div class="tab-content-panel" id="tab-compatibility" role="tabpanel">
-                    <div class="fitments-search-box">
+                <!-- Panel 2: Attributes -->
+                <div class="tab-content-panel" id="tab-attributes" role="tabpanel">
+                    <div style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: flex; flex-direction: column; gap: var(--spacing-sm);">
+                        <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Key Product Attributes:" data-ar="المواصفات والخصائص الأساسية:">Key Product Attributes:</h4>
+                        <div class="specs-column-list" style="margin-top: 0.5rem; max-width: 600px;">
+                            <div class="specs-column-row">
+                                <span class="specs-column-label" data-en="Brand" data-ar="العلامة التجارية">Brand</span>
+                                <span class="specs-column-value" data-en="Weld Racing" data-ar="ويلد ريسينغ">Weld Racing</span>
+                            </div>
+                            <div class="specs-column-row">
+                                <span class="specs-column-label" data-en="Part Number" data-ar="رقم القطعة">Part Number</span>
+                                <span class="specs-column-value">P605-5083</span>
+                            </div>
+                            <div class="specs-column-row">
+                                <span class="specs-column-label" data-en="Product SKU" data-ar="رمز التخزين SKU">Product SKU</span>
+                                <span class="specs-column-value">SKU-WELDRACING-026-79876</span>
+                            </div>
+                            <div class="specs-column-row">
+                                <span class="specs-column-label" data-en="Finish / Color" data-ar="الطلاء / اللون">Finish / Color</span>
+                                <span class="specs-column-value" data-en="Polished Aluminum / Chrome" data-ar="ألومنيوم مصقول / كروم">Polished Aluminum / Chrome</span>
+                            </div>
+                            <div class="specs-column-row">
+                                <span class="specs-column-label" data-en="Country of Manufacture" data-ar="بلد التصنيع">Country of Manufacture</span>
+                                <span class="specs-column-value" data-en="United States" data-ar="الولايات المتحدة">United States</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Specifications -->
+                <div class="tab-content-panel" id="tab-specifications" role="tabpanel">
+                    <div style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
+                        <div>
+                            <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Technical Specifications:" data-ar="المواصفات الفنية:">Technical Specifications:</h4>
+                            <div class="specs-column-list" style="margin-top: 0.5rem;">
+                                <div class="specs-column-row">
+                                    <span class="specs-column-label" data-en="Cradle Range" data-ar="نطاق التثبيت">Cradle Range</span>
+                                    <span class="specs-column-value" data-en="3.18 Inches Diameter" data-ar="٣.١٨ بوصة قطر">3.18 Inches Diameter</span>
+                                </div>
+                                <div class="specs-column-row">
+                                    <span class="specs-column-label" data-en="Clamping Range" data-ar="نطاق التثبيت">Clamping Range</span>
+                                    <span class="specs-column-value" data-en="Push-Through Fitting" data-ar="تثبيت بالدفع والكبس">Push-Through Fitting</span>
+                                </div>
+                                <div class="specs-column-row">
+                                    <span class="specs-column-label" data-en="Materials" data-ar="المواد">Materials</span>
+                                    <span class="specs-column-value" data-en="Billet Aluminum & Steel" data-ar="ألومنيوم صلب وفولاذ">Billet Aluminum & Steel</span>
+                                </div>
+                                <div class="specs-column-row">
+                                    <span class="specs-column-label" data-en="Weight Capacity" data-ar="سعة الوزن">Weight Capacity</span>
+                                    <span class="specs-column-value" data-en="High-Strength Performance" data-ar="أداء عالي التحمل">High-Strength Performance</span>
+                                </div>
+                                <div class="specs-column-row">
+                                    <span class="specs-column-label" data-en="Ball Size" data-ar="مقاس الكرة">Ball Size</span>
+                                    <span class="specs-column-value" data-en="Standard Hub Bore Fit" data-ar="مطابق لتجويف المحور">Standard Hub Bore Fit</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Quality & Standards:" data-ar="الجودة والمعايير:">Quality & Standards:</h4>
+                            <ul style="padding-left: var(--spacing-md); display: flex; flex-direction: column; gap: var(--spacing-xs); margin-top: 0.5rem;">
+                                <li><strong>ISO 9001:2015</strong> - Certified Quality Management System.</li>
+                                <li data-en="MIL-STD-810H Compliant - High vibration and extreme temperature shock durability tested." data-ar="متوافق مع مواصفات MIL-STD-810H - تم اختبار مقاومة الاهتزاز العالي والصدمات الحرارية القصوى.">MIL-STD-810H Compliant - High vibration and extreme temperature shock durability tested.</li>
+                                <li data-en="Salt Spray Tested - ASTM B117 standards verified for corrosion resistance." data-ar="اختبار رذاذ الملح - التحقق من معايير ASTM B117 لمقاومة التآكل.">Salt Spray Tested - ASTM B117 standards verified for corrosion resistance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Vehicle Fitments -->
+                <div class="tab-content-panel" id="tab-fitments" role="tabpanel">
+                    <div class="fitments-search-box" style="margin-bottom: var(--spacing-md);">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="fitment-search-input" placeholder="Search compatible cars..." data-en-placeholder="Search compatible cars..." data-ar-placeholder="البحث عن السيارات المتوافقة...">
+                        <input type="text" id="fitment-search-input" placeholder="Search by make or model..." data-en-placeholder="Search by make or model..." data-ar-placeholder="البحث عن الماركة أو الموديل...">
                     </div>
                     
-                    <div class="fitment-grid-list" id="fitment-container">
-                        <div class="fitment-item" data-car="Ford F-150 Raptor">
-                            <div class="fitment-icon"><i class="fa-solid fa-car"></i></div>
-                            <div class="fitment-details">
-                                <span class="fitment-car">Ford F-150 Raptor</span>
-                                <span class="fitment-years">2015 - 2024</span>
-                            </div>
-                        </div>
-                        <div class="fitment-item" data-car="Chevrolet Silverado 1500">
-                            <div class="fitment-icon"><i class="fa-solid fa-car"></i></div>
-                            <div class="fitment-details">
-                                <span class="fitment-car">Chevrolet Silverado 1500</span>
-                                <span class="fitment-years">2010 - 2023</span>
-                            </div>
-                        </div>
-                        <div class="fitment-item" data-car="Jeep Wrangler JK / JL">
-                            <div class="fitment-icon"><i class="fa-solid fa-car"></i></div>
-                            <div class="fitment-details">
-                                <span class="fitment-car">Jeep Wrangler JK / JL</span>
-                                <span class="fitment-years">2007 - 2024</span>
-                            </div>
-                        </div>
-                        <div class="fitment-item" data-car="GMC Sierra 1500">
-                            <div class="fitment-icon"><i class="fa-solid fa-car"></i></div>
-                            <div class="fitment-details">
-                                <span class="fitment-car">GMC Sierra 1500</span>
-                                <span class="fitment-years">2012 - 2024</span>
-                            </div>
-                        </div>
-                        <div class="fitment-item" data-car="Toyota Tundra TRD Pro">
-                            <div class="fitment-icon"><i class="fa-solid fa-car"></i></div>
-                            <div class="fitment-details">
-                                <span class="fitment-car">Toyota Tundra TRD Pro</span>
-                                <span class="fitment-years">2014 - 2022</span>
-                            </div>
-                        </div>
-                        <div class="fitment-item" data-car="Dodge Ram 1500 TRX">
-                            <div class="fitment-icon"><i class="fa-solid fa-car"></i></div>
-                            <div class="fitment-details">
-                                <span class="fitment-car">Dodge Ram 1500 TRX</span>
-                                <span class="fitment-years">2009 - 2024</span>
-                            </div>
-                        </div>
+                    <div style="overflow-x: auto;">
+                        <table class="fitment-table">
+                            <thead>
+                                <tr>
+                                    <th data-en="Year" data-ar="السنة">Year</th>
+                                    <th data-en="Make" data-ar="الشركة المصنعة">Make</th>
+                                    <th data-en="Model" data-ar="الموديل">Model</th>
+                                    <th data-en="Engine" data-ar="المحرك">Engine</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fitment-table-body">
+                                <tr class="fitment-row" data-car="Ford F-150 Raptor">
+                                    <td>2015 - 2024</td>
+                                    <td>Ford</td>
+                                    <td>F-150 Raptor</td>
+                                    <td>3.5L V6 EcoBoost / 5.2L V8</td>
+                                </tr>
+                                <tr class="fitment-row" data-car="Chevrolet Silverado 1500">
+                                    <td>2010 - 2023</td>
+                                    <td>Chevrolet</td>
+                                    <td>Silverado 1500</td>
+                                    <td>5.3L V8 / 6.2L V8</td>
+                                </tr>
+                                <tr class="fitment-row" data-car="Jeep Wrangler JK / JL">
+                                    <td>2007 - 2024</td>
+                                    <td>Jeep</td>
+                                    <td>Wrangler JK / JL</td>
+                                    <td>2.0L I4 / 3.6L V6</td>
+                                </tr>
+                                <tr class="fitment-row" data-car="GMC Sierra 1500">
+                                    <td>2012 - 2024</td>
+                                    <td>GMC</td>
+                                    <td>Sierra 1500</td>
+                                    <td>5.3L V8 / 6.2L V8</td>
+                                </tr>
+                                <tr class="fitment-row" data-car="Toyota Tundra TRD Pro">
+                                    <td>2014 - 2022</td>
+                                    <td>Toyota</td>
+                                    <td>Tundra TRD Pro</td>
+                                    <td>5.7L V8 / 3.5L Twin-Turbo V6</td>
+                                </tr>
+                                <tr class="fitment-row" data-car="Dodge Ram 1500 TRX">
+                                    <td>2009 - 2024</td>
+                                    <td>Dodge</td>
+                                    <td>Ram 1500 TRX</td>
+                                    <td>6.2L Supercharged V8</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <!-- Panel 3: Installation Guide -->
-                <div class="tab-content-panel" id="tab-installation" role="tabpanel">
-                    <div style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: flex; flex-direction: column; gap: var(--spacing-sm);">
-                        <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Installation Instructions:" data-ar="تعليمات التركيب:">Installation Instructions:</h4>
-                        <ol style="padding-left: var(--spacing-md); display: flex; flex-direction: column; gap: 0.5rem;">
-                            <li data-en="Jack up the vehicle securely and remove the wheel assembly." data-ar="ارفع السيارة بشكل آمن وقم بإزالة العجلة.">Jack up the vehicle securely and remove the wheel assembly.</li>
-                            <li data-en="Clean the center bore of the wheel thoroughly using a wire brush to remove rust or debris." data-ar="نظف تجويف مركز العجلة جيداً باستخدام فرشاة سلكية لإزالة الصدأ أو الأوساخ.">Clean the center bore of the wheel thoroughly using a wire brush to remove rust or debris.</li>
-                            <li data-en="Insert the new Weld Racing center cap from the rear side of the wheel center bore." data-ar="أدخل غطاء مركز عجلات ويلد ريسينغ الجديد من الجزء الخلفي لتجويف مركز العجلة.">Insert the new Weld Racing center cap from the rear side of the wheel center bore.</li>
-                            <li data-en="Push firmly until the cap's flange is completely seated against the wheel's rear mounting pad." data-ar="اضغط بقوة حتى يستقر شفة الغطاء تماماً على لوحة التثبيت الخلفية للعجلة.">Push firmly until the cap's flange is completely seated against the wheel's rear mounting pad.</li>
-                            <li data-en="Re-install the wheel assembly onto the vehicle and torque the lug nuts to factory specifications." data-ar="أعد تركيب العجلة على السيارة وقم بربط الصواميل وفقاً لمواصفات المصنع.">Re-install the wheel assembly onto the vehicle and torque the lug nuts to factory specifications.</li>
-                        </ol>
+                <!-- Panel 5: Reviews -->
+                <div class="tab-content-panel" id="tab-reviews" role="tabpanel">
+                    <div class="reviews-tab-grid">
+                        <!-- Overall score card -->
+                        <div class="review-score-card">
+                            <span class="review-score-big" id="overall-review-score">0</span>
+                            <div class="review-stars-row">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <span data-en="Based on 0 reviews" data-ar="بناءً على ٠ تقييم">Based on 0 reviews</span>
+                        </div>
+                        
+                        <!-- Star progress bars -->
+                        <div class="review-progress-bars">
+                            <div class="review-progress-row">
+                                <span>5 ★</span>
+                                <div class="review-progress-bar-container">
+                                    <div class="review-progress-bar-fill" id="bar-5-star"></div>
+                                </div>
+                                <span class="review-progress-count" id="count-5-star">0</span>
+                            </div>
+                            <div class="review-progress-row">
+                                <span>4 ★</span>
+                                <div class="review-progress-bar-container">
+                                    <div class="review-progress-bar-fill" id="bar-4-star"></div>
+                                </div>
+                                <span class="review-progress-count" id="count-4-star">0</span>
+                            </div>
+                            <div class="review-progress-row">
+                                <span>3 ★</span>
+                                <div class="review-progress-bar-container">
+                                    <div class="review-progress-bar-fill" id="bar-3-star"></div>
+                                </div>
+                                <span class="review-progress-count" id="count-3-star">0</span>
+                            </div>
+                            <div class="review-progress-row">
+                                <span>2 ★</span>
+                                <div class="review-progress-bar-container">
+                                    <div class="review-progress-bar-fill" id="bar-2-star"></div>
+                                </div>
+                                <span class="review-progress-count" id="count-2-star">0</span>
+                            </div>
+                            <div class="review-progress-row">
+                                <span>1 ★</span>
+                                <div class="review-progress-bar-container">
+                                    <div class="review-progress-bar-fill" id="bar-1-star"></div>
+                                </div>
+                                <span class="review-progress-count" id="count-1-star">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Empty reviews placeholder and user reviews list -->
+                    <div id="user-reviews-list-container">
+                        <div id="no-reviews-placeholder">
+                            <i class="fa-regular fa-comments" style="font-size: 3rem; color: var(--color-border); margin-bottom: var(--spacing-sm); display: block;"></i>
+                            <span style="font-weight: 700; font-size: 1.1rem; color: var(--color-text-main); display: block;" data-en="No reviews yet" data-ar="لا توجد تقييمات بعد">No reviews yet</span>
+                            <span style="font-size: 0.9rem; color: var(--color-text-muted);" data-en="Be the first to review this product." data-ar="كن أول من يقيم هذا المنتج.">Be the first to review this product.</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Write a Review Form -->
+                    <div style="background: var(--color-bg-sidebar); border: 1px solid var(--color-border); padding: var(--spacing-xl); border-radius: var(--radius-lg); margin-top: var(--spacing-xl);">
+                        <h4 style="font-weight: 800; text-transform: uppercase; margin-bottom: var(--spacing-md);" data-en="Write a Review" data-ar="كتابة تقييم">Write a Review</h4>
+                        <form id="write-review-form" onsubmit="return false;" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                                <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
+                                    <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Your Name" data-ar="الاسم">Your Name</label>
+                                    <input type="text" id="review-name" placeholder="Enter your name" data-en-placeholder="Enter your name" data-ar-placeholder="أدخل اسمك" required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
+                                    <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
+                                    <input type="email" id="review-email" value="admin@q8mount.com" required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
+                                </div>
+                            </div>
+                            
+                            <!-- Star Rating Input -->
+                            <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
+                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Your Rating" data-ar="تقييمك">Your Rating</label>
+                                <div class="rating-input-row" id="rating-input-stars">
+                                    <i class="fa-regular fa-star" data-rating="1"></i>
+                                    <i class="fa-regular fa-star" data-rating="2"></i>
+                                    <i class="fa-regular fa-star" data-rating="3"></i>
+                                    <i class="fa-regular fa-star" data-rating="4"></i>
+                                    <i class="fa-regular fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
+                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Review Title" data-ar="عنوان التقييم">Review Title</label>
+                                <input type="text" id="review-title" placeholder="Summarise your experience" data-en-placeholder="Summarise your experience" data-ar-placeholder="لخص تجربتك مع المنتج" required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600;">
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 0.4rem; text-align: left;">
+                                <label style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main);" data-en="Your Review" data-ar="مراجعتك">Your Review</label>
+                                <textarea id="review-body" rows="4" placeholder="Tell us about your experience with this product..." data-en-placeholder="Tell us about your experience with this product..." data-ar-placeholder="أخبرنا عن تجربتك مع هذا المنتج..." required style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-input-bg); color: var(--color-text-main); font-weight: 600; font-family: inherit; resize: vertical;"></textarea>
+                            </div>
+                            
+                            <div style="text-align: right;">
+                                <button type="submit" id="btn-submit-review" class="btn btn-primary" style="padding: 0.75rem 2rem; border-radius: var(--radius); border: none; font-weight: 700; cursor: pointer; text-transform: uppercase;" data-en="Submit Review" data-ar="إرسال التقييم">Submit Review</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-
-                <!-- Panel 4: Certifications -->
-                <div class="tab-content-panel" id="tab-certifications" role="tabpanel">
-                    <div style="font-size: 1rem; line-height: 1.6; color: var(--color-text-main); display: flex; flex-direction: column; gap: var(--spacing-sm);">
-                        <h4 style="font-weight: 800; text-transform: uppercase;" data-en="Industrial Quality & Standards Certifications:" data-ar="شهادات الجودة والمعايير الصناعية:">Industrial Quality & Standards Certifications:</h4>
-                        <ul style="padding-left: var(--spacing-md); display: flex; flex-direction: column; gap: var(--spacing-xs);">
-                            <li><strong>ISO 9001:2015</strong> - Certified Quality Management System.</li>
-                            <li data-en="MIL-STD-810H Compliant - High vibration and extreme temperature shock durability tested." data-ar="متوافق مع مواصفات MIL-STD-810H - تم اختبار مقاومة الاهتزاز العالي والصدمات الحرارية القصوى.">MIL-STD-810H Compliant - High vibration and extreme temperature shock durability tested.</li>
-                            <li data-en="Made in USA - Precision engineered and manufactured in Weld Racing Kansas facilities." data-ar="صنع في الولايات المتحدة الأمريكية - تم تصميمه وتصنيعه بدقة في منشآت ويلد ريسينغ في كانساس.">Made in USA - Precision engineered and manufactured in Weld Racing Kansas facilities.</li>
-                            <li data-en="Salt Spray Tested - ASTM B117 standards verified for corrosion resistance." data-ar="اختبار رذاذ الملح - التحقق من معايير ASTM B117 لمقاومة التآكل.">Salt Spray Tested - ASTM B117 standards verified for corrosion resistance.</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Compatible Accessories section (Restructured to match the standard grid) -->
@@ -891,19 +1252,189 @@
 
             /* ---------- FITMENT SEARCH FILTER ---------- */
             const fitmentInput = document.getElementById('fitment-search-input');
-            const fitmentItems = document.querySelectorAll('.fitment-item');
+            const fitmentRows = document.querySelectorAll('.fitment-row');
 
             fitmentInput.addEventListener('input', () => {
                 const query = fitmentInput.value.toLowerCase().trim();
-                fitmentItems.forEach(item => {
-                    const carName = item.getAttribute('data-car').toLowerCase();
+                fitmentRows.forEach(row => {
+                    const carName = row.getAttribute('data-car').toLowerCase();
                     if (carName.includes(query)) {
-                        item.classList.remove('hidden');
+                        row.style.display = '';
                     } else {
-                        item.classList.add('hidden');
+                        row.style.display = 'none';
                     }
                 });
             });
+
+            /* ---------- REVIEWS FUNCTIONALITY ---------- */
+            const reviewStarsContainer = document.getElementById('rating-input-stars');
+            const reviewStars = reviewStarsContainer.querySelectorAll('i');
+            let selectedRating = 0;
+
+            reviewStars.forEach(star => {
+                star.addEventListener('mouseover', () => {
+                    const rating = parseInt(star.getAttribute('data-rating'));
+                    highlightStars(rating);
+                });
+                
+                star.addEventListener('mouseout', () => {
+                    highlightStars(selectedRating);
+                });
+
+                star.addEventListener('click', () => {
+                    selectedRating = parseInt(star.getAttribute('data-rating'));
+                    highlightStars(selectedRating);
+                });
+            });
+
+            function highlightStars(rating) {
+                reviewStars.forEach(s => {
+                    const r = parseInt(s.getAttribute('data-rating'));
+                    if (r <= rating) {
+                        s.className = 'fa-solid fa-star filled';
+                    } else {
+                        s.className = 'fa-regular fa-star';
+                    }
+                });
+            }
+
+            const writeReviewForm = document.getElementById('write-review-form');
+            const reviewsContainer = document.getElementById('user-reviews-list-container');
+            const noReviewsPlaceholder = document.getElementById('no-reviews-placeholder');
+            const toastWrapper = document.getElementById('toast-wrapper');
+            
+            // In-memory reviews array to track submitted reviews
+            const reviewsList = [];
+
+            writeReviewForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('review-name').value.trim();
+                const email = document.getElementById('review-email').value.trim();
+                const title = document.getElementById('review-title').value.trim();
+                const body = document.getElementById('review-body').value.trim();
+
+                if (selectedRating === 0) {
+                    alert(htmlEl.getAttribute('lang') === 'ar' ? 'يرجى اختيار تقييم بالنجوم!' : 'Please select a star rating!');
+                    return;
+                }
+
+                // Add to list
+                const newReview = {
+                    name,
+                    email,
+                    rating: selectedRating,
+                    title,
+                    body,
+                    date: new Date().toLocaleDateString(htmlEl.getAttribute('lang') === 'ar' ? 'ar-EG' : 'en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })
+                };
+
+                reviewsList.push(newReview);
+                renderReviews();
+
+                // Show success toast
+                const currentLang = htmlEl.getAttribute('lang') || 'en';
+                const successMsg = currentLang === 'ar' 
+                    ? 'شكراً لك! تم إرسال تقييمك بنجاح.' 
+                    : 'Thank you! Your review has been submitted successfully.';
+                
+                toastWrapper.innerHTML = '';
+                const toast = document.createElement('div');
+                toast.className = 'toast-notification';
+                toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> <span>${successMsg}</span>`;
+                toastWrapper.appendChild(toast);
+                setTimeout(() => { toast.remove(); }, 3000);
+
+                // Reset form
+                writeReviewForm.reset();
+                selectedRating = 0;
+                highlightStars(0);
+            });
+
+            function renderReviews() {
+                if (reviewsList.length === 0) {
+                    noReviewsPlaceholder.style.display = 'block';
+                    return;
+                }
+
+                noReviewsPlaceholder.style.display = 'none';
+                
+                // Clear dynamic reviews
+                const existingItems = reviewsContainer.querySelectorAll('.review-item');
+                existingItems.forEach(item => item.remove());
+
+                // Calculate summary stats
+                let totalRating = 0;
+                const counts = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+                
+                // Add reviews to list
+                reviewsList.forEach(rev => {
+                    totalRating += rev.rating;
+                    counts[rev.rating]++;
+
+                    const item = document.createElement('div');
+                    item.className = 'review-item';
+                    
+                    let starsHtml = '';
+                    for (let i = 1; i <= 5; i++) {
+                        starsHtml += i <= rev.rating 
+                            ? '<i class="fa-solid fa-star"></i>' 
+                            : '<i class="fa-regular fa-star"></i>';
+                    }
+
+                    item.innerHTML = `
+                        <div class="review-item-header">
+                            <div class="review-item-author-info">
+                                <span class="review-item-name">${rev.name}</span>
+                                <span class="review-item-date">${rev.date}</span>
+                            </div>
+                            <div class="review-item-stars">
+                                ${starsHtml}
+                            </div>
+                        </div>
+                        <h5 class="review-item-title">${rev.title}</h5>
+                        <p class="review-item-body">${rev.body}</p>
+                    `;
+                    
+                    reviewsContainer.appendChild(item);
+                });
+
+                // Update summary numbers
+                const avgRating = (totalRating / reviewsList.length).toFixed(1);
+                document.getElementById('overall-review-score').textContent = avgRating;
+                
+                // Update header tab counter
+                const lang = htmlEl.getAttribute('lang') || 'en';
+                const reviewsTabBtn = document.querySelector('[data-tab="tab-reviews"]');
+                if (reviewsTabBtn) {
+                    reviewsTabBtn.setAttribute('data-en', `Reviews (${reviewsList.length})`);
+                    reviewsTabBtn.setAttribute('data-ar', `التقييمات (${reviewsList.length})`);
+                    reviewsTabBtn.textContent = lang === 'ar' ? `التقييمات (${reviewsList.length})` : `Reviews (${reviewsList.length})`;
+                }
+
+                // Update summary stars UI
+                const scoreStarsContainer = document.querySelector('.review-score-card .review-stars-row');
+                let scoreStarsHtml = '';
+                const roundedAvg = Math.round(parseFloat(avgRating));
+                for (let i = 1; i <= 5; i++) {
+                    scoreStarsHtml += i <= roundedAvg
+                        ? '<i class="fa-solid fa-star filled"></i>'
+                        : '<i class="fa-regular fa-star"></i>';
+                }
+                scoreStarsContainer.innerHTML = scoreStarsHtml;
+
+                // Update progress bar percentages
+                for (let i = 1; i <= 5; i++) {
+                    const pct = ((counts[i] / reviewsList.length) * 100).toFixed(0);
+                    document.getElementById(`bar-${i}-star`).style.width = `${pct}%`;
+                    document.getElementById(`count-${i}-star`).textContent = counts[i];
+                }
+            }
+
 
             /* ---------- WISHLIST ACTIVE TOGGLE ---------- */
             const wishlistBtn = document.getElementById('btn-wishlist');

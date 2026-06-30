@@ -670,7 +670,7 @@
                                 <input type="checkbox" name="brand" value="zf">
                                 <span>ZF</span>
                             </label>
-                            </div>
+                        </div>
                     </div>
 
                     <!-- Price Filter -->
@@ -788,7 +788,8 @@
                         <div id="results-count">
                             <h2 class="toolbar-title" data-en="All Products" data-ar="جميع المنتجات">All Products</h2>
                             <span class="toolbar-subtitle">
-                                <span id="results-count-number">24</span> <span data-en="products found" data-ar="منتج تم العثور عليه">products found</span>
+                                <span id="results-count-number">24</span> <span data-en="products found"
+                                    data-ar="منتج تم العثور عليه">products found</span>
                             </span>
                         </div>
                         <div class="listing-sort-wrap">
@@ -796,14 +797,19 @@
                                 <span data-en="Sort: " data-ar="ترتيب: ">Sort: </span>
                                 <select id="sort-select">
                                     <option value="featured" data-en="Default" data-ar="الافتراضي">Default</option>
-                                    <option value="price-low" data-en="Price: Low to High" data-ar="السعر: من الأقل للأعلى">Price: Low to High</option>
-                                    <option value="price-high" data-en="Price: High to Low" data-ar="السعر: من الأعلى للأقل">Price: High to Low</option>
-                                    <option value="rating" data-en="Best Rating" data-ar="الأعلى تقييمًا">Best Rating</option>
+                                    <option value="price-low" data-en="Price: Low to High"
+                                        data-ar="السعر: من الأقل للأعلى">Price: Low to High</option>
+                                    <option value="price-high" data-en="Price: High to Low"
+                                        data-ar="السعر: من الأعلى للأقل">Price: High to Low</option>
+                                    <option value="rating" data-en="Best Rating" data-ar="الأعلى تقييمًا">Best Rating
+                                    </option>
                                 </select>
                             </div>
                             <div class="view-toggles">
-                                <button class="view-toggle-btn active" id="view-grid-btn" aria-label="Grid View"><i class="fa-solid fa-table-cells"></i></button>
-                                <button class="view-toggle-btn" id="view-list-btn" aria-label="List View"><i class="fa-solid fa-list"></i></button>
+                                <button class="view-toggle-btn active" id="view-grid-btn" aria-label="Grid View"><i
+                                        class="fa-solid fa-table-cells"></i></button>
+                                <button class="view-toggle-btn" id="view-list-btn" aria-label="List View"><i
+                                        class="fa-solid fa-list"></i></button>
                             </div>
                         </div>
                     </div>
@@ -2138,10 +2144,10 @@
                                 el.appendChild(document.createTextNode(' ' + text));
                             } else {
                                 if (text.includes('<') && text.includes('>')) {
-                                el.innerHTML = text;
-                            } else {
-                                el.textContent = text;
-                            }
+                                    el.innerHTML = text;
+                                } else {
+                                    el.textContent = text;
+                                }
                             }
                         }
                     }
